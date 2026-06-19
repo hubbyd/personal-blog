@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Linkedin, Mail, Globe } from "lucide-react";
+import { Menu, X, Github, Mail, Globe, Sun, Moon, Home, User, Code, FolderOpen, FileText, MessageCircle } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
+import { useTheme } from "../context/ThemeContext";
+import { useNavigate, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, lang, toggleLang } = useTranslation();
+  const { theme, toggleTheme } = useTheme();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +22,31 @@ function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: t.nav.home, href: "#hero" },
-    { name: t.nav.about, href: "#about" },
-    { name: t.nav.skills, href: "#skills" },
-    { name: t.nav.projects, href: "#projects" },
-    { name: t.nav.blog, href: "#blog" },
-    { name: t.nav.contact, href: "#contact" },
+    { name: t.nav.home, href: "/", icon: Home },
+    { name: t.nav.about, href: "/#about", icon: User },
+    { name: t.nav.skills, href: "/#skills", icon: Code },
+    { name: t.nav.projects, href: "/projects", icon: FolderOpen },
+    { name: t.nav.blog, href: "/blog", icon: FileText },
+    { name: t.nav.contact, href: "/#contact", icon: MessageCircle },
   ];
+
+  const isActive = (href: string) => {
+    if (href.startsWith("/#")) return location.pathname === "/" && location.hash === href;
+    return location.pathname === href;
+  };
+
+  const scrollToSection = (href: string) => {
+    if (href.startsWith("/#")) {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.querySelector(href);
+        element?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    } else {
+      navigate(href);
+    }
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <motion.nav
@@ -31,67 +54,80 @@ function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.5 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-[#0f0f23]/80 backdrop-blur-xl shadow-2xl shadow-black/20" : "bg-transparent"
+        isScrolled ? "bg-[#0f0f23]/90 backdrop-blur-xl shadow-2xl shadow-black/20" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <motion.a
-            href="#hero"
+          <motion.button
+            onClick={() => scrollToSection("/")}
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
             <div className="w-10 h-10 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20">
-              <span className="text-white font-bold text-lg">Z</span>
+              <span className="text-white font-bold text-lg">R</span>
             </div>
-            <span className="text-xl font-bold text-white">ZHANG</span>
-          </motion.a>
+            <span className="text-xl font-bold text-white">rement</span>
+          </motion.button>
 
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-2">
             {navLinks.map((link, index) => (
-              <motion.a
+              <motion.button
                 key={index}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300 font-medium relative group"
+                onClick={() => scrollToSection(link.href)}
+                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                  isActive(link.href)
+                    ? "text-white"
+                    : "text-gray-400 hover:text-white"
+                }`}
                 whileHover={{ y: -2 }}
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-primary transition-all duration-300 group-hover:w-full" />
-              </motion.a>
+                {isActive(link.href) && (
+                  <motion.span
+                    layoutId="navIndicator"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-primary rounded-full"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
+              </motion.button>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-2">
+            <motion.button
+              onClick={toggleTheme}
+              className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
+            >
+              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+            </motion.button>
             <motion.button
               onClick={toggleLang}
               className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
               title={lang === "zh" ? "切换到英文" : "Switch to Chinese"}
             >
               <Globe className="w-5 h-5" />
             </motion.button>
             <motion.a
-              href="https://github.com"
+              href="https://github.com/hubbyd"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Github className="w-5 h-5" />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="mailto:rement_zhh@163.com"
               className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               whileHover={{ scale: 1.1 }}
-            >
-              <Linkedin className="w-5 h-5" />
-            </motion.a>
-            <motion.a
-              href="mailto:zhanghehao@example.com"
-              className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <Mail className="w-5 h-5" />
             </motion.a>
@@ -114,19 +150,29 @@ function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-[#0f0f23]/95 backdrop-blur-xl border-t border-white/5"
           >
-            <div className="px-4 py-6 space-y-3">
+            <div className="px-4 py-6 space-y-2">
               {navLinks.map((link, index) => (
-                <motion.a
+                <motion.button
                   key={index}
-                  href={link.href}
-                  className="block text-gray-300 hover:text-white py-3 px-4 rounded-xl hover:bg-white/5 transition-all font-medium"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={() => scrollToSection(link.href)}
+                  className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-xl font-medium transition-all ${
+                    isActive(link.href)
+                      ? "bg-white/10 text-white"
+                      : "text-gray-400 hover:text-white hover:bg-white/5"
+                  }`}
                   whileHover={{ x: 10 }}
                 >
+                  <link.icon className="w-5 h-5" />
                   {link.name}
-                </motion.a>
+                </motion.button>
               ))}
               <div className="flex items-center gap-3 pt-4 border-t border-white/5">
+                <button
+                  onClick={toggleTheme}
+                  className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                >
+                  {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+                </button>
                 <button
                   onClick={toggleLang}
                   className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
@@ -134,7 +180,7 @@ function Navbar() {
                   <Globe className="w-5 h-5" />
                 </button>
                 <a
-                  href="https://github.com"
+                  href="https://github.com/hubbyd"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
@@ -142,15 +188,7 @@ function Navbar() {
                   <Github className="w-5 h-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a
-                  href="mailto:zhanghehao@example.com"
+                  href="mailto:rement_zhh@163.com"
                   className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
                 >
                   <Mail className="w-5 h-5" />
