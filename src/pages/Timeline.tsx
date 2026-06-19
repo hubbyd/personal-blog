@@ -10,6 +10,7 @@ function Timeline() {
       description: "Began Software Engineering studies at Xi'an University of Finance and Economics",
       icon: BookOpen,
       color: "primary",
+      image: "/assets/photo.jpg",
     },
     {
       date: "2024",
@@ -17,6 +18,7 @@ function Timeline() {
       description: "Published first research paper on AI and machine learning in a core journal",
       icon: Code,
       color: "accent",
+      image: "/assets/photo.jpg",
     },
     {
       date: "2024",
@@ -24,6 +26,7 @@ function Timeline() {
       description: "Won multiple awards including 三创赛一等奖, 计算机设计大赛西北赛区三等奖",
       icon: Trophy,
       color: "primary",
+      image: "/assets/photo.jpg",
     },
     {
       date: "2025",
@@ -31,6 +34,7 @@ function Timeline() {
       description: "Mastered React, Vue, TypeScript and started building AI-powered applications",
       icon: Rocket,
       color: "accent",
+      image: "/assets/photo.jpg",
     },
     {
       date: "2025",
@@ -38,6 +42,7 @@ function Timeline() {
       description: "Published second research paper on malware classification using deep learning",
       icon: Star,
       color: "primary",
+      image: "/assets/photo.jpg",
     },
     {
       date: "2025",
@@ -45,6 +50,7 @@ function Timeline() {
       description: "Actively looking for summer frontend/full-stack internship opportunities",
       icon: Rocket,
       color: "accent",
+      image: "/assets/photo.jpg",
     },
   ];
 
@@ -82,13 +88,23 @@ function Timeline() {
                 }`}
               >
                 <div className={`w-5/12 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"}`}>
-                  <div className="glass-card rounded-2xl p-6 hover:bg-white/10 transition-all duration-300">
-                    <div className="flex items-center gap-2 text-sm text-gray-500 mb-2 justify-start">
-                      <Calendar className="w-4 h-4" />
-                      {item.date}
+                  <div className="glass-card rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300">
+                    <div className="relative h-32 overflow-hidden">
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        className="w-full h-full object-cover opacity-40"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] to-transparent" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-gray-400">{item.description}</p>
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 text-sm text-gray-500 mb-2 justify-start">
+                        <Calendar className="w-4 h-4" />
+                        {item.date}
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
+                      <p className="text-gray-400">{item.description}</p>
+                    </div>
                   </div>
                 </div>
 

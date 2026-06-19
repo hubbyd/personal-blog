@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Mail, Globe, Sun, Moon, Home, User, Code, FolderOpen, FileText, MessageCircle, FileBadge, Clock, Trophy } from "lucide-react";
+import { Menu, X, Github, Mail, Globe, Sun, Moon, Home, User, Code, FolderOpen, FileText, MessageCircle, FileBadge, Clock, Trophy, Image } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 import { useTheme } from "../context/ThemeContext";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -27,6 +27,7 @@ function Navbar() {
     { name: t.nav.skills, href: "/skills", icon: Code },
     { name: t.nav.projects, href: "/projects", icon: FolderOpen },
     { name: t.nav.blog, href: "/blog", icon: FileText },
+    { name: "Gallery", href: "/gallery", icon: Image },
     { name: "Resume", href: "/resume", icon: FileBadge },
     { name: "Timeline", href: "/timeline", icon: Clock },
     { name: "Awards", href: "/awards", icon: Trophy },

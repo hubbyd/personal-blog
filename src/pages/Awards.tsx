@@ -11,6 +11,7 @@ function Awards() {
       level: "校级",
       icon: Crown,
       color: "from-yellow-500 to-orange-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "计算机设计大赛西北赛区三等奖",
@@ -19,6 +20,7 @@ function Awards() {
       level: "区域",
       icon: Trophy,
       color: "from-blue-500 to-cyan-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "优秀共青团员",
@@ -27,6 +29,7 @@ function Awards() {
       level: "校级",
       icon: Medal,
       color: "from-red-500 to-pink-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "优秀学生干部",
@@ -35,6 +38,7 @@ function Awards() {
       level: "校级",
       icon: Star,
       color: "from-purple-500 to-pink-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "校级三等奖学金",
@@ -43,6 +47,7 @@ function Awards() {
       level: "校级",
       icon: Award,
       color: "from-green-500 to-emerald-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "博学杯校级三等奖",
@@ -51,6 +56,7 @@ function Awards() {
       level: "校级",
       icon: Trophy,
       color: "from-indigo-500 to-blue-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "国创赛校级三等奖",
@@ -59,6 +65,7 @@ function Awards() {
       level: "校级",
       icon: Sparkles,
       color: "from-teal-500 to-cyan-500",
+      image: "/assets/photo.jpg",
     },
     {
       name: "挑战杯校级三等奖",
@@ -67,6 +74,7 @@ function Awards() {
       level: "校级",
       icon: Trophy,
       color: "from-orange-500 to-yellow-500",
+      image: "/assets/photo.jpg",
     },
   ];
 
@@ -123,26 +131,36 @@ function Awards() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 + index * 0.1 }}
-              className="group glass-card rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10"
+              className="group glass-card rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-300 hover:shadow-xl hover:shadow-primary-500/10"
             >
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${award.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                <award.icon className="w-8 h-8 text-white" />
+              <div className="relative h-32 overflow-hidden">
+                <img
+                  src={award.image}
+                  alt={award.name}
+                  className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] to-transparent" />
+                <div className={`absolute top-4 left-4 w-12 h-12 rounded-xl bg-gradient-to-br ${award.color} flex items-center justify-center shadow-lg`}>
+                  <award.icon className="w-6 h-6 text-white" />
+                </div>
               </div>
               
-              <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all">
-                {award.name}
-              </h3>
-              
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400">
-                  {award.category}
-                </span>
-                <span className="px-3 py-1 bg-primary-500/20 rounded-full text-xs text-primary-400">
-                  {award.level}
-                </span>
+              <div className="p-4">
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all">
+                  {award.name}
+                </h3>
+                
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400">
+                    {award.category}
+                  </span>
+                  <span className="px-3 py-1 bg-primary-500/20 rounded-full text-xs text-primary-400">
+                    {award.level}
+                  </span>
+                </div>
+                
+                <p className="text-gray-500 text-sm">{award.date}</p>
               </div>
-              
-              <p className="text-gray-500 text-sm">{award.date}</p>
             </motion.div>
           ))}
         </div>

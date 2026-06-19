@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Mail, Heart, Home, User, Code, FolderOpen, FileText, FileBadge, Clock, Trophy, MessageCircle } from "lucide-react";
+import { Github, Mail, Heart, Home, User, Code, FolderOpen, FileText, FileBadge, Clock, Trophy, MessageCircle, Image } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 
 function Footer() {
@@ -12,6 +12,7 @@ function Footer() {
     { name: "Skills", href: "/skills", icon: Code },
     { name: "Projects", href: "/projects", icon: FolderOpen },
     { name: "Blog", href: "/blog", icon: FileText },
+    { name: "Gallery", href: "/gallery", icon: Image },
     { name: "Resume", href: "/resume", icon: FileBadge },
     { name: "Timeline", href: "/timeline", icon: Clock },
     { name: "Awards", href: "/awards", icon: Trophy },

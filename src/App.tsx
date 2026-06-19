@@ -14,6 +14,7 @@ import Resume from './pages/Resume'
 import Timeline from './pages/Timeline'
 import Awards from './pages/Awards'
 import SkillsPage from './pages/SkillsPage'
+import Gallery from './pages/Gallery'
 import NotFound from './pages/NotFound'
 import { useTheme } from './context/ThemeContext'
 
@@ -53,6 +54,7 @@ function AppContent() {
                 <Route path="/timeline" element={<Timeline />} />
                 <Route path="/awards" element={<Awards />} />
                 <Route path="/skills" element={<SkillsPage />} />
+                <Route path="/gallery" element={<Gallery />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </AnimatePresence>

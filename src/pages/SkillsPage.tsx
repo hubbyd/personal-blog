@@ -8,6 +8,7 @@ function SkillsPage() {
       category: "Frontend Development",
       icon: Code,
       color: "from-blue-500 to-cyan-500",
+      image: "/assets/photo.jpg",
       skills: [
         { name: "HTML5/CSS3", level: 95, years: 3 },
         { name: "JavaScript", level: 90, years: 3 },
@@ -21,6 +22,7 @@ function SkillsPage() {
       category: "Backend Development",
       icon: Terminal,
       color: "from-green-500 to-emerald-500",
+      image: "/assets/photo.jpg",
       skills: [
         { name: "Node.js", level: 80, years: 2 },
         { name: "Python", level: 75, years: 2 },
@@ -34,6 +36,7 @@ function SkillsPage() {
       category: "Database & Storage",
       icon: Database,
       color: "from-purple-500 to-pink-500",
+      image: "/assets/photo.jpg",
       skills: [
         { name: "MySQL", level: 80, years: 2 },
         { name: "SQLite", level: 85, years: 2 },
@@ -45,6 +48,7 @@ function SkillsPage() {
       category: "AI & Machine Learning",
       icon: Brain,
       color: "from-red-500 to-orange-500",
+      image: "/assets/photo.jpg",
       skills: [
         { name: "TensorFlow", level: 70, years: 1 },
         { name: "PyTorch", level: 65, years: 1 },
@@ -58,6 +62,7 @@ function SkillsPage() {
       category: "DevOps & Tools",
       icon: Cloud,
       color: "from-yellow-500 to-amber-500",
+      image: "/assets/photo.jpg",
       skills: [
         { name: "Git", level: 90, years: 3 },
         { name: "Docker", level: 70, years: 1 },
@@ -70,6 +75,7 @@ function SkillsPage() {
       category: "Other Technologies",
       icon: Layers,
       color: "from-indigo-500 to-violet-500",
+      image: "/assets/photo.jpg",
       skills: [
         { name: "Vite", level: 85, years: 2 },
         { name: "Webpack", level: 70, years: 1 },
@@ -113,35 +119,45 @@ function SkillsPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: catIndex * 0.1 }}
-              className="glass-card rounded-2xl p-6"
+              className="glass-card rounded-2xl overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg`}>
-                  <category.icon className="w-6 h-6 text-white" />
+              <div className="relative h-24 overflow-hidden">
+                <img
+                  src={category.image}
+                  alt={category.category}
+                  className="w-full h-full object-cover opacity-30"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a2e] to-transparent" />
+                <div className="absolute bottom-4 left-4 flex items-center gap-3">
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg`}>
+                    <category.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-white">{category.category}</h3>
                 </div>
-                <h3 className="text-xl font-bold text-white">{category.category}</h3>
               </div>
 
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name}>
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-gray-500 text-sm">{skill.level}%</span>
-                        <span className="text-gray-600 text-xs">• {skill.years}y</span>
+              <div className="p-6">
+                <div className="space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skill.name}>
+                      <div className="flex items-center justify-between mb-2">
+                        <span className="text-gray-300 font-medium">{skill.name}</span>
+                        <div className="flex items-center gap-2">
+                          <span className="text-gray-500 text-sm">{skill.level}%</span>
+                          <span className="text-gray-600 text-xs">• {skill.years}y</span>
+                        </div>
+                      </div>
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <motion.div
+                          initial={{ width: 0 }}
+                          animate={{ width: `${skill.level}%` }}
+                          transition={{ duration: 1, delay: catIndex * 0.1 + skillIndex * 0.05 }}
+                          className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
+                        />
                       </div>
                     </div>
-                    <div className="h-2 bg-white/10 rounded-full overflow-hidden">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        animate={{ width: `${skill.level}%` }}
-                        transition={{ duration: 1, delay: catIndex * 0.1 + skillIndex * 0.05 }}
-                        className={`h-full bg-gradient-to-r ${category.color} rounded-full`}
-                      />
-                    </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}
