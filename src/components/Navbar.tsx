@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Mail, Globe, Sun, Moon, Home, User, Code, FolderOpen, FileText, MessageCircle } from "lucide-react";
+import { Menu, X, Github, Mail, Globe, Sun, Moon, Home, User, Code, FolderOpen, FileText, MessageCircle, FileBadge, Clock, Trophy } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 import { useTheme } from "../context/ThemeContext";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -24,9 +24,12 @@ function Navbar() {
   const navLinks = [
     { name: t.nav.home, href: "/", icon: Home },
     { name: t.nav.about, href: "/#about", icon: User },
-    { name: t.nav.skills, href: "/#skills", icon: Code },
+    { name: t.nav.skills, href: "/skills", icon: Code },
     { name: t.nav.projects, href: "/projects", icon: FolderOpen },
     { name: t.nav.blog, href: "/blog", icon: FileText },
+    { name: "Resume", href: "/resume", icon: FileBadge },
+    { name: "Timeline", href: "/timeline", icon: Clock },
+    { name: "Awards", href: "/awards", icon: Trophy },
     { name: t.nav.contact, href: "/#contact", icon: MessageCircle },
   ];
 
@@ -70,19 +73,22 @@ function Navbar() {
             <span className="text-xl font-bold text-white">rement</span>
           </motion.button>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             {navLinks.map((link, index) => (
               <motion.button
                 key={index}
                 onClick={() => scrollToSection(link.href)}
-                className={`px-4 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                className={`px-3 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
                   isActive(link.href)
                     ? "text-white"
                     : "text-gray-400 hover:text-white"
                 }`}
                 whileHover={{ y: -2 }}
               >
-                {link.name}
+                <span className="flex items-center gap-2">
+                  <link.icon className="w-4 h-4" />
+                  <span className="hidden xl:inline">{link.name}</span>
+                </span>
                 {isActive(link.href) && (
                   <motion.span
                     layoutId="navIndicator"
@@ -94,7 +100,7 @@ function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             <motion.button
               onClick={toggleTheme}
               className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
@@ -134,7 +140,7 @@ function Navbar() {
           </div>
 
           <button
-            className="md:hidden text-white p-2 glass-card rounded-lg"
+            className="lg:hidden text-white p-2 glass-card rounded-lg"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -148,9 +154,9 @@ function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0f0f23]/95 backdrop-blur-xl border-t border-white/5"
+            className="lg:hidden bg-[#0f0f23]/95 backdrop-blur-xl border-t border-white/5"
           >
-            <div className="px-4 py-6 space-y-2">
+            <div className="px-4 py-6 space-y-2 max-h-[70vh] overflow-y-auto">
               {navLinks.map((link, index) => (
                 <motion.button
                   key={index}

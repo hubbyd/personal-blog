@@ -10,6 +10,11 @@ import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetail from './pages/ProjectDetail'
 import BlogPage from './pages/BlogPage'
 import BlogDetail from './pages/BlogDetail'
+import Resume from './pages/Resume'
+import Timeline from './pages/Timeline'
+import Awards from './pages/Awards'
+import SkillsPage from './pages/SkillsPage'
+import NotFound from './pages/NotFound'
 import { useTheme } from './context/ThemeContext'
 
 function AppContent() {
@@ -44,6 +49,11 @@ function AppContent() {
                 <Route path="/projects/:projectId" element={<ProjectDetail />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/:articleId" element={<BlogDetail />} />
+                <Route path="/resume" element={<Resume />} />
+                <Route path="/timeline" element={<Timeline />} />
+                <Route path="/awards" element={<Awards />} />
+                <Route path="/skills" element={<SkillsPage />} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </AnimatePresence>
           </main>
