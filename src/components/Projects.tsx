@@ -1,37 +1,13 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, Folder, ArrowRight } from "lucide-react";
+import { Github, ExternalLink, Folder, ArrowRight, Brain, MessageSquare, Wrench, Globe } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 
-const projects = [
-  {
-    title: "Personal Blog System",
-    description: "A modern blog platform built with React + TypeScript + Tailwind CSS, supporting Markdown editing and code highlighting.",
-    tags: ["React", "TypeScript", "Tailwind", "Node.js"],
-    github: "https://github.com",
-    demo: "#",
-  },
-  {
-    title: "E-commerce Frontend",
-    description: "An e-commerce platform frontend based on Vue3 with complete features including product display, cart, and order management.",
-    tags: ["Vue3", "Pinia", "Vite", "Element Plus"],
-    github: "https://github.com",
-    demo: "#",
-  },
-  {
-    title: "Data Visualization Dashboard",
-    description: "Interactive data visualization dashboard using ECharts with multiple chart types and real-time data updates.",
-    tags: ["React", "ECharts", "TypeScript", "Ant Design"],
-    github: "https://github.com",
-    demo: "#",
-  },
-  {
-    title: "Todo Application",
-    description: "A clean and elegant todo management application with task categorization and data persistence.",
-    tags: ["React", "LocalStorage", "Tailwind", "Framer Motion"],
-    github: "https://github.com",
-    demo: "#",
-  },
-];
+const projectIcons: Record<string, typeof Brain> = {
+  "AI Prompt Lab": Brain,
+  "AI Chat Pro": MessageSquare,
+  "AI Toolkit": Wrench,
+  "Personal Portfolio": Globe,
+};
 
 function Projects() {
   const { t } = useTranslation();
@@ -53,71 +29,84 @@ function Projects() {
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-6 rounded-full" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group glass-card rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-500/10"
-            >
-              <div className="p-6">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="w-14 h-14 bg-gradient-primary rounded-xl flex items-center justify-center shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform duration-300">
-                    <Folder className="w-7 h-7 text-white" />
+        <div className="grid md:grid-cols-2 gap-8">
+          {t.projects.projectList.map((project, index) => {
+            const IconComponent = projectIcons[project.title] || Folder;
+            return (
+              <motion.div
+                key={project.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
+                className="group glass-card rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-primary-500/10"
+              >
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary-500/20 group-hover:scale-110 transition-transform duration-300">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <motion.a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-11 h-11 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <Github className="w-5 h-5" />
+                      </motion.a>
+                      <motion.a
+                        href="#"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-11 h-11 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                        whileHover={{ scale: 1.1 }}
+                      >
+                        <ExternalLink className="w-5 h-5" />
+                      </motion.a>
+                    </div>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <motion.a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      <Github className="w-5 h-5" />
-                    </motion.a>
-                    <motion.a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 glass-card rounded-lg flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-                      whileHover={{ scale: 1.1 }}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </motion.a>
+
+                  <div className="mb-4">
+                    <h3 className="text-2xl font-bold text-white mb-1 group-hover:text-gradient transition-all duration-300">
+                      {project.title}
+                    </h3>
+                    <p className="text-primary-400 text-sm">{project.subtitle}</p>
                   </div>
+                  
+                  <p className="text-gray-400 mb-6 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  <div className="text-xs text-gray-500 mb-6 bg-black/20 rounded-lg p-3">
+                    <span className="text-gray-400">Tech Stack: </span>{project.tech}
+                  </div>
+
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-4 py-2 bg-white/5 rounded-full text-sm text-gray-300 border border-white/10 hover:bg-white/10 transition-colors group-hover:border-primary-500/30"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-primary-400 font-medium group/link"
+                  >
+                    {t.projects.viewDetails}
+                    <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
                 </div>
-
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gradient transition-all duration-300">
-                  {project.title}
-                </h3>
-                <p className="text-gray-400 mb-5 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1.5 bg-white/5 rounded-full text-sm text-gray-400 border border-white/10 hover:bg-white/10 transition-colors"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-primary-400 font-medium group/link"
-                >
-                  {t.projects.viewDetails}
-                  <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
-                </a>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            );
+          })}
         </div>
 
         <motion.div
@@ -125,16 +114,17 @@ function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mt-12"
+          className="text-center mt-16"
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/hubbyd"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 glass-card rounded-xl text-white font-bold hover:bg-white/10 transition-all"
+            className="inline-flex items-center gap-3 px-10 py-5 glass-card rounded-xl text-white font-bold hover:bg-white/10 transition-all hover:shadow-lg"
             whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <Github className="w-5 h-5" />
+            <Github className="w-6 h-6" />
             {t.projects.viewMore}
           </motion.a>
         </motion.div>
