@@ -507,7 +507,11 @@ function Login() {
                   animate={{ opacity: 1 }}
                   className="flex items-center justify-end"
                 >
-                  <button type="button" className="text-sm text-pink-400 hover:text-pink-300 transition-colors">
+                  <button 
+                    type="button" 
+                    onClick={() => navigate("/forgot-password")}
+                    className="text-sm text-pink-400 hover:text-pink-300 transition-colors"
+                  >
                     {t.login.forgotPassword}
                   </button>
                 </motion.div>

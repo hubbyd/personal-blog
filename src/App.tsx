@@ -8,6 +8,7 @@ import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
 import Splash from './pages/Splash'
 import Login from './pages/Login'
+import ForgotPassword from './pages/ForgotPassword'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetail from './pages/ProjectDetail'
 import BlogPage from './pages/BlogPage'
@@ -29,7 +30,7 @@ function AppContent() {
     setIsLoaded(true)
   }, [])
 
-  const isFullScreenPage = location.pathname === '/' || location.pathname === '/login';
+  const isFullScreenPage = location.pathname === '/' || location.pathname === '/login' || location.pathname === '/forgot-password';
 
   return (
     <AnimatePresence>
@@ -52,6 +53,7 @@ function AppContent() {
                 <Route path="/" element={<Splash />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/projects/:projectId" element={<ProjectDetail />} />
                 <Route path="/blog" element={<BlogPage />} />
