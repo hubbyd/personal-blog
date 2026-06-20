@@ -30,8 +30,10 @@ function Footer() {
             transition={{ duration: 0.6 }}
           >
             <div className="flex items-center gap-2 mb-3 sm:mb-4">
-              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-base sm:text-lg">R</span>
+              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                <svg viewBox="0 0 32 32" className="w-5 h-5 sm:w-6 sm:h-6 text-white">
+                  <path d="M8 8 L8 24 M8 16 L16 16 M16 8 L16 24 M16 11 L24 11 M16 21 L24 21" stroke="currentColor" strokeWidth="3" strokeLinecap="round" fill="none"/>
+                </svg>
               </div>
               <span className="text-lg sm:text-xl font-bold text-white">rement</span>
             </div>

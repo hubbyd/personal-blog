@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "build:gitee": "tsc && VITE_BASE_PATH=/personal-blog vite build",
+    "build:gitee": "tsc && cross-env VITE_BASE_PATH=/personal-blog vite build",
     "deploy:gitee": "npm run build:gitee && node deploy-gitee.js",
     "deploy:github": "gh-pages -d dist"
   },
@@ -23,6 +23,7 @@
     "@types/react-dom": "^18.2.0",
     "@vitejs/plugin-react": "^4.2.0",
     "autoprefixer": "^10.4.17",
+    "cross-env": "^10.1.0",
     "gh-pages": "^6.3.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
