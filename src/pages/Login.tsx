@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, Lock, User, Eye, EyeOff, Sparkles, ArrowLeft, Heart, MessageCircle, Globe, Check } from "lucide-react";
+import { Mail, Lock, User, Eye, EyeOff, Sparkles, ArrowLeft, Heart, MessageCircle, Globe, Check, AlertCircle, CheckCircle } from "lucide-react";
 import { trackVisitor, getVisitorStats } from "../utils/visitorTracker";
 import { useTranslation } from "../i18n/useTranslation";
 
@@ -17,6 +17,108 @@ function Login() {
   const [petMood, setPetMood] = useState<"happy" | "thinking" | "excited" | "sleepy">("happy");
   const [visitorStats, setVisitorStats] = useState({ views: 0, visitors: 0, logins: 0 });
   const [showLangMenu, setShowLangMenu] = useState(false);
+  
+  // Validation states
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [usernameError, setUsernameError] = useState("");
+  const [passwordStrength, setPasswordStrength] = useState(0);
+
+  // Validation functions
+  const validateEmail = (email: string): boolean => {
+    // Standard email regex pattern (similar to major platforms)
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!email) {
+      setEmailError("");
+      return false;
+    }
+    if (email.includes(" ")) {
+      setEmailError("邮箱不能包含空格");
+      return false;
+    }
+    if (!emailRegex.test(email)) {
+      setEmailError("请输入有效的邮箱地址");
+      return false;
+    }
+    setEmailError("");
+    return true;
+  };
+
+  const validatePassword = (password: string): boolean => {
+    if (!password) {
+      setPasswordError("");
+      setPasswordStrength(0);
+      return false;
+    }
+    
+    // Calculate password strength
+    let strength = 0;
+    if (password.length >= 8) strength += 25;
+    if (password.length >= 12) strength += 10;
+    if (/[a-z]/.test(password)) strength += 20; // lowercase
+    if (/[A-Z]/.test(password)) strength += 20; // uppercase
+    if (/[0-9]/.test(password)) strength += 15; // numbers
+    if (/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength += 10; // special chars
+    setPasswordStrength(Math.min(strength, 100));
+
+    // Validation rules (similar to ChatGPT/WeChat)
+    if (password.length < 8) {
+      setPasswordError("密码至少需要8个字符");
+      return false;
+    }
+    if (password.includes(" ")) {
+      setPasswordError("密码不能包含空格");
+      return false;
+    }
+    if (!/[a-z]/.test(password)) {
+      setPasswordError("密码必须包含小写字母");
+      return false;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setPasswordError("密码必须包含大写字母");
+      return false;
+    }
+    if (!/[0-9]/.test(password)) {
+      setPasswordError("密码必须包含数字");
+      return false;
+    }
+    
+    setPasswordError("");
+    return true;
+  };
+
+  const validateUsername = (username: string): boolean => {
+    if (!username) {
+      setUsernameError("");
+      return false;
+    }
+    if (username.length < 2) {
+      setUsernameError("用户名至少需要2个字符");
+      return false;
+    }
+    if (username.length > 20) {
+      setUsernameError("用户名不能超过20个字符");
+      return false;
+    }
+    if (!/^[a-zA-Z0-9_\u4e00-\u9fa5]+$/.test(username)) {
+      setUsernameError("用户名只能包含字母、数字、下划线或中文");
+      return false;
+    }
+    setUsernameError("");
+    return true;
+  };
+
+  const getStrengthColor = () => {
+    if (passwordStrength < 40) return "bg-red-500";
+    if (passwordStrength < 70) return "bg-yellow-500";
+    return "bg-green-500";
+  };
+
+  const getStrengthText = () => {
+    if (passwordStrength < 40) return "弱";
+    if (passwordStrength < 70) return "中等";
+    return "强";
+  };
 
   const petMessages = {
     login: {
@@ -55,6 +157,18 @@ function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate all fields before submission
+    const emailValid = validateEmail(email);
+    const passwordValid = validatePassword(password);
+    const usernameValid = isLogin || validateUsername(username);
+    
+    if (!emailValid || !passwordValid || !usernameValid) {
+      setPetMood("thinking");
+      setPetMessage("Please check your input carefully!");
+      return;
+    }
+    
     if (isLogin) {
       trackVisitor(true);
     } else {
@@ -277,12 +391,29 @@ function Login() {
                     <input
                       type="text"
                       value={username}
-                      onChange={(e) => setUsername(e.target.value)}
+                      onChange={(e) => {
+                        setUsername(e.target.value);
+                        validateUsername(e.target.value);
+                      }}
                       placeholder={t.login.enterUsername}
-                      className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-purple-200/40 focus:outline-none focus:border-pink-500/50 focus:ring-2 focus:ring-pink-500/20 transition-all"
+                      className={`w-full pl-12 pr-12 py-3 bg-white/5 border rounded-xl text-white placeholder-purple-200/40 focus:outline-none focus:ring-2 transition-all ${
+                        usernameError ? "border-red-500/50 focus:ring-red-500/20" : "border-white/10 focus:border-pink-500/50 focus:ring-pink-500/20"
+                      }`}
                       required={!isLogin}
                     />
+                    {username && !usernameError && (
+                      <CheckCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
+                    )}
+                    {usernameError && (
+                      <AlertCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-red-400" />
+                    )}
                   </div>
+                  {usernameError && (
+                    <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                      <AlertCircle className="w-3 h-3" />
+                      {usernameError}
+                    </p>
+                  )}
                 </motion.div>
               )}
 
@@ -293,12 +424,29 @@ function Login() {
                   <input
                     type="email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                      validateEmail(e.target.value);
+                    }}
                     placeholder={t.login.enterEmail}
-                    className="w-full pl-12 pr-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-purple-200/40 focus:outline-none focus:border-pink-500/50 focus:ring-2 focus:ring-pink-500/20 transition-all"
+                    className={`w-full pl-12 pr-12 py-3 bg-white/5 border rounded-xl text-white placeholder-purple-200/40 focus:outline-none focus:ring-2 transition-all ${
+                      emailError ? "border-red-500/50 focus:ring-red-500/20" : "border-white/10 focus:border-pink-500/50 focus:ring-pink-500/20"
+                    }`}
                     required
                   />
+                  {email && !emailError && (
+                    <CheckCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-green-400" />
+                  )}
+                  {emailError && (
+                    <AlertCircle className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-red-400" />
+                  )}
                 </div>
+                {emailError && (
+                  <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-3 h-3" />
+                    {emailError}
+                  </p>
+                )}
               </div>
 
               <div>
@@ -308,9 +456,14 @@ function Login() {
                   <input
                     type={showPassword ? "text" : "password"}
                     value={password}
-                    onChange={(e) => setPassword(e.target.value)}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                      validatePassword(e.target.value);
+                    }}
                     placeholder={t.login.enterPassword}
-                    className="w-full pl-12 pr-12 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-purple-200/40 focus:outline-none focus:border-pink-500/50 focus:ring-2 focus:ring-pink-500/20 transition-all"
+                    className={`w-full pl-12 pr-12 py-3 bg-white/5 border rounded-xl text-white placeholder-purple-200/40 focus:outline-none focus:ring-2 transition-all ${
+                      passwordError ? "border-red-500/50 focus:ring-red-500/20" : "border-white/10 focus:border-pink-500/50 focus:ring-pink-500/20"
+                    }`}
                     required
                   />
                   <button
@@ -321,6 +474,31 @@ function Login() {
                     {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
                 </div>
+                
+                {/* Password strength indicator */}
+                {!isLogin && password && (
+                  <div className="mt-2">
+                    <div className="flex items-center gap-2 mb-1">
+                      <div className="flex-1 h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div 
+                          className={`h-full ${getStrengthColor()} transition-all duration-300`}
+                          style={{ width: `${passwordStrength}%` }}
+                        />
+                      </div>
+                      <span className="text-xs text-purple-200/60">{getStrengthText()}</span>
+                    </div>
+                    <p className="text-purple-200/50 text-xs">
+                      密码要求：至少8位，包含大小写字母和数字
+                    </p>
+                  </div>
+                )}
+                
+                {passwordError && (
+                  <p className="text-red-400 text-xs mt-1 flex items-center gap-1">
+                    <AlertCircle className="w-3 h-3" />
+                    {passwordError}
+                  </p>
+                )}
               </div>
 
               {isLogin && (
