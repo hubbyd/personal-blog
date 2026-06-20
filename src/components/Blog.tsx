@@ -30,7 +30,7 @@ function Blog() {
           className="flex items-center justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 flex-wrap"
         >
           <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-accent-400" />
-          <span className="text-gray-400 text-xs sm:text-sm">Supported Languages:</span>
+          <span className="text-gray-400 text-xs sm:text-sm">{t.blog.supportedLanguages}:</span>
           <div className="flex flex-wrap gap-1.5 sm:gap-2">
             {t.blog.languages.map((lang, index) => (
               <motion.span

@@ -14,19 +14,19 @@ function About() {
   ];
 
   const awardList = [
-    { name: "优秀共青团员", type: "荣誉称号" },
-    { name: "优秀学生干部", type: "荣誉称号" },
-    { name: "校级三等奖学金", type: "奖学金" },
-    { name: "博学杯校级三等奖", type: "学科竞赛" },
-    { name: "国创赛校级三等奖", type: "学科竞赛" },
-    { name: "挑战杯校级三等奖", type: "学科竞赛" },
-    { name: "计算机设计大赛西北赛区三等奖", type: "学科竞赛" },
-    { name: "三创赛校级一等奖", type: "学科竞赛" },
+    { name: t.about.awards.items.excellentLeague, type: t.about.awards.type.honor },
+    { name: t.about.awards.items.excellentStudent, type: t.about.awards.type.honor },
+    { name: t.about.awards.items.thirdScholarship, type: t.about.awards.type.scholarship },
+    { name: t.about.awards.items.boxueCup, type: t.about.awards.type.competition },
+    { name: t.about.awards.items.guochuang, type: t.about.awards.type.competition },
+    { name: t.about.awards.items.challengeCup, type: t.about.awards.type.competition },
+    { name: t.about.awards.items.computerDesign, type: t.about.awards.type.competition },
+    { name: t.about.awards.items.sanchuang, type: t.about.awards.type.competition },
   ];
 
   const paperList = [
-    { title: "基于改进FCM和注意力机制的点云语义分割算法", journal: "武汉科技大学学报", level: "北大核心" },
-    { title: "结合CBAM注意力与混合采样的恶意软件二分类方法", journal: "信息工程大学学报", level: "核心期刊" },
+    { title: t.about.papers.items.paper1.title, journal: t.about.papers.items.paper1.journal, level: t.about.papers.items.paper1.level },
+    { title: t.about.papers.items.paper2.title, journal: t.about.papers.items.paper2.journal, level: t.about.papers.items.paper2.level },
   ];
 
   return (
@@ -64,7 +64,7 @@ function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                 <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
                   <h3 className="text-xl sm:text-2xl font-bold text-white">rement</h3>
-                  <p className="text-gray-300 text-xs sm:text-sm">Software Engineering Student</p>
+                  <p className="text-gray-300 text-xs sm:text-sm">{t.about.softwareStudent}</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">My Story</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">{t.about.myStory}</h3>
             <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
               {t.about.story}
             </p>

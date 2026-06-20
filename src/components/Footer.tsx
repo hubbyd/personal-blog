@@ -7,16 +7,16 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: "Home", href: "/", icon: Home },
-    { name: "About", href: "/#about", icon: User },
-    { name: "Skills", href: "/skills", icon: Code },
-    { name: "Projects", href: "/projects", icon: FolderOpen },
-    { name: "Blog", href: "/blog", icon: FileText },
-    { name: "Gallery", href: "/gallery", icon: Image },
-    { name: "Resume", href: "/resume", icon: FileBadge },
-    { name: "Timeline", href: "/timeline", icon: Clock },
-    { name: "Awards", href: "/awards", icon: Trophy },
-    { name: "Contact", href: "/#contact", icon: MessageCircle },
+    { name: t.nav.home, href: "/", icon: Home },
+    { name: t.nav.about, href: "/#about", icon: User },
+    { name: t.nav.skills, href: "/skills", icon: Code },
+    { name: t.nav.projects, href: "/projects", icon: FolderOpen },
+    { name: t.nav.blog, href: "/blog", icon: FileText },
+    { name: t.nav.gallery, href: "/gallery", icon: Image },
+    { name: t.nav.resume, href: "/resume", icon: FileBadge },
+    { name: t.nav.timeline, href: "/timeline", icon: Clock },
+    { name: t.nav.awards, href: "/awards", icon: Trophy },
+    { name: t.nav.contact, href: "/#contact", icon: MessageCircle },
   ];
 
   return (
@@ -62,7 +62,7 @@ function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Quick Links</h4>
+            <h4 className="text-white font-semibold mb-3 sm:mb-4 text-sm sm:text-base">{t.footer.quickLinks}</h4>
             <ul className="space-y-1.5 sm:space-y-2">
               {quickLinks.map((link, index) => (
                 <li key={index}>
@@ -96,10 +96,10 @@ function Footer() {
               </div>
             </div>
             <div className="mt-4 sm:mt-6 p-3 sm:p-4 glass-card rounded-xl">
-              <p className="text-gray-400 text-xs sm:text-sm mb-2">Status</p>
+              <p className="text-gray-400 text-xs sm:text-sm mb-2">{t.footer.status}</p>
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-white text-xs sm:text-sm font-medium">Available for Internship</span>
+                <span className="text-white text-xs sm:text-sm font-medium">{t.footer.available}</span>
               </div>
             </div>
           </motion.div>

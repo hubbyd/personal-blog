@@ -41,10 +41,10 @@ function Navbar() {
     { name: t.nav.skills, href: "/skills", icon: Code },
     { name: t.nav.projects, href: "/projects", icon: FolderOpen },
     { name: t.nav.blog, href: "/blog", icon: FileText },
-    { name: "Gallery", href: "/gallery", icon: Image },
-    { name: "Resume", href: "/resume", icon: FileBadge },
-    { name: "Timeline", href: "/timeline", icon: Clock },
-    { name: "Awards", href: "/awards", icon: Trophy },
+    { name: t.nav.gallery, href: "/gallery", icon: Image },
+    { name: t.nav.resume, href: "/resume", icon: FileBadge },
+    { name: t.nav.timeline, href: "/timeline", icon: Clock },
+    { name: t.nav.awards, href: "/awards", icon: Trophy },
     { name: t.nav.contact, href: "/#contact", icon: MessageCircle },
   ];
 
@@ -233,7 +233,7 @@ function Navbar() {
               <div className="pt-4 border-t border-white/5">
                 <div className="flex items-center gap-2 px-4 py-2 text-gray-400">
                   <Globe className="w-5 h-5" />
-                  <span className="font-medium">语言 / Language</span>
+                  <span className="font-medium">{t.nav.language}</span>
                 </div>
                 <div className="grid grid-cols-2 gap-2 px-4">
                   {availableLanguages.map((langCode) => (

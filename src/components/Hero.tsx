@@ -41,7 +41,7 @@ function Hero() {
               className="absolute -bottom-4 -left-4 px-3 py-1.5 sm:px-4 sm:py-2 glass-card rounded-xl flex items-center gap-2"
             >
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-xs sm:text-sm text-gray-300">Available for Internship</span>
+              <span className="text-xs sm:text-sm text-gray-300">{t.hero.available}</span>
             </motion.div>
           </motion.div>
 
@@ -53,7 +53,7 @@ function Hero() {
               className="inline-flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full glass-card mb-6 sm:mb-8"
             >
               <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-accent-400" />
-              <span className="text-xs sm:text-sm text-gray-300 font-medium">Xi'an University of Finance and Economics · Software Engineering</span>
+              <span className="text-xs sm:text-sm text-gray-300 font-medium">{t.hero.university}</span>
             </motion.div>
 
             <motion.h1
@@ -97,7 +97,7 @@ function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Contact Me
+                {t.hero.contact}
               </motion.a>
             </motion.div>
 

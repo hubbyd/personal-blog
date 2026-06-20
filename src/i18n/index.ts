@@ -5,12 +5,20 @@ export const zh = {
     skills: "技能",
     projects: "项目",
     blog: "博客",
-    contact: "联系"
+    contact: "联系",
+    gallery: "相册",
+    resume: "简历",
+    timeline: "时间线",
+    awards: "奖项",
+    language: "语言"
   },
   hero: {
     title: "你好，我是 rement",
     subtitle: "西安财经大学软件工程专业大二学生",
     description: "全栈开发爱好者 | AI 应用开发者 | 开源贡献者",
+    available: "正在寻找实习机会",
+    contact: "联系我",
+    university: "西安财经大学 · 软件工程",
     stats: {
       projects: "项目",
       commits: "提交",
@@ -22,6 +30,8 @@ export const zh = {
   about: {
     title: "关于我",
     subtitle: "Get to Know Me",
+    myStory: "我的故事",
+    softwareStudent: "软件工程学生",
     story: "我是西安财经大学软件工程专业大二学生，热爱编程与技术创新。从大一开始，我就积极参与各类学科竞赛和科研项目，累计获得校级以上奖项7项，发表核心期刊论文2篇。",
     story2: "我专注于前端开发和 AI 应用领域，熟练掌握 React、Vue、TypeScript 等现代技术栈，并在不断探索 AI 与 Web 开发的结合。目前正在寻找2025年暑期实习机会，渴望在大厂中学习成长。",
     achievements: {
@@ -36,6 +46,37 @@ export const zh = {
       awardList: "优秀共青团员 · 优秀学生干部 · 校级三等奖学金 · 博学杯校级三等奖 · 国创赛校级三等奖 · 挑战杯校级三等奖 · 计算机设计大赛西北赛区三等奖 · 三创赛校级一等奖",
       papers: "学术论文",
       paperList: "《基于改进FCM和注意力机制的点云语义分割算法》-武汉科技大学学报(北大核心) · 《结合CBAM注意力与混合采样的恶意软件二分类方法》-信息工程大学学报"
+    },
+    awards: {
+      items: {
+        excellentLeague: "优秀共青团员",
+        excellentStudent: "优秀学生干部",
+        thirdScholarship: "校级三等奖学金",
+        boxueCup: "博学杯校级三等奖",
+        guochuang: "国创赛校级三等奖",
+        challengeCup: "挑战杯校级三等奖",
+        computerDesign: "计算机设计大赛西北赛区三等奖",
+        sanchuang: "三创赛校级一等奖"
+      },
+      type: {
+        honor: "荣誉称号",
+        scholarship: "奖学金",
+        competition: "学科竞赛"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "基于改进FCM和注意力机制的点云语义分割算法",
+          journal: "武汉科技大学学报",
+          level: "北大核心"
+        },
+        paper2: {
+          title: "结合CBAM注意力与混合采样的恶意软件二分类方法",
+          journal: "信息工程大学学报",
+          level: "核心期刊"
+        }
+      }
     }
   },
   skills: {
@@ -134,6 +175,7 @@ export const zh = {
     subtitle: "Blog",
     readMore: "阅读更多",
     viewAll: "查看全部文章",
+    supportedLanguages: "支持的语言",
     articleList: [
       {
         title: "深入理解 React 并发模式",
@@ -178,6 +220,7 @@ export const zh = {
     email: "邮箱",
     phone: "电话",
     location: "地址",
+    locationValue: "陕西西安",
     placeholder: {
       name: "你的名字",
       email: "你的邮箱",
@@ -187,14 +230,16 @@ export const zh = {
     internship: "关于实习",
     internshipText: "我目前正在寻找2025年暑期前端/全栈实习机会。如果你的团队有相关职位，请随时联系我！我对技术充满热情，具备扎实的编程基础和良好的学习能力。",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
-    github: "https://github.com/hubbyd"
+    github: "GitHub"
   },
   footer: {
     description: "西安财经大学软件工程大二学生 | 全栈开发爱好者 | AI 应用开发者",
     quickLinks: "快速链接",
     socialMedia: "社交媒体",
+    status: "状态",
+    available: "正在寻找实习机会",
     copyright: "© 2026 rement. All rights reserved."
-  }
+  },
 };
 
 export const en = {
@@ -204,12 +249,20 @@ export const en = {
     skills: "Skills",
     projects: "Projects",
     blog: "Blog",
-    contact: "Contact"
+    contact: "Contact",
+    gallery: "Gallery",
+    resume: "Resume",
+    timeline: "Timeline",
+    awards: "Awards",
+    language: "Language"
   },
   hero: {
     title: "Hello, I'm rement",
     subtitle: "Sophomore at Xi'an University of Finance and Economics",
     description: "Full-stack Developer | AI Application Developer | Open Source Contributor",
+    available: "Available for Internship",
+    contact: "Contact Me",
+    university: "Xi'an University of Finance and Economics · Software Engineering",
     stats: {
       projects: "Projects",
       commits: "Commits",
@@ -221,6 +274,8 @@ export const en = {
   about: {
     title: "About Me",
     subtitle: "Get to Know Me",
+    myStory: "My Story",
+    softwareStudent: "Software Engineering Student",
     story: "I am a sophomore majoring in Software Engineering at Xi'an University of Finance and Economics. I am passionate about programming and technological innovation. Since my freshman year, I have actively participated in various academic competitions and research projects, accumulating 7 awards above the school level and publishing 2 core journal papers.",
     story2: "I focus on frontend development and AI applications, proficient in modern technology stacks including React, Vue, TypeScript, and continuously exploring the combination of AI and Web development. Currently looking for summer 2025 internship opportunities, eager to learn and grow in top tech companies.",
     achievements: {
@@ -235,6 +290,37 @@ export const en = {
       awardList: "Excellent League Member · Excellent Student Leader · Third Scholarship · Academic Competition Awards · Innovation Competition Awards · Computer Design Competition (Northwest Region) · Business Innovation Competition",
       papers: "Academic Papers",
       paperList: "\"Point Cloud Semantic Segmentation Based on Improved FCM and Attention Mechanism\" - Wuhan University of Science and Technology Journal · \"Malware Classification Using CBAM Attention and Hybrid Sampling\" - Information Engineering University Journal"
+    },
+    awards: {
+      items: {
+        excellentLeague: "Excellent League Member",
+        excellentStudent: "Excellent Student Leader",
+        thirdScholarship: "Third Prize Scholarship",
+        boxueCup: "Boxue Cup Third Prize",
+        guochuang: "National Innovation Competition Third Prize",
+        challengeCup: "Challenge Cup Third Prize",
+        computerDesign: "Computer Design Competition (Northwest Region) Third Prize",
+        sanchuang: "Business Innovation Competition First Prize"
+      },
+      type: {
+        honor: "Honorary Title",
+        scholarship: "Scholarship",
+        competition: "Academic Competition"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "Point Cloud Semantic Segmentation Based on Improved FCM and Attention Mechanism",
+          journal: "Wuhan University of Science and Technology Journal",
+          level: "Peking University Core"
+        },
+        paper2: {
+          title: "Malware Binary Classification Using CBAM Attention and Hybrid Sampling",
+          journal: "Journal of Information Engineering University",
+          level: "Core Journal"
+        }
+      }
     }
   },
   skills: {
@@ -333,6 +419,7 @@ export const en = {
     subtitle: "Tech Articles",
     readMore: "Read More",
     viewAll: "View All Articles",
+    supportedLanguages: "Supported Languages",
     articleList: [
       {
         title: "Understanding React Concurrent Mode",
@@ -377,6 +464,7 @@ export const en = {
     email: "Email",
     phone: "Phone",
     location: "Location",
+    locationValue: "Xi'an, Shaanxi, China",
     placeholder: {
       name: "Your Name",
       email: "Your Email",
@@ -386,12 +474,14 @@ export const en = {
     internship: "About Internship",
     internshipText: "I am currently looking for summer 2025 frontend/full-stack internship opportunities. If your team has relevant positions, please feel free to contact me! I am passionate about technology with solid programming foundation and excellent learning ability.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
-    github: "https://github.com/hubbyd"
+    github: "GitHub"
   },
   footer: {
     description: "Software Engineering Sophomore | Full-stack Developer | AI Application Developer",
     quickLinks: "Quick Links",
     socialMedia: "Social Media",
+    status: "Status",
+    available: "Available for Internship",
     copyright: "© 2026 rement. All rights reserved."
   }
 };
@@ -403,12 +493,20 @@ export const ja = {
     skills: "スキル",
     projects: "プロジェクト",
     blog: "ブログ",
-    contact: "お問い合わせ"
+    contact: "お問い合わせ",
+    gallery: "ギャラリー",
+    resume: "履歴書",
+    timeline: "タイムライン",
+    awards: "受賞歴",
+    language: "言語"
   },
   hero: {
     title: "こんにちは、rementです",
     subtitle: "西安財経大学 ソフトウェア工学専攻 2年生",
     description: "フルスタック開発者 | AIアプリケーション開発者 | オープンソース貢献者",
+    available: "インターンシップ募集",
+    contact: "お問い合わせ",
+    university: "西安財経大学 · ソフトウェア工学",
     stats: {
       projects: "プロジェクト",
       commits: "コミット",
@@ -420,6 +518,8 @@ export const ja = {
   about: {
     title: "自己紹介",
     subtitle: "Get to Know Me",
+    myStory: "私の物語",
+    softwareStudent: "ソフトウェア工学学生",
     story: "私は西安財経大学でソフトウェア工学を専攻している2年生です。プログラミングと技術革新に情熱を持っています。1年生の時から、様々な学術コンテストや研究プロジェクトに積極的に参加し、学内以上の賞を7つ受賞し、核心ジャーナル論文を2本発表しています。",
     story2: "フロントエンド開発とAIアプリケーションに注力し、React、Vue、TypeScriptなどの現代的な技術スタックに精通しています。AIとWeb開発の融合を常に探求しています。現在、2025年夏のインターンシップの機会を探しており、大手テクノロジー企業で学び、成長したいと考えています。",
     achievements: {
@@ -434,6 +534,37 @@ export const ja = {
       awardList: "優秀な共青団員 · 優秀な学生幹部 · 3等奨学金 · 学術コンテスト賞 · イノベーションコンテスト賞 · コンピュータデザインコンテスト(西北地区) · ビジネスイノベーションコンテスト",
       papers: "学術論文",
       paperList: "「改良FCMと注意機構に基づく点群セマンティックセグメンテーションアルゴリズム」- 武漢科技大学学報 · 「CBAM注意とハイブリッドサンプリングを組み合わせたマルウェア二値分類手法」- 情報工程大学学報"
+    },
+    awards: {
+      items: {
+        excellentLeague: "優秀な共青団員",
+        excellentStudent: "優秀な学生幹部",
+        thirdScholarship: "3等奨学金",
+        boxueCup: "博学杯校内3等奖",
+        guochuang: "国創赛校内3等奖",
+        challengeCup: "チャレンジ杯校内3等奖",
+        computerDesign: "コンピュータデザインコンテスト西北地区3等奖",
+        sanchuang: "三創赛校内1等奖"
+      },
+      type: {
+        honor: "荣誉称号",
+        scholarship: "奨学金",
+        competition: "学術コンテスト"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "改良FCMと注意機構に基づく点群セマンティックセグメンテーションアルゴリズム",
+          journal: "武漢科技大学学報",
+          level: "北大コア"
+        },
+        paper2: {
+          title: "CBAM注意とハイブリッドサンプリングを組み合わせたマルウェア二値分類手法",
+          journal: "情報工程大学学報",
+          level: "コアジャーナル"
+        }
+      }
     }
   },
   skills: {
@@ -532,6 +663,7 @@ export const ja = {
     subtitle: "Blog",
     readMore: "続きを読む",
     viewAll: "すべての記事を見る",
+    supportedLanguages: "サポートされている言語",
     articleList: [
       {
         title: "React Concurrent Modeを理解する",
@@ -576,6 +708,7 @@ export const ja = {
     email: "メール",
     phone: "電話",
     location: "所在地",
+    locationValue: "陕西西安",
     placeholder: {
       name: "お名前",
       email: "メールアドレス",
@@ -591,6 +724,8 @@ export const ja = {
     description: "西安財経大学 ソフトウェア工学2年生 | フルスタック開発者 | AIアプリケーション開発者",
     quickLinks: "クイックリンク",
     socialMedia: "ソーシャルメディア",
+    status: "ステータス",
+    available: "インターンシップ募集中",
     copyright: "© 2026 rement. All rights reserved."
   }
 };
@@ -602,12 +737,20 @@ export const ko = {
     skills: "기술",
     projects: "프로젝트",
     blog: "블로그",
-    contact: "연락처"
+    contact: "연락처",
+    gallery: "갤러리",
+    resume: "이력서",
+    timeline: "타임라인",
+    awards: "수상",
+    language: "언어"
   },
   hero: {
     title: "안녕하세요, rement입니다",
     subtitle: "서안재경대학교 소프트웨어공학과 2학년",
     description: "풀스택 개발자 | AI 애플리케이션 개발자 | 오픈소스 기여자",
+    available: "인턴십 구직 중",
+    contact: "연락하기",
+    university: "서안재경대학교 · 소프트웨어공학",
     stats: {
       projects: "프로젝트",
       commits: "커밋",
@@ -619,6 +762,8 @@ export const ko = {
   about: {
     title: "소개",
     subtitle: "Get to Know Me",
+    myStory: "내 이야기",
+    softwareStudent: "소프트웨어공학 학생",
     story: "저는 서안재경대학교에서 소프트웨어공학을 전공하는 2학년 학생입니다. 프로그래밍과 기술 혁신에 열정을 가지고 있습니다. 1학년 때부터 다양한 학술 대회와 연구 프로젝트에 적극적으로 참여하여 교내 이상의 상을 7개 수상하고 핵심 저널 논문 2편을 발표했습니다.",
     story2: "프론트엔드 개발과 AI 애플리케이션에 집중하고 있으며, React, Vue, TypeScript 등 현대적인 기술 스택에 능숙합니다. AI와 웹 개발의 결합을 계속 탐구하고 있습니다. 현재 2025년 여름 인턴십 기회를 찾고 있으며, 대형 기술 기업에서 배우고 성장하고 싶습니다.",
     achievements: {
@@ -633,6 +778,37 @@ export const ko = {
       awardList: "우수 공산주의청년단원 · 우수 학생 간부 · 3등 장학금 · 학술 대회 수상 · 혁신 대회 수상 · 컴퓨터 디자인 대회(서북 지역) · 비즈니스 혁신 대회",
       papers: "학술 논문",
       paperList: "\"개선된 FCM과 어텐션 메커니즘 기반 포인트 클라우드 시맨틱 세그멘테이션 알고리즘\" - 무한과학기술대학교 학보 · \"CBAM 어텐션과 하이브리드 샘플링을 결합한 악성코드 분류 방법\" - 정보공정대학교 학보"
+    },
+    awards: {
+      items: {
+        excellentLeague: "우수 공산주의청년단원",
+        excellentStudent: "우수 학생 간부",
+        thirdScholarship: "3등 장학금",
+        boxueCup: "박학배校内3等奖",
+        guochuang: "국창赛校内3等奖",
+        challengeCup: "챌린지杯校内3等奖",
+        computerDesign: "컴퓨터 디자인 대회 서북지역 3等奖",
+        sanchuang: "삼창赛校内1等奖"
+      },
+      type: {
+        honor: "명예 칭호",
+        scholarship: "장학금",
+        competition: "학술 대회"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "개선된 FCM과 어텐션 메커니즘 기반 포인트 클라우드 시맨틱 세그멘테이션 알고리즘",
+          journal: "무한과학기술대학교 학보",
+          level: "북대 핵심"
+        },
+        paper2: {
+          title: "CBAM 어텐션과 하이브리드 샘플링을 결합한 악성코드 분류 방법",
+          journal: "정보공정대학교 학보",
+          level: "핵심 저널"
+        }
+      }
     }
   },
   skills: {
@@ -731,6 +907,7 @@ export const ko = {
     subtitle: "Blog",
     readMore: "더 읽기",
     viewAll: "모든 글 보기",
+    supportedLanguages: "지원되는 언어",
     articleList: [
       {
         title: "React Concurrent Mode 이해하기",
@@ -775,6 +952,7 @@ export const ko = {
     email: "이메일",
     phone: "전화",
     location: "위치",
+    locationValue: "陕西西安",
     placeholder: {
       name: "이름",
       email: "이메일",
@@ -784,12 +962,14 @@ export const ko = {
     internship: "인턴십 정보",
     internshipText: "현재 2025년 여름 프론트엔드/풀스택 인턴십 기회를 찾고 있습니다. 관련 포지션이 있으시면 언제든지 연락해 주세요! 기술에 열정을 가지고 있으며 탄탄한 프로그래밍 기초와 뛰어난 학습 능력을 갖추고 있습니다.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
-    github: "https://github.com/hubbyd"
+    github: "GitHub"
   },
   footer: {
     description: "서안재경대학교 소프트웨어공학과 2학년 | 풀스택 개발자 | AI 애플리케이션 개발자",
     quickLinks: "빠른 링크",
     socialMedia: "소셜 미디어",
+    status: "상태",
+    available: "인턴십 구직 중",
     copyright: "© 2026 rement. All rights reserved."
   }
 };
@@ -801,12 +981,20 @@ export const fr = {
     skills: "Compétences",
     projects: "Projets",
     blog: "Blog",
-    contact: "Contact"
+    contact: "Contact",
+    gallery: "Galerie",
+    resume: "CV",
+    timeline: "Chronologie",
+    awards: "Prix",
+    language: "Langue"
   },
   hero: {
     title: "Bonjour, je suis rement",
     subtitle: "Étudiant en 2ème année à l'Université de Finance et d'Économie de Xi'an",
     description: "Développeur Full-stack | Développeur d'applications IA | Contributeur Open Source",
+    available: "Recherche de stage",
+    contact: "Me contacter",
+    university: "Université de Finance et d'Économie de Xi'an · Génie Logiciel",
     stats: {
       projects: "Projets",
       commits: "Commits",
@@ -818,6 +1006,8 @@ export const fr = {
   about: {
     title: "À propos de moi",
     subtitle: "Get to Know Me",
+    myStory: "Mon histoire",
+    softwareStudent: "Étudiant en Génie Logiciel",
     story: "Je suis étudiant en deuxième année de génie logiciel à l'Université de Finance et d'Économie de Xi'an. Passionné par la programmation et l'innovation technologique, j'ai participé activement à diverses compétitions académiques et projets de recherche depuis ma première année, accumulant 7 prix au niveau de l'école et au-delà, et publiant 2 articles dans des revues principales.",
     story2: "Je me concentre sur le développement frontend et les applications IA, maîtrisant les piles technologiques modernes comme React, Vue, TypeScript, et j'explore continuellement la combinaison de l'IA et du développement Web. Je recherche actuellement des opportunités de stage d'été 2025, désireux d'apprendre et de grandir dans les grandes entreprises technologiques.",
     achievements: {
@@ -832,6 +1022,37 @@ export const fr = {
       awardList: "Excellent membre de la Ligue de la Jeunesse · Excellent dirigeant étudiant · Bourse de troisième classe · Prix de compétition académique · Prix de compétition d'innovation · Concours de conception informatique (Région Nord-Ouest) · Concours d'innovation commerciale",
       papers: "Articles académiques",
       paperList: "\"Segmentation sémantique de nuages de points basée sur FCM amélioré et mécanisme d'attention\" - Journal de l'Université de Science et Technologie de Wuhan · \"Classification binaire de logiciels malveillants combinant l'attention CBAM et l'échantillonnage hybride\" - Journal de l'Université d'Ingénierie de l'Information"
+    },
+    awards: {
+      items: {
+        excellentLeague: "Excellent membre de la Ligue de la Jeunesse",
+        excellentStudent: "Excellent dirigeant étudiant",
+        thirdScholarship: "Bourse de troisième classe",
+        boxueCup: "Prix Boxue de 3ème niveau",
+        guochuang: "Prix Guochuang de 3ème niveau",
+        challengeCup: "Prix Challenge Cup de 3ème niveau",
+        computerDesign: "Concours de Conception Informatique (Région Nord-Ouest) 3ème prix",
+        sanchuang: "Prix Sanchuang de 1er niveau"
+      },
+      type: {
+        honor: "Titre Honorifique",
+        scholarship: "Bourse",
+        competition: "Compétition Académique"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "Segmentation sémantique de nuages de points basée sur FCM amélioré et mécanisme d'attention",
+          journal: "Journal de l'Université de Science et Technologie de Wuhan",
+          level: "Noyau de l'Université de Pecking"
+        },
+        paper2: {
+          title: "Classification binaire de logiciels malveillants combinant l'attention CBAM et l'échantillonnage hybride",
+          journal: "Journal de l'Université d'Ingénierie de l'Information",
+          level: "Revue Principale"
+        }
+      }
     }
   },
   skills: {
@@ -930,6 +1151,7 @@ export const fr = {
     subtitle: "Blog",
     readMore: "Lire plus",
     viewAll: "Voir tous les articles",
+    supportedLanguages: "Langues prises en charge",
     articleList: [
       {
         title: "Comprendre React Concurrent Mode",
@@ -974,6 +1196,7 @@ export const fr = {
     email: "Email",
     phone: "Téléphone",
     location: "Localisation",
+    locationValue: "Xi'an, Shaanxi, Chine",
     placeholder: {
       name: "Votre nom",
       email: "Votre email",
@@ -983,12 +1206,14 @@ export const fr = {
     internship: "À propos du stage",
     internshipText: "Je recherche actuellement des opportunités de stage frontend/full-stack pour l'été 2025. Si votre équipe a des postes pertinents, n'hésitez pas à me contacter ! Je suis passionné par la technologie avec une solide base en programmation et une excellente capacité d'apprentissage.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
-    github: "https://github.com/hubbyd"
+    github: "GitHub"
   },
   footer: {
     description: "Étudiant en 2ème année de génie logiciel | Développeur Full-stack | Développeur d'applications IA",
     quickLinks: "Liens rapides",
     socialMedia: "Réseaux sociaux",
+    status: "Statut",
+    available: "Recherche de stage",
     copyright: "© 2026 rement. Tous droits réservés."
   }
 };
@@ -1000,12 +1225,20 @@ export const de = {
     skills: "Fähigkeiten",
     projects: "Projekte",
     blog: "Blog",
-    contact: "Kontakt"
+    contact: "Kontakt",
+    gallery: "Galerie",
+    resume: "Lebenslauf",
+    timeline: "Zeitstrahl",
+    awards: "Auszeichnungen",
+    language: "Sprache"
   },
   hero: {
     title: "Hallo, ich bin rement",
     subtitle: "Student im 2. Jahr an der Xi'an Universität für Finanzen und Wirtschaft",
     description: "Full-Stack Entwickler | KI-Anwendungsentwickler | Open-Source-Beitragender",
+    available: "Praktikum suchend",
+    contact: "Kontaktieren",
+    university: "Xi'an Universität für Finanzen und Wirtschaft · Softwaretechnik",
     stats: {
       projects: "Projekte",
       commits: "Commits",
@@ -1017,6 +1250,8 @@ export const de = {
   about: {
     title: "Über mich",
     subtitle: "Get to Know Me",
+    myStory: "Meine Geschichte",
+    softwareStudent: "Softwaretechnik Student",
     story: "Ich bin Student im zweiten Jahr des Studiengangs Softwaretechnik an der Xi'an Universität für Finanzen und Wirtschaft. Ich bin leidenschaftlich an Programmierung und technologischer Innovation interessiert. Seit meinem ersten Jahr habe ich aktiv an verschiedenen akademischen Wettbewerben und Forschungsprojekten teilgenommen, 7 Auszeichnungen auf Schulebene und darüber hinaus gesammelt und 2 Fachzeitschriftenartikel veröffentlicht.",
     story2: "Ich konzentriere mich auf Frontend-Entwicklung und KI-Anwendungen, beherrsche moderne Technologie-Stacks wie React, Vue, TypeScript und erforsche kontinuierlich die Kombination von KI und Web-Entwicklung. Derzeit suche ich nach Sommerpraktikumsmöglichkeiten für 2025 und möchte in großen Technologieunternehmen lernen und wachsen.",
     achievements: {
@@ -1031,6 +1266,37 @@ export const de = {
       awardList: "Ausgezeichnetes Mitglied des Jugendbundes · Ausgezeichneter Studentenleiter · Drittes Stipendium · Akademischer Wettbewerb Auszeichnungen · Innovationswettbewerb Auszeichnungen · Computer-Design-Wettbewerb (Nordwest-Region) · Business-Innovationswettbewerb",
       papers: "Akademische Artikel",
       paperList: "\"Punktwolken-Semantische Segmentierung basierend auf verbessertem FCM und Aufmerksamkeitsmechanismus\" - Journal der Wuhan Universität für Wissenschaft und Technologie · \"Malware-Klassifizierung mit CBAM-Aufmerksamkeit und Hybrid-Sampling\" - Journal der Informations-Universität"
+    },
+    awards: {
+      items: {
+        excellentLeague: "Ausgezeichnetes Mitglied des Jugendbundes",
+        excellentStudent: "Ausgezeichneter Studentenleiter",
+        thirdScholarship: "Drittes Stipendium",
+        boxueCup: "Boxue Cup 3. Preis",
+        guochuang: "Guochuang 3. Preis",
+        challengeCup: "Challenge Cup 3. Preis",
+        computerDesign: "Computer-Design-Wettbewerb (Nordwest-Region) 3. Preis",
+        sanchuang: "Sanchuang 1. Preis"
+      },
+      type: {
+        honor: "Ehrenamt",
+        scholarship: "Stipendium",
+        competition: "Akademischer Wettbewerb"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "Punktwolken-Semantische Segmentierung basierend auf verbessertem FCM und Aufmerksamkeitsmechanismus",
+          journal: "Journal der Wuhan Universität für Wissenschaft und Technologie",
+          level: "Peking Universität Kern"
+        },
+        paper2: {
+          title: "Malware-Klassifizierung mit CBAM-Aufmerksamkeit und Hybrid-Sampling",
+          journal: "Journal der Informations-Universität",
+          level: "Kernzeitschrift"
+        }
+      }
     }
   },
   skills: {
@@ -1129,6 +1395,7 @@ export const de = {
     subtitle: "Blog",
     readMore: "Mehr lesen",
     viewAll: "Alle Artikel ansehen",
+    supportedLanguages: "Unterstützte Sprachen",
     articleList: [
       {
         title: "React Concurrent Mode verstehen",
@@ -1173,6 +1440,7 @@ export const de = {
     email: "E-Mail",
     phone: "Telefon",
     location: "Standort",
+    locationValue: "Xi'an, Shaanxi, China",
     placeholder: {
       name: "Ihr Name",
       email: "Ihre E-Mail",
@@ -1182,12 +1450,14 @@ export const de = {
     internship: "Über das Praktikum",
     internshipText: "Ich suche derzeit nach Frontend-/Full-Stack-Praktikumsmöglichkeiten für den Sommer 2025. Wenn Ihr Team relevante Positionen hat, kontaktieren Sie mich gerne! Ich bin leidenschaftlich an Technologie interessiert mit solider Programmiergrundlage und ausgezeichneter Lernfähigkeit.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
-    github: "https://github.com/hubbyd"
+    github: "GitHub"
   },
   footer: {
     description: "Softwaretechnik-Student im 2. Jahr | Full-Stack Entwickler | KI-Anwendungsentwickler",
     quickLinks: "Schnelllinks",
     socialMedia: "Soziale Medien",
+    status: "Status",
+    available: "Praktikum suchend",
     copyright: "© 2026 rement. Alle Rechte vorbehalten."
   }
 };
@@ -1199,12 +1469,20 @@ export const es = {
     skills: "Habilidades",
     projects: "Proyectos",
     blog: "Blog",
-    contact: "Contacto"
+    contact: "Contacto",
+    gallery: "Galería",
+    resume: "Currículum",
+    timeline: "Línea de tiempo",
+    awards: "Premios",
+    language: "Idioma"
   },
   hero: {
     title: "Hola, soy rement",
     subtitle: "Estudiante de segundo año en la Universidad de Finanzas y Economía de Xi'an",
     description: "Desarrollador Full-stack | Desarrollador de aplicaciones IA | Contribuidor Open Source",
+    available: "Buscando prácticas",
+    contact: "Contactar",
+    university: "Universidad de Finanzas y Economía de Xi'an · Ingeniería de Software",
     stats: {
       projects: "Proyectos",
       commits: "Commits",
@@ -1216,6 +1494,8 @@ export const es = {
   about: {
     title: "Sobre mí",
     subtitle: "Get to Know Me",
+    myStory: "Mi historia",
+    softwareStudent: "Estudiante de Ingeniería de Software",
     story: "Soy estudiante de segundo año de Ingeniería de Software en la Universidad de Finanzas y Economía de Xi'an. Apasionado por la programación y la innovación tecnológica. Desde mi primer año, he participado activamente en diversas competiciones académicas y proyectos de investigación, acumulando 7 premios a nivel escolar y superior, y publicando 2 artículos en revistas principales.",
     story2: "Me concentro en desarrollo frontend y aplicaciones de IA, dominando stacks tecnológicos modernos como React, Vue, TypeScript, y explorando continuamente la combinación de IA y desarrollo web. Actualmente busco oportunidades de pasantía de verano 2025, deseoso de aprender y crecer en grandes empresas tecnológicas.",
     achievements: {
@@ -1230,6 +1510,37 @@ export const es = {
       awardList: "Excelente miembro de la Liga de la Juventud · Excelente líder estudiantil · Beca de tercer nivel · Premios de competición académica · Premios de competición de innovación · Concurso de diseño de computadoras (Región Noroeste) · Concurso de innovación empresarial",
       papers: "Artículos académicos",
       paperList: "\"Segmentación semántica de nubes de puntos basada en FCM mejorado y mecanismo de atención\" - Revista de la Universidad de Ciencia y Tecnología de Wuhan · \"Clasificación de malware binario combinando atención CBAM y muestreo híbrido\" - Revista de la Universidad de Ingeniería de Información"
+    },
+    awards: {
+      items: {
+        excellentLeague: "Excelente miembro de la Liga de la Juventud",
+        excellentStudent: "Excelente líder estudiantil",
+        thirdScholarship: "Beca de tercer nivel",
+        boxueCup: "Premio Boxue de 3er nivel",
+        guochuang: "Premio Guochuang de 3er nivel",
+        challengeCup: "Premio Challenge Cup de 3er nivel",
+        computerDesign: "Concurso de Diseño de Computadoras (Región Noroeste) 3er premio",
+        sanchuang: "Premio Sanchuang de 1er nivel"
+      },
+      type: {
+        honor: "Título Honorífico",
+        scholarship: "Beca",
+        competition: "Competición Académica"
+      }
+    },
+    papers: {
+      items: {
+        paper1: {
+          title: "Segmentación semántica de nubes de puntos basada en FCM mejorado y mecanismo de atención",
+          journal: "Revista de la Universidad de Ciencia y Tecnología de Wuhan",
+          level: "Núcleo de la Universidad de Peking"
+        },
+        paper2: {
+          title: "Clasificación de malware binario combinando atención CBAM y muestreo híbrido",
+          journal: "Revista de la Universidad de Ingeniería de Información",
+          level: "Revista Principal"
+        }
+      }
     }
   },
   skills: {
@@ -1328,6 +1639,7 @@ export const es = {
     subtitle: "Blog",
     readMore: "Leer más",
     viewAll: "Ver todos los artículos",
+    supportedLanguages: "Idiomas admitidos",
     articleList: [
       {
         title: "Entendiendo React Concurrent Mode",
@@ -1372,6 +1684,7 @@ export const es = {
     email: "Email",
     phone: "Teléfono",
     location: "Ubicación",
+    locationValue: "Xi'an, Shaanxi, China",
     placeholder: {
       name: "Tu nombre",
       email: "Tu email",
@@ -1381,12 +1694,14 @@ export const es = {
     internship: "Sobre la pasantía",
     internshipText: "Actualmente busco oportunidades de pasantía frontend/full-stack para el verano 2025. Si tu equipo tiene posiciones relevantes, ¡contáctame! Soy apasionado por la tecnología con una sólida base de programación y excelente capacidad de aprendizaje.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
-    github: "https://github.com/hubbyd"
+    github: "GitHub"
   },
   footer: {
     description: "Estudiante de 2º año de Ingeniería de Software | Desarrollador Full-stack | Desarrollador de aplicaciones IA",
     quickLinks: "Enlaces rápidos",
     socialMedia: "Redes sociales",
+    status: "Estado",
+    available: "Buscando prácticas",
     copyright: "© 2026 rement. Todos los derechos reservados."
   }
 };

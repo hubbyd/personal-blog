@@ -147,7 +147,7 @@ function Contact() {
                 </div>
                 <div>
                   <p className="text-gray-500 text-xs sm:text-sm">{t.contact.location}</p>
-                  <p className="text-white font-medium text-xs sm:text-sm">Xi'an, Shaanxi, China</p>
+                  <p className="text-white font-medium text-xs sm:text-sm">{t.contact.locationValue}</p>
                 </div>
               </motion.div>
 
@@ -162,7 +162,7 @@ function Contact() {
                   <Github className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 </div>
                 <div>
-                  <p className="text-gray-500 text-xs sm:text-sm">GitHub</p>
+                  <p className="text-gray-500 text-xs sm:text-sm">{t.contact.github}</p>
                   <a
                     href={t.contact.github}
                     target="_blank"

@@ -2,71 +2,71 @@ import { motion } from "framer-motion";
 import { Code, Database, Cloud, Brain, Zap } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 
-const skillCategories = [
-  {
-    icon: Code,
-    title: "前端开发",
-    skills: [
-      { name: "JavaScript", level: 90, color: "#f7df1e" },
-      { name: "TypeScript", level: 85, color: "#3178c6" },
-      { name: "React", level: 90, color: "#61dafb" },
-      { name: "Vue", level: 80, color: "#42b883" },
-      { name: "HTML5", level: 95, color: "#e34f26" },
-      { name: "CSS3", level: 90, color: "#1572b6" },
-      { name: "Tailwind CSS", level: 90, color: "#06b6d4" },
-      { name: "Sass", level: 75, color: "#cc6699" },
-    ]
-  },
-  {
-    icon: Zap,
-    title: "后端开发",
-    skills: [
-      { name: "Node.js", level: 80, color: "#339933" },
-      { name: "Python", level: 75, color: "#3776ab" },
-      { name: "Java", level: 70, color: "#ed8b00" },
-      { name: "C/C++", level: 65, color: "#00599c" },
-      { name: "Next.js", level: 75, color: "#000000" },
-      { name: "Nuxt.js", level: 70, color: "#00c58e" },
-      { name: "Vite", level: 85, color: "#646cff" },
-      { name: "Webpack", level: 70, color: "#8dd6f9" },
-    ]
-  },
-  {
-    icon: Database,
-    title: "数据库",
-    skills: [
-      { name: "MySQL", level: 80, color: "#4479a1" },
-      { name: "SQLite", level: 85, color: "#003b57" },
-      { name: "PostgreSQL", level: 70, color: "#4169e1" },
-      { name: "MongoDB", level: 75, color: "#47a248" },
-    ]
-  },
-  {
-    icon: Brain,
-    title: "AI 技术",
-    skills: [
-      { name: "TensorFlow", level: 70, color: "#ff6f00" },
-      { name: "PyTorch", level: 65, color: "#ee4c2c" },
-      { name: "OpenAI API", level: 85, color: "#10a37f" },
-      { name: "LangChain", level: 80, color: "#1c3fa8" },
-      { name: "Prompt Engineering", level: 90, color: "#8b5cf6" },
-      { name: "Hugging Face", level: 70, color: "#f5a623" },
-    ]
-  },
-];
-
-const devOpsTools = [
-  "Git", "GitHub", "Docker", "Kubernetes", "AWS", "Firebase",
-  "Jest", "Cypress", "VS Code", "Figma", "Postman"
-];
-
 function Skills() {
   const { t } = useTranslation();
+
+  const skillCategories = [
+    {
+      icon: Code,
+      title: t.skills.frontend,
+      skills: [
+        { name: "JavaScript", level: 90, color: "#f7df1e" },
+        { name: "TypeScript", level: 85, color: "#3178c6" },
+        { name: "React", level: 90, color: "#61dafb" },
+        { name: "Vue", level: 80, color: "#42b883" },
+        { name: "HTML5", level: 95, color: "#e34f26" },
+        { name: "CSS3", level: 90, color: "#1572b6" },
+        { name: "Tailwind CSS", level: 90, color: "#06b6d4" },
+        { name: "Sass", level: 75, color: "#cc6699" },
+      ]
+    },
+    {
+      icon: Zap,
+      title: t.skills.backend,
+      skills: [
+        { name: "Node.js", level: 80, color: "#339933" },
+        { name: "Python", level: 75, color: "#3776ab" },
+        { name: "Java", level: 70, color: "#ed8b00" },
+        { name: "C/C++", level: 65, color: "#00599c" },
+        { name: "Next.js", level: 75, color: "#000000" },
+        { name: "Nuxt.js", level: 70, color: "#00c58e" },
+        { name: "Vite", level: 85, color: "#646cff" },
+        { name: "Webpack", level: 70, color: "#8dd6f9" },
+      ]
+    },
+    {
+      icon: Database,
+      title: t.skills.databases,
+      skills: [
+        { name: "MySQL", level: 80, color: "#4479a1" },
+        { name: "SQLite", level: 85, color: "#003b57" },
+        { name: "PostgreSQL", level: 70, color: "#4169e1" },
+        { name: "MongoDB", level: 75, color: "#47a248" },
+      ]
+    },
+    {
+      icon: Brain,
+      title: t.skills.ai,
+      skills: [
+        { name: "TensorFlow", level: 70, color: "#ff6f00" },
+        { name: "PyTorch", level: 65, color: "#ee4c2c" },
+        { name: "OpenAI API", level: 85, color: "#10a37f" },
+        { name: "LangChain", level: 80, color: "#1c3fa8" },
+        { name: "Prompt Engineering", level: 90, color: "#8b5cf6" },
+        { name: "Hugging Face", level: 70, color: "#f5a623" },
+      ]
+    },
+  ];
+
+  const devOpsTools = [
+    "Git", "GitHub", "Docker", "Kubernetes", "AWS", "Firebase",
+    "Jest", "Cypress", "VS Code", "Figma", "Postman"
+  ];
 
   return (
     <section id="skills" className="py-24 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
