@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { Sparkles, ChevronDown } from "lucide-react";
+import { Sparkles, ChevronDown, Globe, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "../i18n/useTranslation";
 
 function Splash() {
   const navigate = useNavigate();
+  const { t, lang, setLang, languageNames, availableLanguages } = useTranslation();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; duration: number; delay: number }>>([]);
   const [showContent, setShowContent] = useState(false);
+  const [showLangMenu, setShowLangMenu] = useState(false);
 
   useEffect(() => {
     const newParticles = Array.from({ length: 50 }, (_, i) => ({
@@ -34,6 +37,48 @@ function Splash() {
         <div className="absolute inset-0 bg-gradient-to-r from-violet-500/20 via-transparent to-fuchsia-500/20 animate-pulse" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent via-purple-500/10 to-pink-500/20 animate-pulse" style={{ animationDuration: '4s' }} />
       </div>
+
+      {/* Language Switcher */}
+      <motion.div
+        className="absolute top-6 right-6 z-20"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5 }}
+      >
+        <motion.button
+          onClick={() => setShowLangMenu(!showLangMenu)}
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+        >
+          <Globe className="w-5 h-5 text-white" />
+          <span className="text-white font-medium">{languageNames[lang]}</span>
+        </motion.button>
+
+        {showLangMenu && (
+          <motion.div
+            className="absolute top-full right-0 mt-2 py-2 bg-white/10 backdrop-blur-xl rounded-xl border border-white/20 shadow-xl min-w-[160px]"
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+          >
+            {availableLanguages.map((l) => (
+              <button
+                key={l}
+                onClick={() => {
+                  setLang(l);
+                  setShowLangMenu(false);
+                }}
+                className={`w-full flex items-center justify-between px-4 py-2 text-sm hover:bg-white/10 transition-colors ${
+                  lang === l ? "text-fuchsia-300" : "text-white/80"
+                }`}
+              >
+                <span>{languageNames[l]}</span>
+                {lang === l && <Check className="w-4 h-4" />}
+              </button>
+            ))}
+          </motion.div>
+        )}
+      </motion.div>
 
       {/* Floating particles */}
       {particles.map((particle) => (
@@ -124,7 +169,7 @@ function Splash() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Full-Stack Developer
+            {t.hero.subtitle.split("|")[0]}
           </motion.p>
           <motion.p
             className="text-sm md:text-base text-fuchsia-300/60 mb-12"
@@ -132,7 +177,7 @@ function Splash() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            AI Applications & Open Source Enthusiast
+            {t.hero.subtitle.split("|")[1]?.trim() || "AI Applications & Open Source Enthusiast"}
           </motion.p>
 
           {/* Single Enter Button */}
@@ -151,7 +196,7 @@ function Splash() {
               <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
               <span className="relative text-white font-bold text-xl tracking-wide">
-                Enter Website
+                {t.splash.enterWebsite}
               </span>
             </motion.button>
           </motion.div>
