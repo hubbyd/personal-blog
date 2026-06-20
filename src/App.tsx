@@ -68,9 +68,26 @@ function AppContent() {
 }
 
 function App() {
+  const [basename, setBasename] = useState('/')
+
+  useEffect(() => {
+    const url = window.location.href
+    if (url.includes('gitee.io')) {
+      const match = url.match(/https?:\/\/[\w-]+\.gitee\.io(\/[\w-]+)?/)
+      if (match && match[1]) {
+        setBasename(match[1])
+      }
+    } else if (url.includes('github.io')) {
+      const match = url.match(/https?:\/\/[\w-]+\.github\.io(\/[\w-]+)?/)
+      if (match && match[1]) {
+        setBasename(match[1])
+      }
+    }
+  }, [])
+
   return (
     <LanguageProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={basename}>
         <AppContent />
       </BrowserRouter>
     </LanguageProvider>
