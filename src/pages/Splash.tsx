@@ -169,7 +169,7 @@ function Splash() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            {t.hero.subtitle.split("|")[0]}
+            {t.hero.subtitle}
           </motion.p>
           <motion.p
             className="text-sm md:text-base text-fuchsia-300/60 mb-12"
@@ -177,7 +177,7 @@ function Splash() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            {t.hero.subtitle.split("|")[1]?.trim() || "AI Applications & Open Source Enthusiast"}
+            {t.hero.description}
           </motion.p>
 
           {/* Single Enter Button */}
