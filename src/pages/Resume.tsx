@@ -1,37 +1,39 @@
 import { motion } from "framer-motion";
 import { Download, Mail, MapPin, Github, Calendar, Award, BookOpen, Briefcase } from "lucide-react";
+import { useTranslation } from "../i18n/useTranslation";
 
 function Resume() {
+  const { t } = useTranslation();
 
   const experiences = [
     {
       period: "2024 - Present",
-      title: "Software Engineering Student",
-      company: "Xi'an University of Finance and Economics",
-      description: "Pursuing Bachelor's degree in Software Engineering with focus on frontend development and AI applications.",
+      title: t.resume.softwareEngineeringStudent,
+      company: t.resume.xiAnUniversity,
+      description: t.resume.pursuingDegree,
     },
     {
       period: "2024",
-      title: "Research Assistant",
-      company: "Academic Research Lab",
-      description: "Conducted research on AI and machine learning, published 2 academic papers in core journals.",
+      title: t.resume.researchAssistant,
+      company: t.resume.academicResearchLab,
+      description: t.resume.conductedResearch,
     },
   ];
 
   const education = [
     {
       period: "2024 - 2028 (Expected)",
-      title: "Bachelor of Engineering",
-      school: "Xi'an University of Finance and Economics",
-      major: "Software Engineering",
+      title: t.resume.bachelorEngineering,
+      school: t.resume.xiAnUniversity,
+      major: t.resume.softwareEngineering,
       gpa: "3.5/4.0",
     },
   ];
 
   const certificates = [
-    { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services", year: "2024" },
-    { name: "React Developer Certification", issuer: "Meta", year: "2024" },
-    { name: "Machine Learning Specialization", issuer: "Stanford Online", year: "2024" },
+    { name: t.resume.awsCloudPractitioner, issuer: "Amazon Web Services", year: "2024" },
+    { name: t.resume.reactDeveloperCertification, issuer: t.resume.meta, year: "2024" },
+    { name: t.resume.machineLearningSpecialization, issuer: t.resume.stanfordOnline, year: "2024" },
   ];
 
   return (
@@ -48,15 +50,15 @@ function Resume() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Resume</h1>
-          <p className="text-gray-400 text-lg mb-8">My Professional Profile</p>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{t.resume.title}</h1>
+          <p className="text-gray-400 text-lg mb-8">{t.resume.subtitle}</p>
           <motion.button
             className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary rounded-xl text-white font-medium"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
             <Download className="w-5 h-5" />
-            Download PDF
+            {t.resume.downloadPdf}
           </motion.button>
         </motion.div>
 
@@ -73,9 +75,9 @@ function Resume() {
                   <img src="/assets/photo.jpg" alt="rement" className="w-full h-full object-cover" />
                 </div>
               </div>
-              
+
               <h2 className="text-2xl font-bold text-white text-center mb-2">rement</h2>
-              <p className="text-primary-400 text-center mb-6">Full-stack Developer</p>
+              <p className="text-primary-400 text-center mb-6">{t.resume.fullstackDeveloper}</p>
 
               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-3 text-gray-400">
@@ -84,7 +86,7 @@ function Resume() {
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
                   <MapPin className="w-5 h-5 flex-shrink-0" />
-                  <span className="text-sm">Xi'an, Shaanxi</span>
+                  <span className="text-sm">{t.contact.locationValue}</span>
                 </div>
                 <div className="flex items-center gap-3 text-gray-400">
                   <Github className="w-5 h-5 flex-shrink-0" />
@@ -93,7 +95,7 @@ function Resume() {
               </div>
 
               <div className="border-t border-white/10 pt-6">
-                <h3 className="text-lg font-semibold text-white mb-4">Skills</h3>
+                <h3 className="text-lg font-semibold text-white mb-4">{t.resume.skills}</h3>
                 <div className="space-y-3">
                   {["React", "TypeScript", "Node.js", "Python", "AI/ML"].map((skill) => (
                     <div key={skill} className="flex items-center justify-between">
@@ -117,7 +119,7 @@ function Resume() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Briefcase className="w-6 h-6 text-primary-400" />
-                <h3 className="text-2xl font-bold text-white">Experience</h3>
+                <h3 className="text-2xl font-bold text-white">{t.resume.experience}</h3>
               </div>
               <div className="space-y-6">
                 {experiences.map((exp, index) => (
@@ -143,7 +145,7 @@ function Resume() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <BookOpen className="w-6 h-6 text-primary-400" />
-                <h3 className="text-2xl font-bold text-white">Education</h3>
+                <h3 className="text-2xl font-bold text-white">{t.resume.education}</h3>
               </div>
               <div className="space-y-6">
                 {education.map((edu, index) => (
@@ -155,8 +157,8 @@ function Resume() {
                     </div>
                     <h4 className="text-lg font-semibold text-white mb-1">{edu.title}</h4>
                     <p className="text-accent-400 text-sm mb-1">{edu.school}</p>
-                    <p className="text-gray-400 text-sm">Major: {edu.major}</p>
-                    <p className="text-gray-400 text-sm">GPA: {edu.gpa}</p>
+                    <p className="text-gray-400 text-sm">{t.about.achievements.major}: {edu.major}</p>
+                    <p className="text-gray-400 text-sm">{t.resume.gpa}: {edu.gpa}</p>
                   </div>
                 ))}
               </div>
@@ -170,7 +172,7 @@ function Resume() {
             >
               <div className="flex items-center gap-3 mb-6">
                 <Award className="w-6 h-6 text-primary-400" />
-                <h3 className="text-2xl font-bold text-white">Certificates</h3>
+                <h3 className="text-2xl font-bold text-white">{t.resume.certificates}</h3>
               </div>
               <div className="grid gap-4">
                 {certificates.map((cert, index) => (

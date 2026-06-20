@@ -1,65 +1,67 @@
 import { motion } from "framer-motion";
 import { Camera, Image, Layers, X, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import { useTranslation } from "../i18n/useTranslation";
 
 function Gallery() {
+  const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryImages = [
     {
       src: "/assets/photo.jpg",
-      title: "Profile Photo",
+      title: t.gallery.profilePhoto,
       category: "Personal",
-      description: "Official profile photo for professional use",
+      description: t.gallery.officialProfile,
     },
     {
       src: "/assets/photo.jpg",
-      title: "University Life",
+      title: t.gallery.universityLife,
       category: "Campus",
-      description: "Moments from Xi'an University of Finance and Economics",
+      description: t.gallery.universityMoments,
     },
     {
       src: "/assets/photo.jpg",
-      title: "Coding Session",
+      title: t.gallery.codingSession,
       category: "Work",
-      description: "Working on AI-powered applications",
+      description: t.gallery.workingOnAI,
     },
     {
       src: "/assets/photo.jpg",
-      title: "Award Ceremony",
+      title: t.gallery.awardCeremony,
       category: "Achievement",
-      description: "三创赛校级一等奖 award ceremony",
+      description: t.gallery.sanchuangAwardCeremony,
     },
     {
       src: "/assets/photo.jpg",
-      title: "Research Work",
+      title: t.gallery.researchWork,
       category: "Academic",
-      description: "Working on machine learning research",
+      description: t.gallery.mlResearch,
     },
     {
       src: "/assets/photo.jpg",
-      title: "Team Collaboration",
+      title: t.gallery.teamCollaboration,
       category: "Team",
-      description: "Working with teammates on projects",
+      description: t.gallery.workingWithTeammates,
     },
     {
       src: "/assets/photo.jpg",
-      title: "Conference",
+      title: t.gallery.conference,
       category: "Academic",
-      description: "Presenting research at academic conference",
+      description: t.gallery.presentingResearch,
     },
     {
       src: "/assets/photo.jpg",
-      title: "Hackathon",
+      title: t.gallery.hackathon,
       category: "Competition",
-      description: "Building innovative solutions at hackathons",
+      description: t.gallery.buildingInnovations,
     },
   ];
 
-  const categories = ["All", ...new Set(galleryImages.map((img) => img.category))];
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const categories = [t.gallery.all, ...new Set(galleryImages.map((img) => img.category))];
+  const [selectedCategory, setSelectedCategory] = useState(t.gallery.all);
 
-  const filteredImages = selectedCategory === "All"
+  const filteredImages = selectedCategory === t.gallery.all
     ? galleryImages
     : galleryImages.filter((img) => img.category === selectedCategory);
 
@@ -95,11 +97,11 @@ function Gallery() {
         >
           <span className="text-primary-400 font-medium tracking-wider text-sm uppercase flex items-center justify-center gap-2">
             <Camera className="w-4 h-4" />
-            Photo Gallery
+            {t.gallery.title}
           </span>
-          <h1 className="text-4xl md:text-5xl font-black text-white mt-4">Gallery</h1>
+          <h1 className="text-4xl md:text-5xl font-black text-white mt-4">{t.gallery.title}</h1>
           <p className="text-gray-400 text-lg mt-4 max-w-2xl mx-auto">
-            Capturing moments from my academic journey, competitions, and professional growth
+            {t.gallery.subtitle}
           </p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-6 rounded-full" />
         </motion.div>
@@ -160,7 +162,7 @@ function Gallery() {
             className="text-center py-16"
           >
             <Layers className="w-16 h-16 text-gray-600 mx-auto mb-4" />
-            <p className="text-gray-500 text-lg">No images in this category</p>
+            <p className="text-gray-500 text-lg">{t.gallery.noImagesCategory}</p>
           </motion.div>
         )}
 
@@ -172,24 +174,23 @@ function Gallery() {
         >
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Camera className="w-6 h-6 text-primary-400" />
-            More Coming Soon
+            {t.gallery.moreComingSoon}
           </h2>
           <p className="text-gray-400 leading-relaxed">
-            This gallery will be updated regularly with new photos from my academic journey,
-            project developments, competition experiences, and more memorable moments.
+            {t.gallery.galleryDescription}
           </p>
           <div className="grid md:grid-cols-3 gap-4 mt-6">
             <div className="p-4 bg-white/5 rounded-xl text-center">
               <div className="text-3xl font-black text-gradient mb-2">8</div>
-              <div className="text-gray-400 text-sm">Photos Uploaded</div>
+              <div className="text-gray-400 text-sm">{t.gallery.photosUploaded}</div>
             </div>
             <div className="p-4 bg-white/5 rounded-xl text-center">
               <div className="text-3xl font-black text-gradient mb-2">5</div>
-              <div className="text-gray-400 text-sm">Categories</div>
+              <div className="text-gray-400 text-sm">{t.gallery.categories}</div>
             </div>
             <div className="p-4 bg-white/5 rounded-xl text-center">
               <div className="text-3xl font-black text-gradient mb-2">2024</div>
-              <div className="text-gray-400 text-sm">Year Started</div>
+              <div className="text-gray-400 text-sm">{t.gallery.yearStarted}</div>
             </div>
           </div>
         </motion.div>

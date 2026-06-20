@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import { Trophy, Medal, Star, Award, Crown, Sparkles } from "lucide-react";
+import { useTranslation } from "../i18n/useTranslation";
 
 function Awards() {
+  const { t } = useTranslation();
 
   const awards = [
     {
-      name: "三创赛校级一等奖",
+      name: t.about.awards.items.sanchuang,
       category: "创新创业",
       date: "2024",
       level: "校级",
@@ -14,7 +16,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "计算机设计大赛西北赛区三等奖",
+      name: t.about.awards.items.computerDesign,
       category: "学科竞赛",
       date: "2024",
       level: "区域",
@@ -23,7 +25,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "优秀共青团员",
+      name: t.about.awards.items.excellentLeague,
       category: "荣誉称号",
       date: "2024",
       level: "校级",
@@ -32,7 +34,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "优秀学生干部",
+      name: t.about.awards.items.excellentStudent,
       category: "荣誉称号",
       date: "2024",
       level: "校级",
@@ -41,7 +43,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "校级三等奖学金",
+      name: t.about.awards.items.thirdScholarship,
       category: "奖学金",
       date: "2024",
       level: "校级",
@@ -50,7 +52,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "博学杯校级三等奖",
+      name: t.about.awards.items.boxueCup,
       category: "学科竞赛",
       date: "2024",
       level: "校级",
@@ -59,7 +61,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "国创赛校级三等奖",
+      name: t.about.awards.items.guochuang,
       category: "创新创业",
       date: "2024",
       level: "校级",
@@ -68,7 +70,7 @@ function Awards() {
       image: "/assets/photo.jpg",
     },
     {
-      name: "挑战杯校级三等奖",
+      name: t.about.awards.items.challengeCup,
       category: "学科竞赛",
       date: "2024",
       level: "校级",
@@ -79,10 +81,10 @@ function Awards() {
   ];
 
   const stats = [
-    { number: "8", label: "Total Awards" },
-    { number: "2", label: "First Prizes" },
-    { number: "2", label: "Core Papers" },
-    { number: "1", label: "Years Active" },
+    { number: "8", label: t.awards.totalAwards },
+    { number: "2", label: t.awards.firstPrizes },
+    { number: "2", label: t.awards.corePapers },
+    { number: "1", label: t.awards.yearsActive },
   ];
 
   return (
@@ -99,8 +101,8 @@ function Awards() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Awards & Honors</h1>
-          <p className="text-gray-400 text-lg mb-8">Recognition and Achievements</p>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{t.awards.title}</h1>
+          <p className="text-gray-400 text-lg mb-8">{t.awards.subtitle}</p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto rounded-full" />
         </motion.div>
 
@@ -144,12 +146,12 @@ function Awards() {
                   <award.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
-              
+
               <div className="p-4">
                 <h3 className="text-lg font-bold text-white mb-2 group-hover:text-gradient transition-all">
                   {award.name}
                 </h3>
-                
+
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400">
                     {award.category}
@@ -158,7 +160,7 @@ function Awards() {
                     {award.level}
                   </span>
                 </div>
-                
+
                 <p className="text-gray-500 text-sm">{award.date}</p>
               </div>
             </motion.div>
@@ -173,30 +175,30 @@ function Awards() {
         >
           <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
             <Crown className="w-6 h-6 text-primary-400" />
-            Academic Publications
+            {t.awards.academicPublications}
           </h2>
           <div className="space-y-4">
             <div className="p-4 bg-white/5 rounded-xl">
               <div className="flex items-start justify-between mb-2">
                 <h3 className="text-white font-semibold">
-                  《基于改进FCM和注意力机制的点云语义分割算法》
+                  {t.about.papers.items.paper1.title}
                 </h3>
                 <span className="px-3 py-1 bg-primary-500/20 rounded-full text-xs text-primary-400">
-                  北大核心
+                  {t.about.papers.items.paper1.level}
                 </span>
               </div>
-              <p className="text-gray-500 text-sm">武汉科技大学学报</p>
+              <p className="text-gray-500 text-sm">{t.about.papers.items.paper1.journal}</p>
             </div>
             <div className="p-4 bg-white/5 rounded-xl">
               <div className="flex items-start justify-between mb-2">
                 <h3 className="text-white font-semibold">
-                  《结合CBAM注意力与混合采样的恶意软件二分类方法》
+                  {t.about.papers.items.paper2.title}
                 </h3>
                 <span className="px-3 py-1 bg-accent-500/20 rounded-full text-xs text-accent-400">
-                  核心期刊
+                  {t.about.papers.items.paper2.level}
                 </span>
               </div>
-              <p className="text-gray-500 text-sm">信息工程大学学报</p>
+              <p className="text-gray-500 text-sm">{t.about.papers.items.paper2.journal}</p>
             </div>
           </div>
         </motion.div>

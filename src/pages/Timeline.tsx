@@ -1,53 +1,55 @@
 import { motion } from "framer-motion";
 import { Calendar, Trophy, BookOpen, Code, Rocket, Star } from "lucide-react";
+import { useTranslation } from "../i18n/useTranslation";
 
 function Timeline() {
+  const { t } = useTranslation();
 
   const timeline = [
     {
       date: "2024",
-      title: "Started University",
-      description: "Began Software Engineering studies at Xi'an University of Finance and Economics",
+      title: t.timeline.startedUniversity,
+      description: t.timeline.beganStudies,
       icon: BookOpen,
       color: "primary",
       image: "/assets/photo.jpg",
     },
     {
       date: "2024",
-      title: "First Academic Paper",
-      description: "Published first research paper on AI and machine learning in a core journal",
+      title: t.timeline.firstPaper,
+      description: t.timeline.publishedFirstPaper,
       icon: Code,
       color: "accent",
       image: "/assets/photo.jpg",
     },
     {
       date: "2024",
-      title: "Competition Awards",
-      description: "Won multiple awards including 三创赛一等奖, 计算机设计大赛西北赛区三等奖",
+      title: t.timeline.competitionAwards,
+      description: t.timeline.wonMultipleAwards,
       icon: Trophy,
       color: "primary",
       image: "/assets/photo.jpg",
     },
     {
       date: "2025",
-      title: "Full-stack Development",
-      description: "Mastered React, Vue, TypeScript and started building AI-powered applications",
+      title: t.timeline.fullstackDev,
+      description: t.timeline.masteredReact,
       icon: Rocket,
       color: "accent",
       image: "/assets/photo.jpg",
     },
     {
       date: "2025",
-      title: "Second Academic Paper",
-      description: "Published second research paper on malware classification using deep learning",
+      title: t.timeline.secondPaper,
+      description: t.timeline.publishedSecondPaper,
       icon: Star,
       color: "primary",
       image: "/assets/photo.jpg",
     },
     {
       date: "2025",
-      title: "Seeking Internship",
-      description: "Actively looking for summer frontend/full-stack internship opportunities",
+      title: t.timeline.seekingInternship,
+      description: t.timeline.lookingForInternship,
       icon: Rocket,
       color: "accent",
       image: "/assets/photo.jpg",
@@ -68,8 +70,8 @@ function Timeline() {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-16"
         >
-          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">Timeline</h1>
-          <p className="text-gray-400 text-lg">My Journey So Far</p>
+          <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{t.timeline.title}</h1>
+          <p className="text-gray-400 text-lg">{t.timeline.subtitle}</p>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-6 rounded-full" />
         </motion.div>
 
@@ -110,8 +112,8 @@ function Timeline() {
 
                 <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
                   <div className={`w-12 h-12 rounded-full flex items-center justify-center ${
-                    item.color === "primary" 
-                      ? "bg-gradient-primary" 
+                    item.color === "primary"
+                      ? "bg-gradient-primary"
                       : "bg-gradient-to-br from-accent-500 to-primary-500"
                   } shadow-lg`}>
                     <item.icon className="w-6 h-6 text-white" />

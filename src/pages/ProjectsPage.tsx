@@ -52,7 +52,7 @@ function ProjectsPage() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
             <input
               type="text"
-              placeholder="Search projects..."
+              placeholder={t.projectsPage.searchPlaceholder}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-4 py-4 bg-white/5 border border-gray-700 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
@@ -69,7 +69,7 @@ function ProjectsPage() {
                   : "bg-white/5 text-gray-400 hover:bg-white/10 border border-gray-700"
               }`}
             >
-              All
+              {t.projectsPage.all}
             </button>
             {allTags.map((tag) => (
               <button
@@ -152,7 +152,7 @@ function ProjectsPage() {
                     {project.tech.split(" + ").slice(0, 2).join(" + ")}
                   </span>
                   <span className="flex items-center gap-1 text-primary-400 text-sm font-medium">
-                    View Details
+                    {t.projectsPage.viewDetails}
                     <ArrowRight className="w-4 h-4" />
                   </span>
                 </div>
@@ -167,7 +167,7 @@ function ProjectsPage() {
             animate={{ opacity: 1 }}
             className="text-center py-16"
           >
-            <p className="text-gray-500 text-lg">No projects found matching your criteria.</p>
+            <p className="text-gray-500 text-lg">{t.projectsPage.noProjectsFound}</p>
           </motion.div>
         )}
       </div>
