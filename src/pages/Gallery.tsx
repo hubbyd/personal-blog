@@ -7,6 +7,16 @@ function Gallery() {
   const { t } = useTranslation();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
+  const categoryMap: Record<string, string> = {
+    Personal: t.gallery.catPersonal,
+    Campus: t.gallery.catCampus,
+    Work: t.gallery.catWork,
+    Achievement: t.gallery.catAchievement,
+    Academic: t.gallery.catAcademic,
+    Team: t.gallery.catTeam,
+    Competition: t.gallery.catCompetition,
+  };
+
   const galleryImages = [
     {
       src: "/assets/photo.jpg",
@@ -58,10 +68,10 @@ function Gallery() {
     },
   ];
 
-  const categories = [t.gallery.all, ...new Set(galleryImages.map((img) => img.category))];
-  const [selectedCategory, setSelectedCategory] = useState(t.gallery.all);
+  const categoryKeys = ["All", ...new Set(galleryImages.map((img) => img.category))];
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
-  const filteredImages = selectedCategory === t.gallery.all
+  const filteredImages = selectedCategory === "All"
     ? galleryImages
     : galleryImages.filter((img) => img.category === selectedCategory);
 
@@ -112,17 +122,17 @@ function Gallery() {
           transition={{ delay: 0.2 }}
           className="flex flex-wrap justify-center gap-3 mb-12"
         >
-          {categories.map((category) => (
+          {categoryKeys.map((catKey) => (
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
+              key={catKey}
+              onClick={() => setSelectedCategory(catKey)}
               className={`px-5 py-2.5 rounded-xl text-sm font-medium transition-all duration-300 ${
-                selectedCategory === category
+                selectedCategory === catKey
                   ? "bg-gradient-primary text-white shadow-lg shadow-primary-500/25"
                   : "glass-card text-gray-400 hover:text-white hover:bg-white/10"
               }`}
             >
-              {category}
+              {catKey === "All" ? t.gallery.all : categoryMap[catKey]}
             </button>
           ))}
         </motion.div>
@@ -146,7 +156,7 @@ function Gallery() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                 <p className="text-white font-semibold text-sm">{image.title}</p>
-                <p className="text-gray-300 text-xs">{image.category}</p>
+                <p className="text-gray-300 text-xs">{categoryMap[image.category] || image.category}</p>
               </div>
               <div className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <Image className="w-5 h-5 text-white" />

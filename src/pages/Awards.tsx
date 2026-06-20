@@ -5,75 +5,87 @@ import { useTranslation } from "../i18n/useTranslation";
 function Awards() {
   const { t } = useTranslation();
 
+  const categoryMap: Record<string, string> = {
+    innovation: t.awards.catInnovation,
+    competition: t.awards.catCompetition,
+    honor: t.awards.catHonor,
+    scholarship: t.awards.catScholarship,
+  };
+
+  const levelMap: Record<string, string> = {
+    school: t.awards.levelSchool,
+    regional: t.awards.levelRegional,
+  };
+
   const awards = [
     {
       name: t.about.awards.items.sanchuang,
-      category: "创新创业",
+      category: "innovation",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Crown,
       color: "from-yellow-500 to-orange-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.computerDesign,
-      category: "学科竞赛",
+      category: "competition",
       date: "2024",
-      level: "区域",
+      level: "regional",
       icon: Trophy,
       color: "from-blue-500 to-cyan-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.excellentLeague,
-      category: "荣誉称号",
+      category: "honor",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Medal,
       color: "from-red-500 to-pink-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.excellentStudent,
-      category: "荣誉称号",
+      category: "honor",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Star,
       color: "from-purple-500 to-pink-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.thirdScholarship,
-      category: "奖学金",
+      category: "scholarship",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Award,
       color: "from-green-500 to-emerald-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.boxueCup,
-      category: "学科竞赛",
+      category: "competition",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Trophy,
       color: "from-indigo-500 to-blue-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.guochuang,
-      category: "创新创业",
+      category: "innovation",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Sparkles,
       color: "from-teal-500 to-cyan-500",
       image: "/assets/photo.jpg",
     },
     {
       name: t.about.awards.items.challengeCup,
-      category: "学科竞赛",
+      category: "competition",
       date: "2024",
-      level: "校级",
+      level: "school",
       icon: Trophy,
       color: "from-orange-500 to-yellow-500",
       image: "/assets/photo.jpg",
@@ -154,10 +166,10 @@ function Awards() {
 
                 <div className="flex items-center gap-2 mb-2">
                   <span className="px-3 py-1 bg-white/5 rounded-full text-xs text-gray-400">
-                    {award.category}
+                    {categoryMap[award.category] || award.category}
                   </span>
                   <span className="px-3 py-1 bg-primary-500/20 rounded-full text-xs text-primary-400">
-                    {award.level}
+                    {levelMap[award.level] || award.level}
                   </span>
                 </div>
 
