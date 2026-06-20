@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail, Lock, User, Eye, EyeOff, Sparkles, ArrowLeft, Heart, MessageCircle, Globe, Check, AlertCircle, CheckCircle } from "lucide-react";
-import { trackVisitor, getVisitorStats } from "../utils/visitorTracker";
+import { trackPageView, getVisitorStats, trackLogin } from "../utils/visitorTracker";
 import { useTranslation } from "../i18n/useTranslation";
 
 function Login() {
@@ -142,7 +142,7 @@ function Login() {
   };
 
   useEffect(() => {
-    trackVisitor();
+    trackPageView();
     const stats = getVisitorStats();
     setVisitorStats(stats);
   }, []);
@@ -170,9 +170,11 @@ function Login() {
     }
     
     if (isLogin) {
-      trackVisitor(true);
+      trackPageView();
+      trackLogin(email);
     } else {
-      trackVisitor(false, username);
+      trackPageView();
+      trackLogin(email);
     }
     const stats = getVisitorStats();
     setVisitorStats(stats);
