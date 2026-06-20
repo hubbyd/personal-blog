@@ -2,8 +2,8 @@ import { createClient } from '@supabase/supabase-js'
 
 // Supabase 配置 - 请替换为您自己的项目凭证
 // 访问 https://supabase.com 创建项目并获取以下信息
-const supabaseUrl = 'https://your-project.supabase.co'
-const supabaseAnonKey = 'your-anon-key'
+const supabaseUrl = 'https://gbxwbwgmnoensmwsceeu.supabase.co'
+const supabaseAnonKey = 'sb_publishable_PIGyWGWYQra2I0odriqjLw_dTCSxqs-'
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
