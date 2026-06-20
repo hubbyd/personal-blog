@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Mail, Lock, User, Eye, EyeOff, Sparkles, ArrowLeft, Heart, MessageCircle, Globe, Check, AlertCircle, CheckCircle } from "lucide-react";
-import { trackPageView, getVisitorStats, trackLogin } from "../utils/visitorTracker";
+import { trackPageView, getMergedStats, trackLogin, trackRegister } from "../utils/visitorTracker";
 import { useTranslation } from "../i18n/useTranslation";
 
 function Login() {
@@ -15,7 +15,7 @@ function Login() {
   const [username, setUsername] = useState("");
   const [petMessage, setPetMessage] = useState("");
   const [petMood, setPetMood] = useState<"happy" | "thinking" | "excited" | "sleepy">("happy");
-  const [visitorStats, setVisitorStats] = useState({ views: 0, visitors: 0, logins: 0 });
+  const [visitorStats, setVisitorStats] = useState<{ views: number; visitors: number; logins: number; registeredUsers: number }>({ views: 0, visitors: 0, logins: 0, registeredUsers: 0 });
   const [showLangMenu, setShowLangMenu] = useState(false);
   
   // Validation states
@@ -143,9 +143,13 @@ function Login() {
 
   useEffect(() => {
     trackPageView();
-    const stats = getVisitorStats();
-    setVisitorStats(stats);
+    loadStats();
   }, []);
+
+  const loadStats = async () => {
+    const stats = await getMergedStats();
+    setVisitorStats(stats);
+  };
 
   useEffect(() => {
     const messages = isLogin ? petMessages.login : petMessages.register;
@@ -155,7 +159,7 @@ function Login() {
     setPetMood(randomKey);
   }, [isLogin]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
     // Validate all fields before submission
@@ -170,14 +174,11 @@ function Login() {
     }
     
     if (isLogin) {
-      trackPageView();
-      trackLogin(email);
+      await trackLogin();
     } else {
-      trackPageView();
-      trackLogin(email);
+      await trackRegister();
     }
-    const stats = getVisitorStats();
-    setVisitorStats(stats);
+    await loadStats();
     setPetMood("excited");
     setPetMessage(isLogin ? "Welcome back! Enjoy your visit!" : "Account created! Welcome aboard!");
     
@@ -306,30 +307,38 @@ function Login() {
           <p className="text-purple-200/70 mb-6">{t.login.petDesc}</p>
 
           {/* Stats cards */}
-          <div className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0">
+          <div className="grid grid-cols-4 gap-3 max-w-md mx-auto lg:mx-0">
             <motion.div
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10"
               whileHover={{ scale: 1.05 }}
             >
-              <Eye className="w-6 h-6 text-cyan-400 mx-auto mb-2" />
-              <p className="text-2xl font-bold text-white">{visitorStats.views}</p>
+              <Eye className="w-5 h-5 text-cyan-400 mx-auto mb-1" />
+              <p className="text-xl font-bold text-white">{visitorStats.views}</p>
               <p className="text-xs text-purple-200/60">{t.login.views}</p>
             </motion.div>
             <motion.div
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10"
               whileHover={{ scale: 1.05 }}
             >
-              <User className="w-6 h-6 text-pink-400 mx-auto mb-2" />
-              <p className="text-2xl font-bold text-white">{visitorStats.visitors}</p>
+              <User className="w-5 h-5 text-pink-400 mx-auto mb-1" />
+              <p className="text-xl font-bold text-white">{visitorStats.visitors}</p>
               <p className="text-xs text-purple-200/60">{t.login.visitors}</p>
             </motion.div>
             <motion.div
-              className="bg-white/5 backdrop-blur-sm rounded-xl p-4 text-center border border-white/10"
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10"
               whileHover={{ scale: 1.05 }}
             >
-              <Heart className="w-6 h-6 text-red-400 mx-auto mb-2" />
-              <p className="text-2xl font-bold text-white">{visitorStats.logins}</p>
+              <Heart className="w-5 h-5 text-red-400 mx-auto mb-1" />
+              <p className="text-xl font-bold text-white">{visitorStats.logins}</p>
               <p className="text-xs text-purple-200/60">{t.login.logins}</p>
+            </motion.div>
+            <motion.div
+              className="bg-white/5 backdrop-blur-sm rounded-xl p-3 text-center border border-white/10"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Sparkles className="w-5 h-5 text-yellow-400 mx-auto mb-1" />
+              <p className="text-xl font-bold text-white">{visitorStats.registeredUsers}</p>
+              <p className="text-xs text-purple-200/60">{t.login.registered}</p>
             </motion.div>
           </div>
 

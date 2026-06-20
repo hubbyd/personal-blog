@@ -391,7 +391,8 @@ export const zh = {
     petDesc: "您在网站上的友好伙伴",
     views: "浏览量",
     visitors: "访客",
-    logins: "登录次数",
+    logins: "登录",
+    registered: "注册",
     petTip: "小贴士",
     petTipContent: "注册后可跟踪您的访问并获取个性化更新！"
   }
@@ -791,6 +792,7 @@ export const en = {
     views: "Views",
     visitors: "Visitors",
     logins: "Logins",
+    registered: "Registered",
     petTip: "Pet's Tip",
     petTipContent: "Register to track your visits and get personalized updates!"
   }
@@ -1190,6 +1192,7 @@ export const ja = {
     views: "閲覧数",
     visitors: "訪問者",
     logins: "ログイン数",
+    registered: "登録者",
     petTip: "ペットのヒント",
     petTipContent: "登録して訪問を追跡し、パーソナライズされた更新情報を入手しましょう！"
   }
@@ -1589,6 +1592,7 @@ export const ko = {
     views: "조회수",
     visitors: "방문자",
     logins: "로그인 수",
+    registered: "등록자",
     petTip: "펫의 팁",
     petTipContent: "방문 기록을 추적하고 개인화된 업데이트를 받으려면 등록하세요!"
   }
@@ -1988,6 +1992,7 @@ export const fr = {
     views: "Vues",
     visitors: "Visiteurs",
     logins: "Connexions",
+    registered: "Inscrits",
     petTip: "Conseil du Pet",
     petTipContent: "Inscrivez-vous pour suivre vos visites et obtenir des mises à jour personnalisées !"
   }
@@ -2387,6 +2392,7 @@ export const de = {
     views: "Aufrufe",
     visitors: "Besucher",
     logins: "Anmeldungen",
+    registered: "Registriert",
     petTip: "Tier-Tipp",
     petTipContent: "Registrieren Sie sich, um Ihre Besuche zu verfolgen und personalisierte Updates zu erhalten!"
   }
@@ -2786,6 +2792,7 @@ export const es = {
     views: "Vistas",
     visitors: "Visitantes",
     logins: "Inicios de sesión",
+    registered: "Registrados",
     petTip: "Consejo de la Mascota",
     petTipContent: "¡Regístrate para seguir tus visitas y obtener actualizaciones personalizadas!"
   }

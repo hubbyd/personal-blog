@@ -3,7 +3,6 @@ import { Sparkles, ChevronDown, Globe, Check } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "../i18n/useTranslation";
-import { initTracking } from "../utils/visitorTracker";
 
 function Splash() {
   const navigate = useNavigate();
@@ -13,9 +12,6 @@ function Splash() {
   const [showLangMenu, setShowLangMenu] = useState(false);
 
   useEffect(() => {
-    // 初始化追踪
-    initTracking();
-    
     const newParticles = Array.from({ length: 50 }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
