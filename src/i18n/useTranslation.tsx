@@ -1,11 +1,12 @@
 import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { zh, en, Language, Translations } from "./index";
+import { translations, Language, Translations, languageNames } from "./index";
 
 interface LanguageContextType {
   lang: Language;
   t: Translations;
   setLang: (lang: Language) => void;
-  toggleLang: () => void;
+  languageNames: Record<Language, string>;
+  availableLanguages: Language[];
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -13,7 +14,15 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export function LanguageProvider({ children }: { children: ReactNode }) {
   const [lang, setLangState] = useState<Language>(() => {
     const saved = localStorage.getItem("lang");
-    return (saved as Language) || "zh";
+    if (saved && (saved === "zh" || saved === "en" || saved === "ja" || saved === "ko" || saved === "fr" || saved === "de" || saved === "es")) {
+      return saved as Language;
+    }
+    // 默认根据浏览器语言设置
+    const browserLang = navigator.language.split("-")[0];
+    if (browserLang === "zh" || browserLang === "en" || browserLang === "ja" || browserLang === "ko" || browserLang === "fr" || browserLang === "de" || browserLang === "es") {
+      return browserLang as Language;
+    }
+    return "zh";
   });
 
   useEffect(() => {
@@ -21,18 +30,16 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     document.documentElement.lang = lang;
   }, [lang]);
 
-  const t = lang === "zh" ? zh : en;
+  const t = translations[lang];
 
   const setLang = (newLang: Language) => {
     setLangState(newLang);
   };
 
-  const toggleLang = () => {
-    setLangState((prev) => (prev === "zh" ? "en" : "zh"));
-  };
+  const availableLanguages: Language[] = ["zh", "en", "ja", "ko", "fr", "de", "es"];
 
   return (
-    <LanguageContext.Provider value={{ lang, t, setLang, toggleLang }}>
+    <LanguageContext.Provider value={{ lang, t, setLang, languageNames, availableLanguages }}>
       {children}
     </LanguageContext.Provider>
   );

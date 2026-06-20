@@ -42,11 +42,11 @@ function About() {
           className="text-center mb-16"
         >
           <span className="text-primary-400 font-medium tracking-wider text-sm uppercase">{t.about.subtitle}</span>
-          <h2 className="text-4xl md:text-5xl font-black text-white mt-4">{t.about.title}</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white mt-4">{t.about.title}</h2>
           <div className="w-24 h-1 bg-gradient-primary mx-auto mt-6 rounded-full" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16 lg:mb-20">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -55,16 +55,16 @@ function About() {
           >
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-primary rounded-2xl opacity-20 blur-xl" />
-              <div className="relative w-full aspect-square rounded-2xl overflow-hidden glass-card">
+              <div className="relative w-full max-w-md mx-auto lg:max-w-none aspect-square rounded-2xl overflow-hidden glass-card">
                 <img
                   src="/assets/photo.jpg"
                   alt="rement"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-2xl font-bold text-white">rement</h3>
-                  <p className="text-gray-300 text-sm">Software Engineering Student</p>
+                <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6">
+                  <h3 className="text-xl sm:text-2xl font-bold text-white">rement</h3>
+                  <p className="text-gray-300 text-xs sm:text-sm">Software Engineering Student</p>
                 </div>
               </div>
             </div>
@@ -76,15 +76,15 @@ function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-white mb-4">My Story</h3>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">My Story</h3>
+            <p className="text-gray-400 leading-relaxed mb-4 sm:mb-6 text-sm sm:text-base">
               {t.about.story}
             </p>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-gray-400 leading-relaxed mb-6 sm:mb-8 text-sm sm:text-base">
               {t.about.story2}
             </p>
 
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               {achievements.slice(0, 4).map((item, index) => (
                 <motion.div
                   key={item.title}
@@ -110,11 +110,11 @@ function About() {
           transition={{ duration: 0.6 }}
           className="mb-16"
         >
-          <div className="flex items-center gap-3 mb-6">
-            <Trophy className="w-6 h-6 text-accent-400" />
-            <h3 className="text-2xl font-bold text-white">{t.about.achievements.awards}</h3>
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <Trophy className="w-5 h-5 sm:w-6 sm:h-6 text-accent-400" />
+            <h3 className="text-xl sm:text-2xl font-bold text-white">{t.about.achievements.awards}</h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
             {awardList.map((award, index) => (
               <motion.div
                 key={award.name}
@@ -140,11 +140,11 @@ function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="flex items-center gap-3 mb-6">
-            <FileText className="w-6 h-6 text-primary-400" />
-            <h3 className="text-2xl font-bold text-white">{t.about.achievements.papers}</h3>
+          <div className="flex items-center gap-3 mb-4 sm:mb-6">
+            <FileText className="w-5 h-5 sm:w-6 sm:h-6 text-primary-400" />
+            <h3 className="text-xl sm:text-2xl font-bold text-white">{t.about.achievements.papers}</h3>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
             {paperList.map((paper, index) => (
               <motion.div
                 key={paper.title}

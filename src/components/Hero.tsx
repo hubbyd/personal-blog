@@ -26,7 +26,7 @@ function Hero() {
             <motion.div
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
-              className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl shadow-primary-500/20"
+              className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/10 shadow-2xl shadow-primary-500/20"
             >
               <img
                 src="/assets/photo.jpg"
@@ -38,10 +38,10 @@ function Hero() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="absolute -bottom-4 -left-4 px-4 py-2 glass-card rounded-xl flex items-center gap-2"
+              className="absolute -bottom-4 -left-4 px-3 py-1.5 sm:px-4 sm:py-2 glass-card rounded-xl flex items-center gap-2"
             >
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-              <span className="text-sm text-gray-300">Available for Internship</span>
+              <span className="text-xs sm:text-sm text-gray-300">Available for Internship</span>
             </motion.div>
           </motion.div>
 
@@ -50,17 +50,17 @@ function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full glass-card mb-8"
+              className="inline-flex items-center gap-2 px-3 py-2 sm:px-5 sm:py-2.5 rounded-full glass-card mb-6 sm:mb-8"
             >
-              <Sparkles className="w-4 h-4 text-accent-400" />
-              <span className="text-sm text-gray-300 font-medium">Xi'an University of Finance and Economics · Software Engineering</span>
+              <Sparkles className="w-3 h-3 sm:w-4 sm:h-4 text-accent-400" />
+              <span className="text-xs sm:text-sm text-gray-300 font-medium">Xi'an University of Finance and Economics · Software Engineering</span>
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black mb-4 sm:mb-6 leading-tight"
             >
               <span className="text-white block">{t.hero.title}</span>
             </motion.h1>
@@ -69,7 +69,7 @@ function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg md:text-xl text-gray-400 mb-8 max-w-xl leading-relaxed"
+              className="text-base sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-8 max-w-xl leading-relaxed"
             >
               {t.hero.subtitle}
               <br />
@@ -80,20 +80,20 @@ function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start items-center mb-8 sm:mb-12"
             >
               <motion.a
                 href="#projects"
-                className="group px-8 py-4 bg-gradient-primary rounded-xl text-white font-bold flex items-center gap-2 hover:shadow-2xl hover:shadow-primary-500/25 transition-all duration-300"
+                className="group px-6 py-3 sm:px-8 sm:py-4 bg-gradient-primary rounded-xl text-white font-bold flex items-center gap-2 hover:shadow-2xl hover:shadow-primary-500/25 transition-all duration-300 text-sm sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 {t.hero.cta}
-                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               <motion.a
                 href="#contact"
-                className="px-8 py-4 glass-card rounded-xl text-white font-bold hover:bg-white/10 transition-all duration-300"
+                className="px-6 py-3 sm:px-8 sm:py-4 glass-card rounded-xl text-white font-bold hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -105,7 +105,7 @@ function Hero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1 }}
-              className="grid grid-cols-3 gap-6 max-w-sm mx-auto lg:mx-0"
+              className="grid grid-cols-3 gap-3 sm:gap-6 max-w-sm mx-auto lg:mx-0"
             >
               {[
                 { number: "50+", label: t.hero.stats.projects },
@@ -119,8 +119,8 @@ function Hero() {
                   transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
                   className="text-center lg:text-left"
                 >
-                  <div className="text-2xl md:text-3xl font-black text-gradient mb-1">{stat.number}</div>
-                  <div className="text-xs md:text-sm text-gray-500">{stat.label}</div>
+                  <div className="text-xl sm:text-2xl md:text-3xl font-black text-gradient mb-1">{stat.number}</div>
+                  <div className="text-xs sm:text-sm text-gray-500">{stat.label}</div>
                 </motion.div>
               ))}
             </motion.div>
