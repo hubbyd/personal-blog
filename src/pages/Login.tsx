@@ -61,6 +61,11 @@ function Login() {
     setVisitorStats(stats);
     setPetMood("excited");
     setPetMessage(isLogin ? "Welcome back! Enjoy your visit!" : "Account created! Welcome aboard!");
+    
+    // Navigate to home after login/register
+    setTimeout(() => {
+      navigate("/home");
+    }, 1500);
   };
 
   const toggleMode = () => {

@@ -24,10 +24,6 @@ function Splash() {
   }, []);
 
   const handleEnter = () => {
-    navigate("/home");
-  };
-
-  const handleLogin = () => {
     navigate("/login");
   };
 
@@ -139,34 +135,23 @@ function Splash() {
             AI Applications & Open Source Enthusiast
           </motion.p>
 
-          {/* Buttons */}
+          {/* Single Enter Button */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="flex justify-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
             <motion.button
               onClick={handleEnter}
-              className="group relative px-8 py-4 rounded-2xl overflow-hidden"
-              whileHover={{ scale: 1.05 }}
+              className="group relative px-12 py-5 rounded-2xl overflow-hidden"
+              whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.95 }}
             >
               <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 opacity-90 group-hover:opacity-100 transition-opacity" />
               <div className="absolute inset-0 bg-gradient-to-r from-violet-600 via-fuchsia-600 to-pink-600 blur-xl opacity-50 group-hover:opacity-75 transition-opacity" />
-              <span className="relative text-white font-bold text-lg tracking-wide">
+              <span className="relative text-white font-bold text-xl tracking-wide">
                 Enter Website
-              </span>
-            </motion.button>
-
-            <motion.button
-              onClick={handleLogin}
-              className="group px-8 py-4 rounded-2xl border-2 border-fuchsia-500/50 hover:border-fuchsia-400 bg-fuchsia-500/10 hover:bg-fuchsia-500/20 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="text-fuchsia-200 font-bold text-lg tracking-wide">
-                Login / Register
               </span>
             </motion.button>
           </motion.div>
