@@ -364,6 +364,37 @@ export const zh = {
     available: "正在寻找实习机会",
     copyright: "© 2026 rement. All rights reserved."
   },
+  splash: {
+    enterWebsite: "进入网站",
+    loginRegister: "登录/注册",
+    welcome: "欢迎来到我的世界",
+    tagline: "探索创意与技术的无限可能"
+  },
+  login: {
+    welcomeBack: "欢迎回来",
+    createAccount: "创建账户",
+    loginSubtitle: "登录以访问您的仪表板",
+    registerSubtitle: "今天就加入我们的社区",
+    email: "邮箱",
+    password: "密码",
+    username: "用户名",
+    enterEmail: "输入您的邮箱",
+    enterPassword: "输入您的密码",
+    enterUsername: "输入您的用户名",
+    forgotPassword: "忘记密码？",
+    login: "登录",
+    register: "注册",
+    noAccount: "没有账户？",
+    haveAccount: "已有账户？",
+    petGuide: "宠物引导",
+    petName: "Remet 宠物向导",
+    petDesc: "您在网站上的友好伙伴",
+    views: "浏览量",
+    visitors: "访客",
+    logins: "登录次数",
+    petTip: "小贴士",
+    petTipContent: "注册后可跟踪您的访问并获取个性化更新！"
+  }
 };
 
 export const en = {
@@ -731,6 +762,37 @@ export const en = {
     status: "Status",
     available: "Available for Internship",
     copyright: "© 2026 rement. All rights reserved."
+  },
+  splash: {
+    enterWebsite: "Enter Website",
+    loginRegister: "Login / Register",
+    welcome: "Welcome to My World",
+    tagline: "Explore the Infinite Possibilities of Creativity and Technology"
+  },
+  login: {
+    welcomeBack: "Welcome Back",
+    createAccount: "Create Account",
+    loginSubtitle: "Login to access your dashboard",
+    registerSubtitle: "Join our community today",
+    email: "Email",
+    password: "Password",
+    username: "Username",
+    enterEmail: "Enter your email",
+    enterPassword: "Enter your password",
+    enterUsername: "Enter your username",
+    forgotPassword: "Forgot password?",
+    login: "Login",
+    register: "Register",
+    noAccount: "Don't have an account?",
+    haveAccount: "Already have an account?",
+    petGuide: "Pet Guide",
+    petName: "Remet Pet Guide",
+    petDesc: "Your friendly companion on this website",
+    views: "Views",
+    visitors: "Visitors",
+    logins: "Logins",
+    petTip: "Pet's Tip",
+    petTipContent: "Register to track your visits and get personalized updates!"
   }
 };
 
@@ -1099,6 +1161,37 @@ export const ja = {
     status: "ステータス",
     available: "インターンシップ募集中",
     copyright: "© 2026 rement. All rights reserved."
+  },
+  splash: {
+    enterWebsite: "サイトに入る",
+    loginRegister: "ログイン/登録",
+    welcome: "私の世界へようこそ",
+    tagline: "創造性とテクノロジーの無限の可能性を探索"
+  },
+  login: {
+    welcomeBack: "おかえり",
+    createAccount: "アカウント作成",
+    loginSubtitle: "ダッシュボードにログイン",
+    registerSubtitle: "今日からコミュニティに参加",
+    email: "メール",
+    password: "パスワード",
+    username: "ユーザー名",
+    enterEmail: "メールアドレスを入力",
+    enterPassword: "パスワードを入力",
+    enterUsername: "ユーザー名を入力",
+    forgotPassword: "パスワードをお忘れですか？",
+    login: "ログイン",
+    register: "登録",
+    noAccount: "アカウントをお持ちでないですか？",
+    haveAccount: "すでにアカウントをお持ちですか？",
+    petGuide: "ペットガイド",
+    petName: "Remet ペットガイド",
+    petDesc: "このサイトでのあなたの優しい仲間",
+    views: "閲覧数",
+    visitors: "訪問者",
+    logins: "ログイン数",
+    petTip: "ペットのヒント",
+    petTipContent: "登録して訪問を追跡し、パーソナライズされた更新情報を入手しましょう！"
   }
 };
 
@@ -1467,6 +1560,37 @@ export const ko = {
     status: "상태",
     available: "인턴십 구직 중",
     copyright: "© 2026 rement. All rights reserved."
+  },
+  splash: {
+    enterWebsite: "웹사이트 진입",
+    loginRegister: "로그인/회원가입",
+    welcome: "나의 세계에 오신 것을 환영합니다",
+    tagline: "창의성과 기술의 무한한 가능성 탐험"
+  },
+  login: {
+    welcomeBack: "다시 오신 것을 환영합니다",
+    createAccount: "계정 만들기",
+    loginSubtitle: "대시보드에 로그인하세요",
+    registerSubtitle: "오늘 커뮤니티에 참여하세요",
+    email: "이메일",
+    password: "비밀번호",
+    username: "사용자 이름",
+    enterEmail: "이메일을 입력하세요",
+    enterPassword: "비밀번호를 입력하세요",
+    enterUsername: "사용자 이름을 입력하세요",
+    forgotPassword: "비밀번호를 잊으셨나요?",
+    login: "로그인",
+    register: "회원가입",
+    noAccount: "계정이 없으신가요?",
+    haveAccount: "이미 계정이 있으신가요?",
+    petGuide: "펫 가이드",
+    petName: "Remet 펫 가이드",
+    petDesc: "이 웹사이트에서 당신의 친절한 동반자",
+    views: "조회수",
+    visitors: "방문자",
+    logins: "로그인 수",
+    petTip: "펫의 팁",
+    petTipContent: "방문 기록을 추적하고 개인화된 업데이트를 받으려면 등록하세요!"
   }
 };
 
@@ -1835,6 +1959,37 @@ export const fr = {
     status: "Statut",
     available: "Recherche de stage",
     copyright: "© 2026 rement. Tous droits réservés."
+  },
+  splash: {
+    enterWebsite: "Entrer sur le site",
+    loginRegister: "Connexion / S'inscrire",
+    welcome: "Bienvenue dans mon monde",
+    tagline: "Explorez les possibilités infinies de la créativité et de la technologie"
+  },
+  login: {
+    welcomeBack: "Bon retour",
+    createAccount: "Créer un compte",
+    loginSubtitle: "Connectez-vous à votre tableau de bord",
+    registerSubtitle: "Rejoignez notre communauté aujourd'hui",
+    email: "Email",
+    password: "Mot de passe",
+    username: "Nom d'utilisateur",
+    enterEmail: "Entrez votre email",
+    enterPassword: "Entrez votre mot de passe",
+    enterUsername: "Entrez votre nom d'utilisateur",
+    forgotPassword: "Mot de passe oublié ?",
+    login: "Connexion",
+    register: "S'inscrire",
+    noAccount: "Pas encore de compte ?",
+    haveAccount: "Déjà un compte ?",
+    petGuide: "Guide Mascotte",
+    petName: "Guide Mascotte Remet",
+    petDesc: "Votre compagnon amical sur ce site",
+    views: "Vues",
+    visitors: "Visiteurs",
+    logins: "Connexions",
+    petTip: "Conseil du Pet",
+    petTipContent: "Inscrivez-vous pour suivre vos visites et obtenir des mises à jour personnalisées !"
   }
 };
 
@@ -2203,6 +2358,37 @@ export const de = {
     status: "Status",
     available: "Praktikum suchend",
     copyright: "© 2026 rement. Alle Rechte vorbehalten."
+  },
+  splash: {
+    enterWebsite: "Website betreten",
+    loginRegister: "Anmelden / Registrieren",
+    welcome: "Willkommen in meiner Welt",
+    tagline: "Erkunden Sie die grenzenlosen Möglichkeiten von Kreativität und Technologie"
+  },
+  login: {
+    welcomeBack: "Willkommen zurück",
+    createAccount: "Konto erstellen",
+    loginSubtitle: "Melden Sie sich bei Ihrem Dashboard an",
+    registerSubtitle: "Werden Sie noch heute Teil unserer Community",
+    email: "E-Mail",
+    password: "Passwort",
+    username: "Benutzername",
+    enterEmail: "Geben Sie Ihre E-Mail ein",
+    enterPassword: "Geben Sie Ihr Passwort ein",
+    enterUsername: "Geben Sie Ihren Benutzernamen ein",
+    forgotPassword: "Passwort vergessen?",
+    login: "Anmelden",
+    register: "Registrieren",
+    noAccount: "Noch kein Konto?",
+    haveAccount: "Bereits ein Konto?",
+    petGuide: "Tier-Guide",
+    petName: "Remet Tier-Guide",
+    petDesc: "Ihr freundlicher Begleiter auf dieser Website",
+    views: "Aufrufe",
+    visitors: "Besucher",
+    logins: "Anmeldungen",
+    petTip: "Tier-Tipp",
+    petTipContent: "Registrieren Sie sich, um Ihre Besuche zu verfolgen und personalisierte Updates zu erhalten!"
   }
 };
 
@@ -2571,6 +2757,37 @@ export const es = {
     status: "Estado",
     available: "Buscando prácticas",
     copyright: "© 2026 rement. Todos los derechos reservados."
+  },
+  splash: {
+    enterWebsite: "Entrar al sitio",
+    loginRegister: "Iniciar sesión / Registrarse",
+    welcome: "Bienvenido a mi mundo",
+    tagline: "Explora las posibilidades infinitas de la creatividad y la tecnología"
+  },
+  login: {
+    welcomeBack: "Bienvenido de nuevo",
+    createAccount: "Crear cuenta",
+    loginSubtitle: "Inicia sesión para acceder a tu panel",
+    registerSubtitle: "Únete a nuestra comunidad hoy",
+    email: "Correo electrónico",
+    password: "Contraseña",
+    username: "Nombre de usuario",
+    enterEmail: "Ingresa tu correo electrónico",
+    enterPassword: "Ingresa tu contraseña",
+    enterUsername: "Ingresa tu nombre de usuario",
+    forgotPassword: "¿Olvidaste tu contraseña?",
+    login: "Iniciar sesión",
+    register: "Registrarse",
+    noAccount: "¿No tienes una cuenta?",
+    haveAccount: "¿Ya tienes una cuenta?",
+    petGuide: "Guía Mascota",
+    petName: "Guía Mascota Remet",
+    petDesc: "Tu compañero amigable en este sitio web",
+    views: "Vistas",
+    visitors: "Visitantes",
+    logins: "Inicios de sesión",
+    petTip: "Consejo de la Mascota",
+    petTipContent: "¡Regístrate para seguir tus visitas y obtener actualizaciones personalizadas!"
   }
 };
 

@@ -6,6 +6,8 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import ScrollToTop from './components/ScrollToTop'
 import Home from './pages/Home'
+import Splash from './pages/Splash'
+import Login from './pages/Login'
 import ProjectsPage from './pages/ProjectsPage'
 import ProjectDetail from './pages/ProjectDetail'
 import BlogPage from './pages/BlogPage'
@@ -27,6 +29,8 @@ function AppContent() {
     setIsLoaded(true)
   }, [])
 
+  const isFullScreenPage = location.pathname === '/' || location.pathname === '/login';
+
   return (
     <AnimatePresence>
       {isLoaded && (
@@ -41,11 +45,13 @@ function AppContent() {
               : 'bg-gradient-to-br from-[#f8fafc] via-[#e2e8f0] to-[#cbd5e1]'
           }`}
         >
-          <Navbar />
+          {!isFullScreenPage && <Navbar />}
           <main>
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Splash />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/login" element={<Login />} />
                 <Route path="/projects" element={<ProjectsPage />} />
                 <Route path="/projects/:projectId" element={<ProjectDetail />} />
                 <Route path="/blog" element={<BlogPage />} />
@@ -59,8 +65,8 @@ function AppContent() {
               </Routes>
             </AnimatePresence>
           </main>
-          <Footer />
-          <ScrollToTop />
+          {!isFullScreenPage && <Footer />}
+          {!isFullScreenPage && <ScrollToTop />}
         </motion.div>
       )}
     </AnimatePresence>
