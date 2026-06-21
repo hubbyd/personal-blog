@@ -1,9 +1,14 @@
 import { motion } from "framer-motion";
 import { Download, Mail, MapPin, Github, Calendar, Award, BookOpen, Briefcase } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
+import { useRef, useState } from "react";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
 function Resume() {
   const { t } = useTranslation();
+  const resumeRef = useRef<HTMLDivElement>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   const experiences = [
     {
@@ -36,6 +41,40 @@ function Resume() {
     { name: t.resume.machineLearningSpecialization, issuer: t.resume.stanfordOnline, year: "2024" },
   ];
 
+  const handleDownloadPdf = async () => {
+    if (!resumeRef.current || isDownloading) return;
+    
+    setIsDownloading(true);
+    
+    try {
+      const element = resumeRef.current;
+      const canvas = await html2canvas(element, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#0f0f1a",
+        logging: false,
+        allowTaint: true,
+      });
+      
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const imgWidth = canvas.width;
+      const imgHeight = canvas.height;
+      const ratio = Math.min(pdfWidth / imgWidth, pdfHeight / imgHeight);
+      const imgX = (pdfWidth - imgWidth * ratio) / 2;
+      const imgY = 10;
+      
+      pdf.addImage(imgData, "PNG", imgX, imgY, imgWidth * ratio, imgHeight * ratio);
+      pdf.save("resume-rement.pdf");
+    } catch (error) {
+      console.error("PDF generation failed:", error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -44,7 +83,7 @@ function Resume() {
       transition={{ duration: 0.5 }}
       className="min-h-screen py-24"
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div ref={resumeRef} className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -53,12 +92,22 @@ function Resume() {
           <h1 className="text-4xl md:text-5xl font-black text-white mb-4">{t.resume.title}</h1>
           <p className="text-gray-400 text-lg mb-8">{t.resume.subtitle}</p>
           <motion.button
-            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-primary rounded-xl text-white font-medium"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            onClick={handleDownloadPdf}
+            disabled={isDownloading}
+            className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-medium transition-all ${
+              isDownloading
+                ? "bg-gray-600 cursor-not-allowed"
+                : "bg-gradient-primary hover:opacity-90"
+            }`}
+            whileHover={!isDownloading ? { scale: 1.05 } : {}}
+            whileTap={!isDownloading ? { scale: 0.95 } : {}}
           >
-            <Download className="w-5 h-5" />
-            {t.resume.downloadPdf}
+            {isDownloading ? (
+              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+            ) : (
+              <Download className="w-5 h-5" />
+            )}
+            {isDownloading ? t.resume.downloading : t.resume.downloadPdf}
           </motion.button>
         </motion.div>
 
