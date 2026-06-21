@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Github, Mail, Heart, Home, User, Code, FolderOpen, FileText, FileBadge, Clock, Trophy, MessageCircle, Image } from "lucide-react";
+import { Github, Mail, Heart, User, Code, FolderOpen, FileText, FileBadge, Clock, Trophy, MessageCircle, Image } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 
 function Footer() {
@@ -7,7 +7,6 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { name: t.nav.home, href: "/", icon: Home },
     { name: t.nav.about, href: "/#about", icon: User },
     { name: t.nav.skills, href: "/skills", icon: Code },
     { name: t.nav.projects, href: "/projects", icon: FolderOpen },

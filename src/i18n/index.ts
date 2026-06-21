@@ -10,7 +10,8 @@ export const zh = {
     resume: "简历",
     timeline: "时间线",
     awards: "奖项",
-    language: "语言"
+    language: "语言",
+    logout: "退出登录"
   },
   hero: {
     title: "你好，我是 rement",
@@ -410,7 +411,8 @@ export const en = {
     resume: "Resume",
     timeline: "Timeline",
     awards: "Awards",
-    language: "Language"
+    language: "Language",
+    logout: "Logout"
   },
   hero: {
     title: "Hello, I'm rement",
@@ -810,7 +812,8 @@ export const ja = {
     resume: "履歴書",
     timeline: "タイムライン",
     awards: "受賞歴",
-    language: "言語"
+    language: "言語",
+    logout: "ログアウト"
   },
   hero: {
     title: "こんにちは、rementです",
@@ -1210,7 +1213,8 @@ export const ko = {
     resume: "이력서",
     timeline: "타임라인",
     awards: "수상",
-    language: "언어"
+    language: "언어",
+    logout: "로그아웃"
   },
   hero: {
     title: "안녕하세요, rement입니다",
@@ -1610,7 +1614,8 @@ export const fr = {
     resume: "CV",
     timeline: "Chronologie",
     awards: "Prix",
-    language: "Langue"
+    language: "Langue",
+    logout: "Déconnexion"
   },
   hero: {
     title: "Bonjour, je suis rement",
@@ -2010,7 +2015,8 @@ export const de = {
     resume: "Lebenslauf",
     timeline: "Zeitstrahl",
     awards: "Auszeichnungen",
-    language: "Sprache"
+    language: "Sprache",
+    logout: "Abmelden"
   },
   hero: {
     title: "Hallo, ich bin rement",
@@ -2410,7 +2416,8 @@ export const es = {
     resume: "Currículum",
     timeline: "Línea de tiempo",
     awards: "Premios",
-    language: "Idioma"
+    language: "Idioma",
+    logout: "Cerrar sesión"
   },
   hero: {
     title: "Hola, soy rement",

@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Github, Mail, Globe, Sun, Moon, Home, User, Code, FolderOpen, FileText, MessageCircle, FileBadge, Clock, Trophy, Image, ChevronDown, Check } from "lucide-react";
+import { Menu, X, Github, Mail, Globe, Sun, Moon, User, Code, FolderOpen, FileText, MessageCircle, FileBadge, Clock, Trophy, Image, ChevronDown, Check, LogOut } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
 import { useTheme } from "../context/ThemeContext";
 import { useNavigate, useLocation } from "react-router-dom";
@@ -36,7 +36,6 @@ function Navbar() {
   }, []);
 
   const navLinks = [
-    { name: t.nav.home, href: "/", icon: Home },
     { name: t.nav.about, href: "/#about", icon: User },
     { name: t.nav.skills, href: "/skills", icon: Code },
     { name: t.nav.projects, href: "/projects", icon: FolderOpen },
@@ -72,6 +71,11 @@ function Navbar() {
     setIsMobileMenuOpen(false);
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    navigate("/");
+  };
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -84,7 +88,7 @@ function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <motion.button
-            onClick={() => scrollToSection("/")}
+            onClick={() => navigate("/home")}
             className="flex items-center gap-2"
             whileHover={{ scale: 1.05 }}
           >
@@ -138,15 +142,17 @@ function Navbar() {
             <div ref={langDropdownRef} className="relative">
               <motion.button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center gap-1 px-3 py-2 glass-card rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                className="flex items-center gap-2 px-3 py-2 glass-card rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all min-w-[110px] justify-between"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Globe className="w-5 h-5" />
-                <span className="text-sm font-medium">{languageNames[lang]}</span>
-                <ChevronDown className={`w-4 h-4 transition-transform ${isLangDropdownOpen ? "rotate-180" : ""}`} />
+                <div className="flex items-center gap-1.5">
+                  <Globe className="w-4 h-4" />
+                  <span className="text-sm font-medium uppercase tracking-wider">{lang}</span>
+                </div>
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isLangDropdownOpen ? "rotate-180" : ""}`} />
               </motion.button>
-              
+
               <AnimatePresence>
                 {isLangDropdownOpen && (
                   <motion.div
@@ -154,22 +160,31 @@ function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-48 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-50"
+                    className="absolute right-0 mt-2 w-56 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-50 p-2"
                   >
-                    {availableLanguages.map((langCode) => (
-                      <button
-                        key={langCode}
-                        onClick={() => handleLanguageChange(langCode)}
-                        className={`flex items-center justify-between w-full px-4 py-3 text-left transition-all ${
-                          lang === langCode
-                            ? "bg-primary-500/20 text-white"
-                            : "text-gray-400 hover:text-white hover:bg-white/5"
-                        }`}
-                      >
-                        <span className="font-medium">{languageNames[langCode]}</span>
-                        {lang === langCode && <Check className="w-4 h-4 text-primary-400" />}
-                      </button>
-                    ))}
+                    <div className="grid grid-cols-1 gap-1">
+                      {availableLanguages.map((langCode) => (
+                        <button
+                          key={langCode}
+                          onClick={() => handleLanguageChange(langCode)}
+                          className={`flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-left transition-all ${
+                            lang === langCode
+                              ? "bg-primary-500/20 text-white"
+                              : "text-gray-400 hover:text-white hover:bg-white/5"
+                          }`}
+                        >
+                          <div className="flex items-center gap-3">
+                            <span className={`text-xs font-bold uppercase tracking-wider w-6 h-6 flex items-center justify-center rounded-md ${
+                              lang === langCode ? "bg-primary-500/30 text-primary-300" : "bg-white/5 text-gray-500"
+                            }`}>
+                              {langCode}
+                            </span>
+                            <span className="font-medium text-sm">{languageNames[langCode]}</span>
+                          </div>
+                          {lang === langCode && <Check className="w-4 h-4 text-primary-400" />}
+                        </button>
+                      ))}
+                    </div>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -193,6 +208,18 @@ function Navbar() {
             >
               <Mail className="w-5 h-5" />
             </motion.a>
+
+            {/* 退出登录按钮 */}
+            <motion.button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:text-red-300 border border-red-500/20 transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              title={t.nav.logout}
+            >
+              <LogOut className="w-4 h-4" />
+              <span className="text-sm font-medium hidden xl:inline">{t.nav.logout}</span>
+            </motion.button>
           </div>
 
           <button
@@ -275,6 +302,16 @@ function Navbar() {
                   <Mail className="w-5 h-5" />
                 </a>
               </div>
+
+              {/* 移动端退出登录 */}
+              <motion.button
+                onClick={handleLogout}
+                className="flex items-center gap-3 w-full text-left px-4 py-3 rounded-xl font-medium transition-all bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:text-red-300 border border-red-500/20"
+                whileHover={{ x: 10 }}
+              >
+                <LogOut className="w-5 h-5" />
+                {t.nav.logout}
+              </motion.button>
             </div>
           </motion.div>
         )}

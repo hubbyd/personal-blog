@@ -182,7 +182,8 @@ function Login() {
     setPetMood("excited");
     setPetMessage(isLogin ? "Welcome back! Enjoy your visit!" : "Account created! Welcome aboard!");
     
-    // Navigate to home after login/register
+    // Save login state and navigate to home
+    localStorage.setItem("isLoggedIn", "true");
     setTimeout(() => {
       navigate("/home");
     }, 1500);
