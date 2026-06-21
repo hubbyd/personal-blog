@@ -54,6 +54,8 @@ function Resume() {
         backgroundColor: "#0f0f1a",
         logging: false,
         allowTaint: true,
+        scrollX: 0,
+        scrollY: 0,
       });
       
       const imgData = canvas.toDataURL("image/png");
@@ -67,9 +69,19 @@ function Resume() {
       const imgY = 10;
       
       pdf.addImage(imgData, "PNG", imgX, imgY, imgWidth * ratio, imgHeight * ratio);
-      pdf.save("resume-rement.pdf");
+      
+      const blob = pdf.output("blob");
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "resume-rement.pdf";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      URL.revokeObjectURL(url);
     } catch (error) {
       console.error("PDF generation failed:", error);
+      alert("PDF下载失败，请重试");
     } finally {
       setIsDownloading(false);
     }
