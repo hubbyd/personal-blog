@@ -48,15 +48,22 @@ function Navbar() {
   ];
 
   const isActive = (href: string) => {
-    if (href.startsWith("/#")) return location.pathname === "/" && location.hash === href;
+    if (href.startsWith("/#")) {
+      // Check if we're on /home and the hash matches
+      const sectionId = href.replace("/#", "");
+      return (location.pathname === "/home" || location.pathname === "/") && location.hash === `#${sectionId}`;
+    }
     return location.pathname === href;
   };
 
   const scrollToSection = (href: string) => {
     if (href.startsWith("/#")) {
-      navigate("/");
+      // Extract the section id from href (e.g., "/#about" -> "about")
+      const sectionId = href.replace("/#", "");
+      // Navigate to /home first, then scroll to the section
+      navigate("/home");
       setTimeout(() => {
-        const element = document.querySelector(href);
+        const element = document.getElementById(sectionId);
         element?.scrollIntoView({ behavior: "smooth" });
       }, 100);
     } else {
@@ -100,21 +107,21 @@ function Navbar() {
             <span className="text-lg sm:text-xl font-bold text-white">rement</span>
           </motion.button>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1 xl:gap-2">
             {navLinks.map((link, index) => (
               <motion.button
                 key={index}
                 onClick={() => scrollToSection(link.href)}
-                className={`px-3 py-2 rounded-lg font-medium transition-all duration-300 relative group ${
+                className={`px-2 py-2 rounded-lg font-medium transition-all duration-300 relative group whitespace-nowrap ${
                   isActive(link.href)
                     ? "text-white"
                     : "text-gray-400 hover:text-white"
                 }`}
                 whileHover={{ y: -2 }}
               >
-                <span className="flex items-center gap-2">
-                  <link.icon className="w-4 h-4" />
-                  <span className="hidden xl:inline">{link.name}</span>
+                <span className="flex items-center gap-1.5">
+                  <link.icon className="w-3.5 h-3.5 xl:w-4 xl:h-4 flex-shrink-0" />
+                  <span className="hidden 2xl:inline text-xs xl:text-sm">{link.name}</span>
                 </span>
                 {isActive(link.href) && (
                   <motion.span
@@ -127,30 +134,30 @@ function Navbar() {
             ))}
           </div>
 
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-1.5 xl:gap-2">
             <motion.button
               onClick={toggleTheme}
-              className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              className="w-9 h-9 xl:w-10 xl:h-10 glass-card rounded-lg xl:rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
               title={theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode"}
             >
-              {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
+              {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
             </motion.button>
-            
+
             {/* 语言切换下拉菜单 */}
             <div ref={langDropdownRef} className="relative">
               <motion.button
                 onClick={() => setIsLangDropdownOpen(!isLangDropdownOpen)}
-                className="flex items-center gap-2 px-3 py-2 glass-card rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all min-w-[110px] justify-between"
+                className="flex items-center gap-1.5 px-2.5 py-1.5 xl:px-3 xl:py-2 glass-card rounded-lg xl:rounded-xl text-gray-400 hover:text-white hover:bg-white/10 transition-all min-w-[80px] xl:min-w-[100px] justify-between"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <div className="flex items-center gap-1.5">
-                  <Globe className="w-4 h-4" />
-                  <span className="text-sm font-medium uppercase tracking-wider">{lang}</span>
+                <div className="flex items-center gap-1">
+                  <Globe className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
+                  <span className="text-xs font-bold uppercase tracking-wider">{lang}</span>
                 </div>
-                <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isLangDropdownOpen ? "rotate-180" : ""}`} />
+                <ChevronDown className={`w-3 h-3 xl:w-3.5 xl:h-3.5 transition-transform ${isLangDropdownOpen ? "rotate-180" : ""}`} />
               </motion.button>
 
               <AnimatePresence>
@@ -160,28 +167,28 @@ function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute right-0 mt-2 w-56 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-50 p-2"
+                    className="absolute right-0 mt-2 w-52 xl:w-56 bg-[#1a1a2e]/95 backdrop-blur-xl rounded-xl shadow-xl border border-white/10 overflow-hidden z-50 p-2"
                   >
-                    <div className="grid grid-cols-1 gap-1">
+                    <div className="grid grid-cols-1 gap-0.5">
                       {availableLanguages.map((langCode) => (
                         <button
                           key={langCode}
                           onClick={() => handleLanguageChange(langCode)}
-                          className={`flex items-center justify-between w-full px-3 py-2.5 rounded-lg text-left transition-all ${
+                          className={`flex items-center justify-between w-full px-2.5 py-2 rounded-lg text-left transition-all ${
                             lang === langCode
                               ? "bg-primary-500/20 text-white"
                               : "text-gray-400 hover:text-white hover:bg-white/5"
                           }`}
                         >
-                          <div className="flex items-center gap-3">
-                            <span className={`text-xs font-bold uppercase tracking-wider w-6 h-6 flex items-center justify-center rounded-md ${
+                          <div className="flex items-center gap-2.5">
+                            <span className={`text-xs font-bold uppercase tracking-wider w-6 h-6 flex items-center justify-center rounded-md flex-shrink-0 ${
                               lang === langCode ? "bg-primary-500/30 text-primary-300" : "bg-white/5 text-gray-500"
                             }`}>
                               {langCode}
                             </span>
-                            <span className="font-medium text-sm">{languageNames[langCode]}</span>
+                            <span className="font-medium text-sm whitespace-nowrap">{languageNames[langCode]}</span>
                           </div>
-                          {lang === langCode && <Check className="w-4 h-4 text-primary-400" />}
+                          {lang === langCode && <Check className="w-3.5 h-3.5 text-primary-400 flex-shrink-0" />}
                         </button>
                       ))}
                     </div>
@@ -189,36 +196,36 @@ function Navbar() {
                 )}
               </AnimatePresence>
             </div>
-            
+
             <motion.a
               href="https://github.com/hubbyd"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              className="w-9 h-9 xl:w-10 xl:h-10 glass-card rounded-lg xl:rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Github className="w-5 h-5" />
+              <Github className="w-4 h-4" />
             </motion.a>
             <motion.a
               href="mailto:rement_zhh@163.com"
-              className="w-10 h-10 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              className="w-9 h-9 xl:w-10 xl:h-10 glass-card rounded-lg xl:rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Mail className="w-5 h-5" />
+              <Mail className="w-4 h-4" />
             </motion.a>
 
             {/* 退出登录按钮 */}
             <motion.button
               onClick={handleLogout}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:text-red-300 border border-red-500/20 transition-all"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 xl:px-3 xl:py-2 rounded-lg xl:rounded-xl bg-red-500/10 text-red-400 hover:bg-red-500/20 hover:text-red-300 border border-red-500/20 transition-all"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               title={t.nav.logout}
             >
-              <LogOut className="w-4 h-4" />
-              <span className="text-sm font-medium hidden xl:inline">{t.nav.logout}</span>
+              <LogOut className="w-3.5 h-3.5 xl:w-4 xl:h-4" />
+              <span className="text-xs font-medium hidden xl:inline">{t.nav.logout}</span>
             </motion.button>
           </div>
 
