@@ -64,7 +64,7 @@ function Awards() {
       image: "/assets/award-scholarship-2025.jpg",
     },
     {
-      name: t.about.awards.items.boxueCup,
+      name: "博学杯院级二等奖",
       category: "competition",
       date: "2025",
       level: "school",
@@ -82,7 +82,7 @@ function Awards() {
       image: "/assets/award-guochuang-2025.jpg",
     },
     {
-      name: t.about.awards.items.challengeCup,
+      name: "大学生职业规划大赛院级三等奖",
       category: "competition",
       date: "2024",
       level: "school",
