@@ -229,6 +229,9 @@ export const zh = {
     academicResearchLab: "学术研究实验室",
     pursuingDegree: "正在攻读软件工程学士学位，重点学习前端开发和AI应用。",
     conductedResearch: "从事AI和机器学习研究，在核心期刊发表2篇学术论文。",
+    internshipSeeking: "2026年实习寻找中",
+    lookingForInternship: "寻找实习机会",
+    internshipDescription: "2024年入学，目前大二在读，正在积极寻找2026年暑期实习机会，希望在前端开发、全栈开发或AI应用开发领域积累实践经验。",
     bachelorEngineering: "工学学士",
     softwareEngineering: "软件工程",
     gpa: "GPA",
@@ -308,7 +311,11 @@ export const zh = {
     searchPlaceholder: "搜索项目...",
     all: "全部",
     viewDetails: "查看详情",
-    noProjectsFound: "未找到符合条件的项目"
+    noProjectsFound: "未找到符合条件的项目",
+    loading: "加载中...",
+    retry: "重试",
+    noDescription: "暂无描述",
+    noTags: "暂无标签"
   },
   skillsPage: {
     title: "技术技能",
@@ -631,6 +638,9 @@ export const en = {
     academicResearchLab: "Academic Research Lab",
     pursuingDegree: "Pursuing Bachelor's degree in Software Engineering with focus on frontend development and AI applications.",
     conductedResearch: "Conducted research on AI and machine learning, published 2 academic papers in core journals.",
+    internshipSeeking: "2026 Internship Seeking",
+    lookingForInternship: "Seeking Internship Opportunities",
+    internshipDescription: "Enrolled in 2024, currently a sophomore. Actively seeking summer 2026 internship opportunities in frontend development, full-stack development, or AI application development.",
     bachelorEngineering: "Bachelor of Engineering",
     softwareEngineering: "Software Engineering",
     gpa: "GPA",
@@ -710,7 +720,11 @@ export const en = {
     searchPlaceholder: "Search projects...",
     all: "All",
     viewDetails: "View Details",
-    noProjectsFound: "No projects found matching your criteria."
+    noProjectsFound: "No projects found matching your criteria.",
+    loading: "Loading...",
+    retry: "Retry",
+    noDescription: "No description",
+    noTags: "No tags"
   },
   skillsPage: {
     title: "Technical Skills",
@@ -1033,6 +1047,9 @@ export const ja = {
     academicResearchLab: "学術研究ラボ",
     pursuingDegree: "ソフトウェア工学の学士号を取得中。フロントエンド開発とAIアプリケーションに重点を置いています。",
     conductedResearch: "AIと機械学習の研究を行い、核心ジャーナルに2本の学術論文を発表しました。",
+    internshipSeeking: "2026年インターンシップ募集",
+    lookingForInternship: "インターンシップ機会を探しています",
+    internshipDescription: "2024年入学、現在大学2年生。2026年夏のインターンシップ機会を積極的に探しており、フロントエンド開発、フルスタック開発、またはAIアプリケーション開発の分野で実務経験を積みたいと考えています。",
     bachelorEngineering: "工学学士",
     softwareEngineering: "ソフトウェア工学",
     gpa: "GPA",
@@ -1112,7 +1129,11 @@ export const ja = {
     searchPlaceholder: "プロジェクトを検索...",
     all: "すべて",
     viewDetails: "詳細を見る",
-    noProjectsFound: "条件に一致するプロジェクトが見つかりません。"
+    noProjectsFound: "条件に一致するプロジェクトが見つかりません。",
+    loading: "読み込み中...",
+    retry: "再試行",
+    noDescription: "説明なし",
+    noTags: "タグなし"
   },
   skillsPage: {
     title: "技術スキル",
@@ -1435,6 +1456,9 @@ export const ko = {
     academicResearchLab: "학술 연구 실험실",
     pursuingDegree: "소프트웨어공학 학사 학위过程中，专注于前端开发和AI应用。",
     conductedResearch: "AI와 머신러닝 연구를 수행し、핵심 저널에 2편의 학술 논문을 발표했습니다。",
+    internshipSeeking: "2026년 인턴십 모집",
+    lookingForInternship: "인턴십 기회를 찾고 있습니다",
+    internshipDescription: "2024년 입학, 현재 대학교 2학년입니다. 2026년 여름 인턴십 기회를 적극적으로 찾고 있으며, 프론트엔드 개발, 풀스택 개발 또는 AI 애플리케이션 개발 분야에서 실무 경험을 쌓고 싶습니다.",
     bachelorEngineering: "공학 학사",
     softwareEngineering: "소프트웨어공학",
     gpa: "GPA",
@@ -1514,7 +1538,11 @@ export const ko = {
     searchPlaceholder: "프로젝트 검색...",
     all: "전체",
     viewDetails: "상세 보기",
-    noProjectsFound: "조건에 맞는 프로젝트가 없습니다。"
+    noProjectsFound: "조건에 맞는 프로젝트가 없습니다。",
+    loading: "로딩 중...",
+    retry: "다시 시도",
+    noDescription: "설명 없음",
+    noTags: "태그 없음"
   },
   skillsPage: {
     title: "기술 스킬",
@@ -1837,6 +1865,9 @@ export const fr = {
     academicResearchLab: "Laboratoire de recherche académique",
     pursuingDegree: "Poursuivant un licence en Génie Logiciel avec spécialisation en développement frontend et applications IA.",
     conductedResearch: "A mené des recherches sur l'IA et l'apprentissage automatique, a publié 2 articles dans des revues principales.",
+    internshipSeeking: "Recherche de stage 2026",
+    lookingForInternship: "Recherche d'opportunités de stage",
+    internshipDescription: "Inscrit en 2024, actuellement deuxième année. Recherche activement des opportunités de stage d'été 2026 dans les domaines du développement frontend, du développement full-stack ou du développement d'applications IA.",
     bachelorEngineering: "Licence de Génie",
     softwareEngineering: "Génie Logiciel",
     gpa: "GPA",
@@ -1916,7 +1947,11 @@ export const fr = {
     searchPlaceholder: "Rechercher des projets...",
     all: "Tout",
     viewDetails: "Voir les détails",
-    noProjectsFound: "Aucun projet trouvé correspondant à vos critères."
+    noProjectsFound: "Aucun projet trouvé correspondant à vos critères.",
+    loading: "Chargement...",
+    retry: "Réessayer",
+    noDescription: "Aucune description",
+    noTags: "Aucun tag"
   },
   skillsPage: {
     title: "Compétences Techniques",
@@ -2239,6 +2274,9 @@ export const de = {
     academicResearchLab: "Akademisches Forschungslabor",
     pursuingDegree: "Absolvierung eines Bachelor-Abschlusses in Softwaretechnik mit Fokus auf Frontend-Entwicklung und KI-Anwendungen.",
     conductedResearch: "Forschungsarbeit zu KI und maschinellem Lernen, Veröffentlichung von 2 Artikeln in wichtigen Zeitschriften.",
+    internshipSeeking: "Praktikumssuche 2026",
+    lookingForInternship: "Suche nach Praktikumsmöglichkeiten",
+    internshipDescription: "Im Jahr 2024 eingeschrieben, derzeit 2. Jahr. Aktive Suche nach Praktikumsmöglichkeiten im Sommer 2026 im Bereich Frontend-Entwicklung, Full-Stack-Entwicklung oder KI-Anwendungsentwicklung.",
     bachelorEngineering: "Bachelor of Engineering",
     softwareEngineering: "Softwaretechnik",
     gpa: "GPA",
@@ -2318,7 +2356,11 @@ export const de = {
     searchPlaceholder: "Projekte suchen...",
     all: "Alle",
     viewDetails: "Details ansehen",
-    noProjectsFound: "Keine Projekte gefunden, die Ihren Kriterien entsprechen."
+    noProjectsFound: "Keine Projekte gefunden, die Ihren Kriterien entsprechen.",
+    loading: "Laden...",
+    retry: "Erneut versuchen",
+    noDescription: "Keine Beschreibung",
+    noTags: "Keine Tags"
   },
   skillsPage: {
     title: "Technische Fähigkeiten",
@@ -2641,6 +2683,9 @@ export const es = {
     academicResearchLab: "Laboratorio de Investigación Académica",
     pursuingDegree: "Persiguiendo Licenciatura en Ingeniería de Software con enfoque en desarrollo frontend y aplicaciones de IA.",
     conductedResearch: "Realizó investigación en IA y aprendizaje automático, publicó 2 artículos en revistas principales.",
+    internshipSeeking: "Búsqueda de prácticas 2026",
+    lookingForInternship: "Buscando oportunidades de prácticas",
+    internshipDescription: "Inscrito en 2024, actualmente segundo año. Buscando activamente oportunidades de prácticas de verano 2026 en desarrollo frontend, desarrollo full-stack o desarrollo de aplicaciones de IA.",
     bachelorEngineering: "Licenciatura en Ingeniería",
     softwareEngineering: "Ingeniería de Software",
     gpa: "GPA",
@@ -2720,7 +2765,11 @@ export const es = {
     searchPlaceholder: "Buscar proyectos...",
     all: "Todo",
     viewDetails: "Ver detalles",
-    noProjectsFound: "No se encontraron proyectos que coincidan con sus criterios."
+    noProjectsFound: "No se encontraron proyectos que coincidan con sus criterios.",
+    loading: "Cargando...",
+    retry: "Reintentar",
+    noDescription: "Sin descripción",
+    noTags: "Sin etiquetas"
   },
   skillsPage: {
     title: "Habilidades Técnicas",
