@@ -34,7 +34,7 @@ export const zh = {
     myStory: "我的故事",
     softwareStudent: "软件工程学生",
     story: "我是西安财经大学软件工程专业大二学生，热爱编程与技术创新。从大一开始，我就积极参与各类学科竞赛和科研项目，累计获得校级以上奖项7项，发表核心期刊论文2篇。",
-    story2: "我专注于前端开发和 AI 应用领域，熟练掌握 React、Vue、TypeScript 等现代技术栈，并在不断探索 AI 与 Web 开发的结合。目前正在寻找2025年暑期实习机会，渴望在大厂中学习成长。",
+    story2: "我专注于前端开发和 AI 应用领域，熟练掌握 React、Vue、TypeScript 等现代技术栈，并在不断探索 AI 与 Web 开发的结合。目前正在寻找2026年暑期实习机会，渴望在大厂中学习成长。",
     achievements: {
       school: "西安财经大学",
       major: "软件工程 · 大二",
@@ -168,6 +168,14 @@ export const zh = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "数据库课程设计",
+        description: "基于 HTML 实现的数据库课程设计项目，包含数据库设计文档、前端界面和后端逻辑。实现了完整的增删改查功能，展示了数据库原理与应用的实践能力。",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -229,9 +237,6 @@ export const zh = {
     academicResearchLab: "学术研究实验室",
     pursuingDegree: "正在攻读软件工程学士学位，重点学习前端开发和AI应用。",
     conductedResearch: "从事AI和机器学习研究，在核心期刊发表2篇学术论文。",
-    internshipSeeking: "2026年实习寻找中",
-    lookingForInternship: "寻找实习机会",
-    internshipDescription: "2024年入学，目前大二在读，正在积极寻找2026年暑期实习机会，希望在前端开发、全栈开发或AI应用开发领域积累实践经验。",
     bachelorEngineering: "工学学士",
     softwareEngineering: "软件工程",
     gpa: "GPA",
@@ -311,11 +316,7 @@ export const zh = {
     searchPlaceholder: "搜索项目...",
     all: "全部",
     viewDetails: "查看详情",
-    noProjectsFound: "未找到符合条件的项目",
-    loading: "加载中...",
-    retry: "重试",
-    noDescription: "暂无描述",
-    noTags: "暂无标签"
+    noProjectsFound: "未找到符合条件的项目"
   },
   skillsPage: {
     title: "技术技能",
@@ -361,7 +362,7 @@ export const zh = {
     },
     sentSuccess: "发送成功",
     internship: "关于实习",
-    internshipText: "我目前正在寻找2025年暑期前端/全栈实习机会。如果你的团队有相关职位，请随时联系我！我对技术充满热情，具备扎实的编程基础和良好的学习能力。",
+    internshipText: "我目前正在寻找2026年暑期前端/全栈实习机会。如果你的团队有相关职位，请随时联系我！我对技术充满热情，具备扎实的编程基础和良好的学习能力。",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "GitHub"
   },
@@ -443,7 +444,7 @@ export const en = {
     myStory: "My Story",
     softwareStudent: "Software Engineering Student",
     story: "I am a sophomore majoring in Software Engineering at Xi'an University of Finance and Economics. I am passionate about programming and technological innovation. Since my freshman year, I have actively participated in various academic competitions and research projects, accumulating 7 awards above the school level and publishing 2 core journal papers.",
-    story2: "I focus on frontend development and AI applications, proficient in modern technology stacks including React, Vue, TypeScript, and continuously exploring the combination of AI and Web development. Currently looking for summer 2025 internship opportunities, eager to learn and grow in top tech companies.",
+    story2: "I focus on frontend development and AI applications, proficient in modern technology stacks including React, Vue, TypeScript, and continuously exploring the combination of AI and Web development. Currently looking for summer 2026 internship opportunities, eager to learn and grow in top tech companies.",
     achievements: {
       school: "Xi'an University of Finance and Economics",
       major: "Software Engineering · Sophomore",
@@ -577,6 +578,14 @@ export const en = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "Database Course Project",
+        description: "Database course design project implemented with HTML, including database design documentation, frontend interface, and backend logic. Implements complete CRUD functionality, demonstrating practical ability in database principles and applications.",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -638,9 +647,6 @@ export const en = {
     academicResearchLab: "Academic Research Lab",
     pursuingDegree: "Pursuing Bachelor's degree in Software Engineering with focus on frontend development and AI applications.",
     conductedResearch: "Conducted research on AI and machine learning, published 2 academic papers in core journals.",
-    internshipSeeking: "2026 Internship Seeking",
-    lookingForInternship: "Seeking Internship Opportunities",
-    internshipDescription: "Enrolled in 2024, currently a sophomore. Actively seeking summer 2026 internship opportunities in frontend development, full-stack development, or AI application development.",
     bachelorEngineering: "Bachelor of Engineering",
     softwareEngineering: "Software Engineering",
     gpa: "GPA",
@@ -720,11 +726,7 @@ export const en = {
     searchPlaceholder: "Search projects...",
     all: "All",
     viewDetails: "View Details",
-    noProjectsFound: "No projects found matching your criteria.",
-    loading: "Loading...",
-    retry: "Retry",
-    noDescription: "No description",
-    noTags: "No tags"
+    noProjectsFound: "No projects found matching your criteria."
   },
   skillsPage: {
     title: "Technical Skills",
@@ -770,7 +772,7 @@ export const en = {
     },
     sentSuccess: "Sent Successfully",
     internship: "About Internship",
-    internshipText: "I am currently looking for summer 2025 frontend/full-stack internship opportunities. If your team has relevant positions, please feel free to contact me! I am passionate about technology with solid programming foundation and excellent learning ability.",
+    internshipText: "I am currently looking for summer 2026 frontend/full-stack internship opportunities. If your team has relevant positions, please feel free to contact me! I am passionate about technology with solid programming foundation and excellent learning ability.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "GitHub"
   },
@@ -986,6 +988,14 @@ export const ja = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "データベース課程設計",
+        description: "HTMLで実装されたデータベースコースデザインプロジェクト。データベース設計ドキュメント、フロントエンドインターフェース、バックエンドロジックを含む。完全なCRUD機能を実装し、データベースの原理と応用の実践的な能力を示しています。",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -1047,9 +1057,6 @@ export const ja = {
     academicResearchLab: "学術研究ラボ",
     pursuingDegree: "ソフトウェア工学の学士号を取得中。フロントエンド開発とAIアプリケーションに重点を置いています。",
     conductedResearch: "AIと機械学習の研究を行い、核心ジャーナルに2本の学術論文を発表しました。",
-    internshipSeeking: "2026年インターンシップ募集",
-    lookingForInternship: "インターンシップ機会を探しています",
-    internshipDescription: "2024年入学、現在大学2年生。2026年夏のインターンシップ機会を積極的に探しており、フロントエンド開発、フルスタック開発、またはAIアプリケーション開発の分野で実務経験を積みたいと考えています。",
     bachelorEngineering: "工学学士",
     softwareEngineering: "ソフトウェア工学",
     gpa: "GPA",
@@ -1129,11 +1136,7 @@ export const ja = {
     searchPlaceholder: "プロジェクトを検索...",
     all: "すべて",
     viewDetails: "詳細を見る",
-    noProjectsFound: "条件に一致するプロジェクトが見つかりません。",
-    loading: "読み込み中...",
-    retry: "再試行",
-    noDescription: "説明なし",
-    noTags: "タグなし"
+    noProjectsFound: "条件に一致するプロジェクトが見つかりません。"
   },
   skillsPage: {
     title: "技術スキル",
@@ -1179,7 +1182,7 @@ export const ja = {
     },
     sentSuccess: "送信完了",
     internship: "インターンシップについて",
-    internshipText: "現在、2025年夏のフロントエンド/フルスタックインターンシップの機会を探しています。関連するポジションがある場合は、お気軽にご連絡ください！技術に情熱を持ち、確かなプログラミング基盤と優れた学習能力を持っています。",
+    internshipText: "現在、2026年夏のフロントエンド/フルスタックインターンシップの機会を探しています。関連するポジションがある場合は、お気軽にご連絡ください！技術に情熱を持ち、確かなプログラミング基盤と優れた学習能力を持っています。",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "https://github.com/hubbyd"
   },
@@ -1395,6 +1398,14 @@ export const ko = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "데이터베이스 과정 설계",
+        description: "HTML로 구현된 데이터베이스 과정 설계 프로젝트. 데이터베이스 설계 문서, 프론트엔드 인터페이스, 백엔드 로직을 포함합니다. 완전한 CRUD 기능을 구현하여 데이터베이스 원리와 응용에 대한 실제 능력을 보여줍니다.",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -1456,9 +1467,6 @@ export const ko = {
     academicResearchLab: "학술 연구 실험실",
     pursuingDegree: "소프트웨어공학 학사 학위过程中，专注于前端开发和AI应用。",
     conductedResearch: "AI와 머신러닝 연구를 수행し、핵심 저널에 2편의 학술 논문을 발표했습니다。",
-    internshipSeeking: "2026년 인턴십 모집",
-    lookingForInternship: "인턴십 기회를 찾고 있습니다",
-    internshipDescription: "2024년 입학, 현재 대학교 2학년입니다. 2026년 여름 인턴십 기회를 적극적으로 찾고 있으며, 프론트엔드 개발, 풀스택 개발 또는 AI 애플리케이션 개발 분야에서 실무 경험을 쌓고 싶습니다.",
     bachelorEngineering: "공학 학사",
     softwareEngineering: "소프트웨어공학",
     gpa: "GPA",
@@ -1538,11 +1546,7 @@ export const ko = {
     searchPlaceholder: "프로젝트 검색...",
     all: "전체",
     viewDetails: "상세 보기",
-    noProjectsFound: "조건에 맞는 프로젝트가 없습니다。",
-    loading: "로딩 중...",
-    retry: "다시 시도",
-    noDescription: "설명 없음",
-    noTags: "태그 없음"
+    noProjectsFound: "조건에 맞는 프로젝트가 없습니다。"
   },
   skillsPage: {
     title: "기술 스킬",
@@ -1588,7 +1592,7 @@ export const ko = {
     },
     sentSuccess: "전송 완료",
     internship: "인턴십 정보",
-    internshipText: "현재 2025년 여름 프론트엔드/풀스택 인턴십 기회를 찾고 있습니다. 관련 포지션이 있으시면 언제든지 연락해 주세요! 기술에 열정을 가지고 있으며 탄탄한 프로그래밍 기초와 뛰어난 학습 능력을 갖추고 있습니다.",
+    internshipText: "현재 2026년 여름 프론트엔드/풀스택 인턴십 기회를 찾고 있습니다. 관련 포지션이 있으시면 언제든지 연락해 주세요! 기술에 열정을 가지고 있으며 탄탄한 프로그래밍 기초와 뛰어난 학습 능력을 갖추고 있습니다.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "GitHub"
   },
@@ -1804,6 +1808,14 @@ export const fr = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "Projet de conception de base de données",
+        description: "Projet de conception de base de données implémenté avec HTML, comprenant la documentation de conception de base de données, l'interface frontend et la logique backend. Implémente une fonctionnalité CRUD complète, démontrant une capacité pratique en principes et applications de base de données.",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -1865,9 +1877,6 @@ export const fr = {
     academicResearchLab: "Laboratoire de recherche académique",
     pursuingDegree: "Poursuivant un licence en Génie Logiciel avec spécialisation en développement frontend et applications IA.",
     conductedResearch: "A mené des recherches sur l'IA et l'apprentissage automatique, a publié 2 articles dans des revues principales.",
-    internshipSeeking: "Recherche de stage 2026",
-    lookingForInternship: "Recherche d'opportunités de stage",
-    internshipDescription: "Inscrit en 2024, actuellement deuxième année. Recherche activement des opportunités de stage d'été 2026 dans les domaines du développement frontend, du développement full-stack ou du développement d'applications IA.",
     bachelorEngineering: "Licence de Génie",
     softwareEngineering: "Génie Logiciel",
     gpa: "GPA",
@@ -1947,11 +1956,7 @@ export const fr = {
     searchPlaceholder: "Rechercher des projets...",
     all: "Tout",
     viewDetails: "Voir les détails",
-    noProjectsFound: "Aucun projet trouvé correspondant à vos critères.",
-    loading: "Chargement...",
-    retry: "Réessayer",
-    noDescription: "Aucune description",
-    noTags: "Aucun tag"
+    noProjectsFound: "Aucun projet trouvé correspondant à vos critères."
   },
   skillsPage: {
     title: "Compétences Techniques",
@@ -1997,7 +2002,7 @@ export const fr = {
     },
     sentSuccess: "Envoyé avec succès",
     internship: "À propos du stage",
-    internshipText: "Je recherche actuellement des opportunités de stage frontend/full-stack pour l'été 2025. Si votre équipe a des postes pertinents, n'hésitez pas à me contacter ! Je suis passionné par la technologie avec une solide base en programmation et une excellente capacité d'apprentissage.",
+    internshipText: "Je recherche actuellement des opportunités de stage frontend/full-stack pour l'été 2026. Si votre équipe a des postes pertinents, n'hésitez pas à me contacter ! Je suis passionné par la technologie avec une solide base en programmation et une excellente capacité d'apprentissage.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "GitHub"
   },
@@ -2213,6 +2218,14 @@ export const de = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "Datenbank-Kursdesign",
+        description: "Datenbank-Kursdesign-Projekt, implementiert mit HTML, einschließlich Datenbankdesign-Dokumentation, Frontend-Schnittstelle und Backend-Logik. Implementiert vollständige CRUD-Funktionalität und demonstriert praktische Fähigkeiten in Datenbankprinzipien und -anwendungen.",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -2274,9 +2287,6 @@ export const de = {
     academicResearchLab: "Akademisches Forschungslabor",
     pursuingDegree: "Absolvierung eines Bachelor-Abschlusses in Softwaretechnik mit Fokus auf Frontend-Entwicklung und KI-Anwendungen.",
     conductedResearch: "Forschungsarbeit zu KI und maschinellem Lernen, Veröffentlichung von 2 Artikeln in wichtigen Zeitschriften.",
-    internshipSeeking: "Praktikumssuche 2026",
-    lookingForInternship: "Suche nach Praktikumsmöglichkeiten",
-    internshipDescription: "Im Jahr 2024 eingeschrieben, derzeit 2. Jahr. Aktive Suche nach Praktikumsmöglichkeiten im Sommer 2026 im Bereich Frontend-Entwicklung, Full-Stack-Entwicklung oder KI-Anwendungsentwicklung.",
     bachelorEngineering: "Bachelor of Engineering",
     softwareEngineering: "Softwaretechnik",
     gpa: "GPA",
@@ -2356,11 +2366,7 @@ export const de = {
     searchPlaceholder: "Projekte suchen...",
     all: "Alle",
     viewDetails: "Details ansehen",
-    noProjectsFound: "Keine Projekte gefunden, die Ihren Kriterien entsprechen.",
-    loading: "Laden...",
-    retry: "Erneut versuchen",
-    noDescription: "Keine Beschreibung",
-    noTags: "Keine Tags"
+    noProjectsFound: "Keine Projekte gefunden, die Ihren Kriterien entsprechen."
   },
   skillsPage: {
     title: "Technische Fähigkeiten",
@@ -2406,7 +2412,7 @@ export const de = {
     },
     sentSuccess: "Erfolgreich gesendet",
     internship: "Über das Praktikum",
-    internshipText: "Ich suche derzeit nach Frontend-/Full-Stack-Praktikumsmöglichkeiten für den Sommer 2025. Wenn Ihr Team relevante Positionen hat, kontaktieren Sie mich gerne! Ich bin leidenschaftlich an Technologie interessiert mit solider Programmiergrundlage und ausgezeichneter Lernfähigkeit.",
+    internshipText: "Ich suche derzeit nach Frontend-/Full-Stack-Praktikumsmöglichkeiten für den Sommer 2026. Wenn Ihr Team relevante Positionen hat, kontaktieren Sie mich gerne! Ich bin leidenschaftlich an Technologie interessiert mit solider Programmiergrundlage und ausgezeichneter Lernfähigkeit.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "GitHub"
   },
@@ -2622,6 +2628,14 @@ export const es = {
         tech: "React + TypeScript + Vite + Tailwind CSS + Framer Motion",
         tags: ["Portfolio", "React", "Animation", "Responsive"],
         github: "https://github.com/hubbyd/personal-blog"
+      },
+      {
+        title: "Database Course Design",
+        subtitle: "Diseño de Curso de Base de Datos",
+        description: "Proyecto de diseño de curso de base de datos implementado con HTML, que incluye documentación de diseño de base de datos, interfaz frontend y lógica backend. Implementa funcionalidad CRUD completa, demostrando capacidad práctica en principios y aplicaciones de bases de datos.",
+        tech: "HTML + CSS + JavaScript + MySQL",
+        tags: ["Database", "Course Design", "MySQL", "Web"],
+        github: "https://github.com/hubbyd/2431271221-zhh"
       }
     ]
   },
@@ -2683,9 +2697,6 @@ export const es = {
     academicResearchLab: "Laboratorio de Investigación Académica",
     pursuingDegree: "Persiguiendo Licenciatura en Ingeniería de Software con enfoque en desarrollo frontend y aplicaciones de IA.",
     conductedResearch: "Realizó investigación en IA y aprendizaje automático, publicó 2 artículos en revistas principales.",
-    internshipSeeking: "Búsqueda de prácticas 2026",
-    lookingForInternship: "Buscando oportunidades de prácticas",
-    internshipDescription: "Inscrito en 2024, actualmente segundo año. Buscando activamente oportunidades de prácticas de verano 2026 en desarrollo frontend, desarrollo full-stack o desarrollo de aplicaciones de IA.",
     bachelorEngineering: "Licenciatura en Ingeniería",
     softwareEngineering: "Ingeniería de Software",
     gpa: "GPA",
@@ -2765,11 +2776,7 @@ export const es = {
     searchPlaceholder: "Buscar proyectos...",
     all: "Todo",
     viewDetails: "Ver detalles",
-    noProjectsFound: "No se encontraron proyectos que coincidan con sus criterios.",
-    loading: "Cargando...",
-    retry: "Reintentar",
-    noDescription: "Sin descripción",
-    noTags: "Sin etiquetas"
+    noProjectsFound: "No se encontraron proyectos que coincidan con sus criterios."
   },
   skillsPage: {
     title: "Habilidades Técnicas",
@@ -2815,7 +2822,7 @@ export const es = {
     },
     sentSuccess: "Enviado exitosamente",
     internship: "Sobre la pasantía",
-    internshipText: "Actualmente busco oportunidades de pasantía frontend/full-stack para el verano 2025. Si tu equipo tiene posiciones relevantes, ¡contáctame! Soy apasionado por la tecnología con una sólida base de programación y excelente capacidad de aprendizaje.",
+    internshipText: "Actualmente busco oportunidades de pasantía frontend/full-stack para el verano 2026. Si tu equipo tiene posiciones relevantes, ¡contáctame! Soy apasionado por la tecnología con una sólida base de programación y excelente capacidad de aprendizaje.",
     emails: ["rement_zhh@163.com", "rement06125@gmail.com", "3118035229@qq.com"],
     github: "GitHub"
   },

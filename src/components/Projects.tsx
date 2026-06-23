@@ -7,6 +7,7 @@ const projectIcons: Record<string, typeof Brain> = {
   "AI Chat Pro": MessageSquare,
   "AI Toolkit": Wrench,
   "Personal Portfolio": Globe,
+  "Database Course Design": Folder,
 };
 
 function Projects() {
