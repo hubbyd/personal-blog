@@ -54,10 +54,15 @@ export const zh = {
         excellentStudent: "优秀学生干部",
         thirdScholarship: "校级三等奖学金",
         boxueCup: "博学杯校级三等奖",
+        boxueCup2025: "博学杯院级二等奖",
+        boxueCup2026: "博学杯校级三等奖",
         guochuang: "国创赛校级三等奖",
         challengeCup: "挑战杯校级三等奖",
         computerDesign: "计算机设计大赛西北赛区三等奖",
-        sanchuang: "三创赛校级一等奖"
+        sanchuang: "三创赛校级一等奖",
+        careerPlanning: "大学生职业规划大赛院级三等奖",
+        loveLetter: "三行情书大赛三等奖",
+        socialPractice: "寒假社会实践校级二等奖"
       },
       type: {
         honor: "荣誉称号",
@@ -471,10 +476,15 @@ export const en = {
         excellentStudent: "Excellent Student Leader",
         thirdScholarship: "Third Prize Scholarship",
         boxueCup: "Boxue Cup Third Prize",
+        boxueCup2025: "Boxue Cup (College Level) Second Prize",
+        boxueCup2026: "Boxue Cup (School Level) Third Prize",
         guochuang: "National Innovation Competition Third Prize",
         challengeCup: "Challenge Cup Third Prize",
         computerDesign: "Computer Design Competition (Northwest Region) Third Prize",
-        sanchuang: "Business Innovation Competition First Prize"
+        sanchuang: "Business Innovation Competition First Prize",
+        careerPlanning: "Career Planning Competition (College Level) Third Prize",
+        loveLetter: "Three-Line Love Letter Contest Third Prize",
+        socialPractice: "Winter Social Practice (School Level) Second Prize"
       },
       type: {
         honor: "Honorary Title",
@@ -888,10 +898,15 @@ export const ja = {
         excellentStudent: "優秀な学生幹部",
         thirdScholarship: "3等奨学金",
         boxueCup: "博学杯校内3等奖",
+        boxueCup2025: "博学杯院級2等奖",
+        boxueCup2026: "博学杯校内3等奖",
         guochuang: "国創赛校内3等奖",
         challengeCup: "チャレンジ杯校内3等奖",
         computerDesign: "コンピュータデザインコンテスト西北地区3等奖",
-        sanchuang: "三創赛校内1等奖"
+        sanchuang: "三創赛校内1等奖",
+        careerPlanning: "キャリアプランニングコンテスト院級3等奖",
+        loveLetter: "三行情書コンテスト3等奖",
+        socialPractice: "寒假社会実践校内2等奖"
       },
       type: {
         honor: "荣誉称号",
@@ -1305,10 +1320,15 @@ export const ko = {
         excellentStudent: "우수 학생 간부",
         thirdScholarship: "3등 장학금",
         boxueCup: "박학배校内3等奖",
+        boxueCup2025: "박학배院級2等奖",
+        boxueCup2026: "박학배校内3等奖",
         guochuang: "국창赛校内3等奖",
         challengeCup: "챌린지杯校内3等奖",
         computerDesign: "컴퓨터 디자인 대회 서북지역 3等奖",
-        sanchuang: "삼창赛校内1等奖"
+        sanchuang: "삼창赛校内1等奖",
+        careerPlanning: "캐리어 플래닝 대회院級3等奖",
+        loveLetter: "삼행시 사랑편지 대회3等奖",
+        socialPractice: "겨울방학 사회 실천校内2等奖"
       },
       type: {
         honor: "명예 칭호",
@@ -1722,10 +1742,15 @@ export const fr = {
         excellentStudent: "Excellent dirigeant étudiant",
         thirdScholarship: "Bourse de troisième classe",
         boxueCup: "Prix Boxue de 3ème niveau",
+        boxueCup2025: "Prix Boxue (Niveau Collège) 2ème prix",
+        boxueCup2026: "Prix Boxue (Niveau École) 3ème prix",
         guochuang: "Prix Guochuang de 3ème niveau",
         challengeCup: "Prix Challenge Cup de 3ème niveau",
         computerDesign: "Concours de Conception Informatique (Région Nord-Ouest) 3ème prix",
-        sanchuang: "Prix Sanchuang de 1er niveau"
+        sanchuang: "Prix Sanchuang de 1er niveau",
+        careerPlanning: "Concours de Planification de Carrière (Niveau Collège) 3ème prix",
+        loveLetter: "Concours de Lettre d'Amour en Trois Vers 3ème prix",
+        socialPractice: "Pratique Sociale d'Hiver (Niveau École) 2ème prix"
       },
       type: {
         honor: "Titre Honorifique",
@@ -2139,10 +2164,15 @@ export const de = {
         excellentStudent: "Ausgezeichneter Studentenleiter",
         thirdScholarship: "Drittes Stipendium",
         boxueCup: "Boxue Cup 3. Preis",
+        boxueCup2025: "Boxue Cup (Kollegestufe) 2. Preis",
+        boxueCup2026: "Boxue Cup (Schulstufe) 3. Preis",
         guochuang: "Guochuang 3. Preis",
         challengeCup: "Challenge Cup 3. Preis",
         computerDesign: "Computer-Design-Wettbewerb (Nordwest-Region) 3. Preis",
-        sanchuang: "Sanchuang 1. Preis"
+        sanchuang: "Sanchuang 1. Preis",
+        careerPlanning: "Karriereplanungswettbewerb (Kollegestufe) 3. Preis",
+        loveLetter: "Drei-Reihen-Liebesbrief-Wettbewerb 3. Preis",
+        socialPractice: "Winterliche Sozialpraxis (Schulstufe) 2. Preis"
       },
       type: {
         honor: "Ehrenamt",
@@ -2556,10 +2586,15 @@ export const es = {
         excellentStudent: "Excelente líder estudiantil",
         thirdScholarship: "Beca de tercer nivel",
         boxueCup: "Premio Boxue de 3er nivel",
+        boxueCup2025: "Premio Boxue (Nivel Colegio) 2do premio",
+        boxueCup2026: "Premio Boxue (Nivel Escuela) 3er premio",
         guochuang: "Premio Guochuang de 3er nivel",
         challengeCup: "Premio Challenge Cup de 3er nivel",
         computerDesign: "Concurso de Diseño de Computadoras (Región Noroeste) 3er premio",
-        sanchuang: "Premio Sanchuang de 1er nivel"
+        sanchuang: "Premio Sanchuang de 1er nivel",
+        careerPlanning: "Concurso de Planificación de Carrera (Nivel Colegio) 3er premio",
+        loveLetter: "Concurso de Carta de Amor en Tres Líneas 3er premio",
+        socialPractice: "Práctica Social de Invierno (Nivel Escuela) 2do premio"
       },
       type: {
         honor: "Título Honorífico",

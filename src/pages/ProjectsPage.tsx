@@ -1,58 +1,21 @@
 import { motion } from "framer-motion";
-import { Github, ExternalLink, ArrowRight, Filter, Search, Loader2 } from "lucide-react";
+import { Github, ExternalLink, ArrowRight, Filter, Search } from "lucide-react";
 import { useTranslation } from "../i18n/useTranslation";
-import { useState, useEffect } from "react";
-
-interface GithubRepo {
-  name: string;
-  full_name: string;
-  description: string;
-  html_url: string;
-  language: string | null;
-  topics: string[];
-  stargazers_count: number;
-  forks_count: number;
-  created_at: string;
-  pushed_at: string;
-  homepage: string | null;
-}
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function ProjectsPage() {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedTag, setSelectedTag] = useState("");
-  const [projects, setProjects] = useState<GithubRepo[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    fetchProjects();
-  }, []);
+  const allTags = [...new Set(t.projects.projectList.flatMap((p) => p.tags))];
 
-  const fetchProjects = async () => {
-    setIsLoading(true);
-    setError(null);
-    try {
-      const response = await fetch("https://api.github.com/users/hubbyd/repos?sort=updated&direction=desc");
-      if (!response.ok) {
-        throw new Error("Failed to fetch projects");
-      }
-      const data: GithubRepo[] = await response.json();
-      setProjects(data);
-    } catch (err) {
-      setError("Failed to load projects from GitHub");
-      console.error(err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const allTags = [...new Set(projects.flatMap((p) => p.topics))];
-
-  const filteredProjects = projects.filter((project) => {
-    const matchesSearch = project.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         (project.description || "").toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesTag = !selectedTag || project.topics.includes(selectedTag);
+  const filteredProjects = t.projects.projectList.filter((project) => {
+    const matchesSearch = project.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                         project.description.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesTag = !selectedTag || project.tags.includes(selectedTag);
     return matchesSearch && matchesTag;
   });
 
@@ -125,122 +88,77 @@ function ProjectsPage() {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {isLoading ? (
+          {filteredProjects.map((project, index) => (
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="col-span-full text-center py-16"
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group glass-card rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500"
+              onClick={() => navigate(`/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}`)}
             >
-              <Loader2 className="w-12 h-12 text-primary-400 mx-auto animate-spin mb-4" />
-              <p className="text-gray-400 text-lg">{t.projectsPage.loading}</p>
-            </motion.div>
-          ) : error ? (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="col-span-full text-center py-16"
-            >
-              <p className="text-gray-500 text-lg">{error}</p>
-              <button
-                onClick={fetchProjects}
-                className="mt-4 px-6 py-3 bg-gradient-primary rounded-xl text-white font-medium"
-              >
-                {t.projectsPage.retry}
-              </button>
-            </motion.div>
-          ) : (
-            filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.full_name}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group glass-card rounded-2xl overflow-hidden hover:bg-white/10 transition-all duration-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center">
-                      <span className="text-2xl font-bold text-white">
-                        {project.name.charAt(0).toUpperCase()}
-                      </span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <motion.a
-                        href={project.html_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-11 h-11 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-                        whileHover={{ scale: 1.1 }}
-                      >
-                        <Github className="w-5 h-5" />
-                      </motion.a>
-                      {project.homepage && (
-                        <motion.a
-                          href={project.homepage}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-11 h-11 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
-                          whileHover={{ scale: 1.1 }}
-                        >
-                          <ExternalLink className="w-5 h-5" />
-                        </motion.a>
-                      )}
-                    </div>
+              <div className="p-8">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="w-16 h-16 bg-gradient-primary rounded-2xl flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">
+                      {project.title.charAt(0)}
+                    </span>
                   </div>
-
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gradient transition-all">
-                    {project.name}
-                  </h3>
-                  <p className="text-primary-400 text-sm mb-4">
-                    {project.language || "Project"}
-                  </p>
-                  <p className="text-gray-400 mb-6 leading-relaxed line-clamp-3">
-                    {project.description || t.projectsPage.noDescription}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.topics.length > 0 ? (
-                      project.topics.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-gray-300 border border-white/10"
-                        >
-                          {tag}
-                        </span>
-                      ))
-                    ) : (
-                      <span className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-gray-500 border border-white/10">
-                        {t.projectsPage.noTags}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-4 text-xs text-gray-500">
-                      <span className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-yellow-500" />
-                        {project.stargazers_count}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-green-500" />
-                        {project.forks_count}
-                      </span>
-                    </div>
+                  <div className="flex items-center gap-3">
                     <motion.a
-                      href={project.html_url}
+                      href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-primary-400 text-sm font-medium"
-                      whileHover={{ x: 5 }}
+                      className="w-11 h-11 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                      whileHover={{ scale: 1.1 }}
+                      onClick={(e) => e.stopPropagation()}
                     >
-                      {t.projectsPage.viewDetails}
-                      <ArrowRight className="w-4 h-4" />
+                      <Github className="w-5 h-5" />
+                    </motion.a>
+                    <motion.a
+                      href="#"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-11 h-11 glass-card rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+                      whileHover={{ scale: 1.1 }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <ExternalLink className="w-5 h-5" />
                     </motion.a>
                   </div>
                 </div>
-              </motion.div>
-            ))
-          )}
+
+                <h3 className="text-xl font-bold text-white mb-2 group-hover:text-gradient transition-all">
+                  {project.title}
+                </h3>
+                <p className="text-primary-400 text-sm mb-4">{project.subtitle}</p>
+                <p className="text-gray-400 mb-6 leading-relaxed line-clamp-3">
+                  {project.description}
+                </p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1.5 bg-white/5 rounded-full text-xs text-gray-300 border border-white/10"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-gray-500">
+                    {project.tech.split(" + ").slice(0, 2).join(" + ")}
+                  </span>
+                  <span className="flex items-center gap-1 text-primary-400 text-sm font-medium">
+                    {t.projectsPage.viewDetails}
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
 
         {filteredProjects.length === 0 && (

@@ -12,12 +12,6 @@ function Resume() {
 
   const experiences = [
     {
-      period: "2026",
-      title: t.resume.internshipSeeking,
-      company: t.resume.lookingForInternship,
-      description: t.resume.internshipDescription,
-    },
-    {
       period: "2024 - Present",
       title: t.resume.softwareEngineeringStudent,
       company: t.resume.xiAnUniversity,
