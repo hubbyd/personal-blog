@@ -244,7 +244,10 @@ export const zh = {
     reactDeveloperCertification: "React 开发者认证",
     meta: "Meta",
     machineLearningSpecialization: "机器学习专项",
-    stanfordOnline: "斯坦福在线"
+    stanfordOnline: "斯坦福在线",
+    internshipSeeking: "寻找实习",
+    lookingForInternship: "积极寻找2026年暑期前端/全栈实习机会",
+    internshipDescription: "我目前正在寻找2026年暑期前端/全栈实习机会。如果你的团队有相关职位，请随时联系我！"
   },
   timeline: {
     title: "时间线",
@@ -316,7 +319,11 @@ export const zh = {
     searchPlaceholder: "搜索项目...",
     all: "全部",
     viewDetails: "查看详情",
-    noProjectsFound: "未找到符合条件的项目"
+    noProjectsFound: "未找到符合条件的项目",
+    loading: "加载中...",
+    retry: "重试",
+    noDescription: "暂无描述",
+    noTags: "暂无标签"
   },
   skillsPage: {
     title: "技术技能",
@@ -654,7 +661,10 @@ export const en = {
     reactDeveloperCertification: "React Developer Certification",
     meta: "Meta",
     machineLearningSpecialization: "Machine Learning Specialization",
-    stanfordOnline: "Stanford Online"
+    stanfordOnline: "Stanford Online",
+    internshipSeeking: "Seeking Internship",
+    lookingForInternship: "Actively seeking summer 2026 frontend/full-stack internship opportunities",
+    internshipDescription: "I am currently looking for summer 2026 frontend/full-stack internship opportunities. If your team has relevant positions, please feel free to contact me!"
   },
   timeline: {
     title: "Timeline",
@@ -726,7 +736,11 @@ export const en = {
     searchPlaceholder: "Search projects...",
     all: "All",
     viewDetails: "View Details",
-    noProjectsFound: "No projects found matching your criteria."
+    noProjectsFound: "No projects found matching your criteria.",
+    loading: "Loading...",
+    retry: "Retry",
+    noDescription: "No description",
+    noTags: "No tags"
   },
   skillsPage: {
     title: "Technical Skills",
@@ -1064,7 +1078,10 @@ export const ja = {
     reactDeveloperCertification: "React 開発者認定",
     meta: "Meta",
     machineLearningSpecialization: "機械学習専門講座",
-    stanfordOnline: "スタンフォードオンライン"
+    stanfordOnline: "スタンフォードオンライン",
+    internshipSeeking: "インターンシップを探しています",
+    lookingForInternship: "2026年夏のフロントエンド/フルスタックインターンシップを積極的に探しています",
+    internshipDescription: "現在、2026年夏のフロントエンド/フルスタックインターンシップの機会を探しています。関連するポジションがある場合は、お気軽にご連絡ください！"
   },
   timeline: {
     title: "タイムライン",
@@ -1136,7 +1153,11 @@ export const ja = {
     searchPlaceholder: "プロジェクトを検索...",
     all: "すべて",
     viewDetails: "詳細を見る",
-    noProjectsFound: "条件に一致するプロジェクトが見つかりません。"
+    noProjectsFound: "条件に一致するプロジェクトが見つかりません。",
+    loading: "読み込み中...",
+    retry: "再試行",
+    noDescription: "説明がありません",
+    noTags: "タグがありません"
   },
   skillsPage: {
     title: "技術スキル",
@@ -1474,7 +1495,10 @@ export const ko = {
     reactDeveloperCertification: "React 개발자 인증",
     meta: "Meta",
     machineLearningSpecialization: "머신러닝 전문화",
-    stanfordOnline: "스탠퍼드 온라인"
+    stanfordOnline: "스탠퍼드 온라인",
+    internshipSeeking: "인턴십 찾기",
+    lookingForInternship: "2026년 여름 프론트엔드/풀스택 인턴십을 적극적으로 찾고 있습니다",
+    internshipDescription: "현재 2026년 여름 프론트엔드/풀스택 인턴십 기회를 찾고 있습니다. 관련 포지션이 있으시면 언제든지 연락해 주세요!"
   },
   timeline: {
     title: "타임라인",
@@ -1546,7 +1570,11 @@ export const ko = {
     searchPlaceholder: "프로젝트 검색...",
     all: "전체",
     viewDetails: "상세 보기",
-    noProjectsFound: "조건에 맞는 프로젝트가 없습니다。"
+    noProjectsFound: "조건에 맞는 프로젝트가 없습니다。",
+    loading: "로딩 중...",
+    retry: "다시 시도",
+    noDescription: "설명이 없습니다",
+    noTags: "태그가 없습니다"
   },
   skillsPage: {
     title: "기술 스킬",
@@ -1884,7 +1912,10 @@ export const fr = {
     reactDeveloperCertification: "Certification Développeur React",
     meta: "Meta",
     machineLearningSpecialization: "Spécialisation en Apprentissage Automatique",
-    stanfordOnline: "Stanford Online"
+    stanfordOnline: "Stanford Online",
+    internshipSeeking: "Recherche de stage",
+    lookingForInternship: "Recherche activement des opportunités de stage frontend/full-stack pour l'été 2026",
+    internshipDescription: "Je recherche actuellement des opportunités de stage frontend/full-stack pour l'été 2026. Si votre équipe a des postes pertinents, n'hésitez pas à me contacter !"
   },
   timeline: {
     title: "Chronologie",
@@ -1956,7 +1987,11 @@ export const fr = {
     searchPlaceholder: "Rechercher des projets...",
     all: "Tout",
     viewDetails: "Voir les détails",
-    noProjectsFound: "Aucun projet trouvé correspondant à vos critères."
+    noProjectsFound: "Aucun projet trouvé correspondant à vos critères.",
+    loading: "Chargement...",
+    retry: "Réessayer",
+    noDescription: "Aucune description",
+    noTags: "Aucun tag"
   },
   skillsPage: {
     title: "Compétences Techniques",
@@ -2294,7 +2329,10 @@ export const de = {
     reactDeveloperCertification: "React Entwickler Zertifizierung",
     meta: "Meta",
     machineLearningSpecialization: "Spezialisierung für maschinelles Lernen",
-    stanfordOnline: "Stanford Online"
+    stanfordOnline: "Stanford Online",
+    internshipSeeking: "Praktikum suchen",
+    lookingForInternship: "Aktiv auf der Suche nach Sommer-Praktikumsmöglichkeiten im Frontend/Full-Stack-Bereich 2026",
+    internshipDescription: "Ich suche derzeit nach Frontend-/Full-Stack-Praktikumsmöglichkeiten für den Sommer 2026. Wenn Ihr Team relevante Positionen hat, kontaktieren Sie mich gerne!"
   },
   timeline: {
     title: "Zeitstrahl",
@@ -2366,7 +2404,11 @@ export const de = {
     searchPlaceholder: "Projekte suchen...",
     all: "Alle",
     viewDetails: "Details ansehen",
-    noProjectsFound: "Keine Projekte gefunden, die Ihren Kriterien entsprechen."
+    noProjectsFound: "Keine Projekte gefunden, die Ihren Kriterien entsprechen.",
+    loading: "Laden...",
+    retry: "Wiederholen",
+    noDescription: "Keine Beschreibung",
+    noTags: "Keine Tags"
   },
   skillsPage: {
     title: "Technische Fähigkeiten",
@@ -2704,7 +2746,10 @@ export const es = {
     reactDeveloperCertification: "Certificación de Desarrollador React",
     meta: "Meta",
     machineLearningSpecialization: "Especialización en Aprendizaje Automático",
-    stanfordOnline: "Stanford Online"
+    stanfordOnline: "Stanford Online",
+    internshipSeeking: "Buscando Pasantía",
+    lookingForInternship: "Buscando activamente oportunidades de práctica de frontend/full-stack para el verano 2026",
+    internshipDescription: "Actualmente busco oportunidades de pasantía frontend/full-stack para el verano 2026. Si tu equipo tiene posiciones relevantes, ¡contáctame!"
   },
   timeline: {
     title: "Línea de Tiempo",
@@ -2776,7 +2821,11 @@ export const es = {
     searchPlaceholder: "Buscar proyectos...",
     all: "Todo",
     viewDetails: "Ver detalles",
-    noProjectsFound: "No se encontraron proyectos que coincidan con sus criterios."
+    noProjectsFound: "No se encontraron proyectos que coincidan con sus criterios.",
+    loading: "Cargando...",
+    retry: "Reintentar",
+    noDescription: "Sin descripción",
+    noTags: "Sin etiquetas"
   },
   skillsPage: {
     title: "Habilidades Técnicas",
